@@ -27,7 +27,7 @@ abstract class MasterController extends Controller
         return response()->json($response);
     }
 
-    public function sendError($error,$data=[], $code = 400)
+    public function sendError($error,$data=[], $code = 422)
     {
         $response = [
             'status' => $code,

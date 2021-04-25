@@ -22,9 +22,16 @@ Route::group([
         Route::post('user/register', 'RegisterController@useRegister');
         Route::post('company/register', 'RegisterController@companyRegister');
         Route::post('login', 'LoginController@login');
+        // AuthedUser
+        Route::group([
+            'middleware' => JwtTokenIsValid::class,
+        ], function () {
+            Route::post('logout', 'LoginController@logout');
+        });
     });
     // USER
     Route::group(['namespace' => 'User', 'prefix' => 'user','middleware'=>JwtTokenIsValid::class], function () {
+        Route::get('simple-profile', 'UserController@simpleProfile');
         Route::get('profile', 'UserController@profile');
         Route::post('update-avatar', 'UserController@updateAvatar');
         Route::post('update-personal-info', 'UserController@updateProfile');

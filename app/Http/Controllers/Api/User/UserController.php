@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\User;
 
 use App\Http\Controllers\Api\MasterController;
 use App\Http\Resources\UserResourse;
+use App\Http\Resources\SimpleUserResourse;
 use Illuminate\Http\Request;
 use App\Models\Socials;
 use App\Http\Requests\Api\Auth\ProfileUpdateRequest;
@@ -14,6 +15,11 @@ class UserController extends MasterController
     {
         $user = auth('api')->user();
         return $this->sendResponse(new UserResourse($user));
+    }
+    public function simpleProfile(): object
+    {
+        $user = auth('api')->user();
+        return $this->sendResponse(new SimpleUserResourse($user));
     }
 
     public function updateAvatar(Request $request)
