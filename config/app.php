@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Tawzeef'),
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY','base64:zYdxYLQLo0vXSsQNes/YL1vJzD1huVo3lHp9cxozFGQ='),
 
     'cipher' => 'AES-256-CBC',
 
