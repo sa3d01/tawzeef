@@ -27,6 +27,7 @@ class Profile extends Model
     ];
     protected $casts = [
         'birthdate' => 'datetime',
+        'sub_majors' => 'array',
     ];
 
     public function user():object

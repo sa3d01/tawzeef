@@ -18,7 +18,10 @@ class TrainingCourse extends Model
         'end_date',
         'graduation_file',
     ];
-
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
     protected function getGraduationFileAttribute(): string
     {
         try {

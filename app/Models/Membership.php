@@ -15,4 +15,7 @@ class Membership extends Model
         'role_name',
         'member_from',
     ];
+    protected $casts=[
+        'member_from'=>'datetime'
+    ];
 }

@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="initial">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/cv/AIMY8bcGQO.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_4_25_21__6_45_AM.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/ExperienceUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/JobRequiredUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/QulificationUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/PersonalInfoResourse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/graduation_file/7x2FYEJWFu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/H3GbuF4t7I.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MasterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/ApiMasterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/ApiMasterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MembershipCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MembershipCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/QulificationResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/QulificationResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TrainingCoursesCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TrainingCoursesCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Experience.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Experience.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/JobRequired.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/JobRequired.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Membership.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Membership.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Qualification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Qualification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TrainingCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TrainingCourse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,15 +163,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests/Api/Auth" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Resources" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/Api/Auth" />
+      <recent name="$PROJECT_DIR$/app/Http/Resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -182,7 +191,8 @@
       <workItem from="1619322516993" duration="240000" />
       <workItem from="1619322758172" duration="3094000" />
       <workItem from="1619326304888" duration="1083000" />
-      <workItem from="1619379297512" duration="3070000" />
+      <workItem from="1619379297512" duration="5346000" />
+      <workItem from="1619391679335" duration="11188000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -212,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619327215817</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="initial">
+      <created>1619385307085</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619385307085</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

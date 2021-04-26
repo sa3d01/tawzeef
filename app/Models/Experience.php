@@ -22,6 +22,10 @@ class Experience extends Model
         'foundation_members_count',
         'latest_salary',
     ];
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
     public function country():object
     {
         return $this->belongsTo(Country::class);

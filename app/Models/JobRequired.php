@@ -25,4 +25,8 @@ class JobRequired extends Model
     {
         return $this->belongsTo(Major::class);
     }
+    public function country():object
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

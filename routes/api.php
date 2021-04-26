@@ -34,7 +34,26 @@ Route::group([
         Route::get('simple-profile', 'UserController@simpleProfile');
         Route::get('profile', 'UserController@profile');
         Route::post('update-avatar', 'UserController@updateAvatar');
+
+        Route::get('personal-info', 'UserController@personalInfo');
         Route::post('update-personal-info', 'UserController@updateProfile');
+        Route::get('personal-socials', 'UserController@personalSocials');
         Route::post('update-socials', 'UserController@updateSocials');
+        Route::get('personal-contacts', 'UserController@personalContacts');
+        Route::post('update-contacts', 'UserController@updateContacts');
+        Route::get('personal-qualifications', 'UserController@personalQualifications');
+        Route::post('update-qualifications', 'UserController@updateQualifications');
+        Route::get('personal-sub-majors', 'UserController@personalSubMajors');
+        Route::post('update-sub-majors', 'UserController@updateSubMajors');
+        Route::get('personal-job-required', 'UserController@personalJobRequired');
+        Route::post('update-job-required', 'UserController@updateJobRequired');
+        Route::get('personal-training-courses', 'UserController@personalTrainingCourses');
+        Route::post('update-training-courses', 'UserController@updateTrainingCourses');
+        Route::get('personal-experience', 'UserController@personalExperience');
+        Route::post('update-experience', 'UserController@updateExperience');
+        Route::get('personal-memberships', 'UserController@personalMemberships');
+        Route::post('update-memberships', 'UserController@updateMemberships');
+        Route::get('personal-skills', 'UserController@personalSkills');
+        Route::post('update-skills', 'UserController@updateSkills');
     });
 });
