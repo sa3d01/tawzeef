@@ -32,7 +32,7 @@ class QulificationUpdateRequest extends ApiMasterRequest
             'graduation_date' => 'required|date',
             'graduation_degree' => 'nullable',
             'specialization'=>'required|string|max:110',
-            'graduation_file' => 'required',
+            'graduation_file' => 'nullable',
         ];
     }
 

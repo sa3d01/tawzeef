@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="initial">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/ExperienceUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/JobRequiredUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/QulificationUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/PersonalInfoResourse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/graduation_file/7x2FYEJWFu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/images/user/H3GbuF4t7I.jpg" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="profile user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MembershipCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MembershipCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/QulificationResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/QulificationResourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TrainingCoursesCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TrainingCoursesCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Experience.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Experience.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/JobRequired.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/JobRequired.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Membership.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Membership.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Qualification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Qualification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TrainingCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TrainingCourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +175,8 @@
       <workItem from="1619322758172" duration="3094000" />
       <workItem from="1619326304888" duration="1083000" />
       <workItem from="1619379297512" duration="5346000" />
-      <workItem from="1619391679335" duration="11188000" />
+      <workItem from="1619391679335" duration="11875000" />
+      <workItem from="1619489315870" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -229,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619385307085</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="profile user">
+      <created>1619411402184</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619411402184</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +241,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="profile user" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile user" />
   </component>
 </project>
