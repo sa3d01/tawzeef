@@ -76,7 +76,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function completedProfileRatio(): int
     {
-        $percent=20;
+        $percent=10;
         if ($this->profile){
             $percent=$percent+10;
         }
