@@ -76,7 +76,32 @@ class User extends Authenticatable implements JWTSubject
 
     public function completedProfileRatio(): int
     {
-        return 25;
+        $percent=20;
+        if ($this->profile){
+            $percent=$percent+10;
+        }
+        if ($this->experience){
+            $percent=$percent+10;
+        }
+        if ($this->memberships->count() > 0){
+            $percent=$percent+10;
+        }
+        if ($this->qualification){
+            $percent=$percent+10;
+        }
+        if ($this->jobRequired){
+            $percent=$percent+10;
+        }
+        if ($this->skills->count() > 0){
+            $percent=$percent+10;
+        }
+        if ($this->TrainingCourses->count() > 0){
+            $percent=$percent+10;
+        }
+        if ($this->socials->count() > 0){
+            $percent=$percent+10;
+        }
+        return $percent;
     }
 
     public function country(): object
