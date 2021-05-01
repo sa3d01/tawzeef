@@ -13,7 +13,7 @@ class LoginController extends MasterController
     public function login(LoginRequest $request): object
     {
         $credentials = $request->only('email', 'password');
-        $user = User::where(['phone' => $request['phone'], 'type' => $request['type']])->first();
+        $user = User::where(['email' => $request['email'], 'type' => $request['type']])->first();
         if (!$user) {
             return $this->sendError('هذا الحساب غير موجود.');
         }
