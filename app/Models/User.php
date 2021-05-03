@@ -92,13 +92,13 @@ class User extends Authenticatable implements JWTSubject
         if ($this->jobRequired){
             $percent=$percent+10;
         }
-        if (count($this->skills) > 0){
+        if ($this->skills > 0){
             $percent=$percent+10;
         }
-        if (count($this->TrainingCourses) > 0){
+        if ($this->TrainingCourses > 0){
             $percent=$percent+10;
         }
-        if (count($this->socials) > 0){
+        if ($this->socials > 0){
             $percent=$percent+10;
         }
         return $percent;
