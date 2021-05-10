@@ -1,6 +1,7 @@
 <?php
 
 use \App\Http\Middleware\JwtTokenIsValid;
+use \App\Http\Middleware\JwtTokenIsCompany;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
@@ -55,5 +56,15 @@ Route::group([
         Route::post('update-memberships', 'UserController@updateMemberships');
         Route::get('personal-skills', 'UserController@personalSkills');
         Route::post('update-skills', 'UserController@updateSkills');
+    });
+    // COMPANY
+    Route::group(['namespace' => 'Company', 'prefix' => 'company','middleware'=>JwtTokenIsCompany::class], function () {
+        Route::post('job', 'JobController@store');
+        Route::get('active-job', 'JobController@activeJobs');
+        Route::get('expired-job', 'JobController@expiredJobs');
+        Route::post('find-employee', 'EmployeeController@findEmployee');
+        Route::get('employee/{id}', 'EmployeeController@showEmployee');
+        Route::post('employee/{id}/message', 'EmployeeController@messageEmployee');
+
     });
 });

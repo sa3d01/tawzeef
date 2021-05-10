@@ -17,6 +17,7 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();
+            $table->integer('create_job')->nullable();
             $table->timestamps();
         });
     }

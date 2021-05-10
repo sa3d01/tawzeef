@@ -2,7 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="profile user">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/JwtTokenIsCompany.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/JobStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/JobResourse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Job.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_10_013411_create_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/commercial_file/9EudI2bMbS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/cv/nrQNdBkwwT.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/graduation_file/2sjZzf78r5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/graduation_file/byBtdOmLFh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/13cXxnGzZY.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/1VUmm6cmQH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/4ZgTDi7bn1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/NvhGnQfapS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/d3cVd7AfOK.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/f5rjTQrIJT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/hVnDo5I1cy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/hw0HEgIRY3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/jmz8StK6Jm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/l8R6jeNf8c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/clDvy46ljf.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_24_220154_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_24_220154_create_settings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,15 +176,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests/Api/Auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Api/Company" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Requests/Api/Auth" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Company" />
       <recent name="$PROJECT_DIR$/app/Http/Resources" />
+      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
+      <recent name="$PROJECT_DIR$/app/Http/Requests/Api" />
+      <recent name="$PROJECT_DIR$/app/Http/Requests/Api/Auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -182,6 +215,9 @@
       <workItem from="1619746892337" duration="617000" />
       <workItem from="1619812972418" duration="1642000" />
       <workItem from="1619901062031" duration="2531000" />
+      <workItem from="1620047193730" duration="2727000" />
+      <workItem from="1620431714110" duration="1823000" />
+      <workItem from="1620609888442" duration="13034000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -267,7 +303,28 @@
       <option name="project" value="LOCAL" />
       <updated>1619903764333</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="profile user">
+      <created>1620047268037</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620047268037</updated>
+    </task>
+    <task id="LOCAL-00014" summary="profile user">
+      <created>1620047372224</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620047372224</updated>
+    </task>
+    <task id="LOCAL-00015" summary="profile user">
+      <created>1620047466204</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1620047466204</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

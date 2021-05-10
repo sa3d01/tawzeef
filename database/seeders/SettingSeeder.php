@@ -61,7 +61,8 @@ class SettingSeeder extends Seeder
         ]);
         Setting::create([
             'mobile'=>'+9665xxxxxxxx',
-            'email'=>'info@zad-map.com',
+            'email'=>'info@tawzeef.com',
+            'create_job'=>50
         ]);
         Socials::create([
             'facebook'=>'https://facebook.com/',

@@ -28,8 +28,6 @@ use App\Models\Skill;
 use App\Models\Socials;
 use App\Models\TrainingCourse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 use phpDocumentor\Reflection\Types\Object_;
 
 class UserController extends MasterController

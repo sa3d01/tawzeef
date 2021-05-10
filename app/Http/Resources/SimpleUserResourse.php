@@ -25,6 +25,7 @@ class SimpleUserResourse extends JsonResource
             'avatar' => $this->avatar,
             'first_name' => $this->profile->first_name,
             'last_name' => $this->profile->last_name,
+            'created_at'=>Carbon::parse($this->created_at)->format('Y-m-d')
         ];
     }
 }
