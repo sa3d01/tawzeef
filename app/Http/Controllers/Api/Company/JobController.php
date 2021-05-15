@@ -13,7 +13,11 @@ class JobController extends MasterController
 {
     public function activeJobs(): object
     {
-        $jobs = Job::all()->filter(function ($job) {
+        $jobs_q=Job::query();
+        if (request()->input('major_id')){
+            $jobs_q=$jobs_q->where('job_id',request()->input('job_id'));
+        }
+        $jobs = $jobs_q->get()->filter(function ($job) {
             $startTime = Carbon::parse($job->start_date)->format('Y-M-d');
             $endTime = Carbon::parse($job->end_date)->format('Y-M-d');
             if (Carbon::now()->between($startTime, $endTime)) {
