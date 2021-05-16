@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Major;
 use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -26,6 +27,7 @@ class JobResourse extends JsonResource
         $arr['sex']=$this->sex??"";
         $arr['location']=$this->location;
         $arr['published_at']=Carbon::parse($this->start_date)->diffForHumans();
+        $arr['similar_majors']=new MajorCollection(Major::all());
         return $arr;
     }
 }

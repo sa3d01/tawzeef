@@ -46,6 +46,12 @@ class JobController extends MasterController
 //        return $this->sendResponse(new JobCollection($jobs));
     }
 
+    public function show($id): object
+    {
+        $job = Job::find($id);
+
+        return $this->sendResponse(new JobResourse($job));
+    }
     public function store(JobStoreRequest $request): object
     {
         $data = $request->validated();

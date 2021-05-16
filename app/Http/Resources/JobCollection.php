@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Major;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -26,6 +27,7 @@ class JobCollection extends ResourceCollection
             $arr['sex']=$obj->sex??"";
             $arr['location']=$obj->location;
             $arr['published_at']=Carbon::parse($obj->start_date)->diffForHumans();
+            $arr['similar_majors']=new MajorCollection(Major::all());
             $data[] = $arr;
         }
         return $data;
