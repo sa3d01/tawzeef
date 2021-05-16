@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bank;
+use App\Models\ContactType;
 use App\Models\Page;
 use App\Models\Setting;
 use App\Models\Socials;
@@ -48,6 +49,22 @@ class SettingSeeder extends Seeder
             'title_en'=>'about banks',
             'note_ar'=>'نص عن الحسابات البنكية',
             'note_en'=>'about banks',
+        ]);
+        Page::create([
+            'type'=>'contact',
+            'for'=>'all',
+            'title_ar'=>'اتصل بنا',
+            'title_en'=>'contact us',
+            'note_ar'=>'نص تواصل معنا',
+            'note_en'=>'contact us notes',
+        ]);
+        ContactType::create([
+            'name_ar'=>'اقتراح',
+            'name_en'=>'suggestion',
+        ]);
+        ContactType::create([
+            'name_ar'=>'شكوي',
+            'name_en'=>'report',
         ]);
         Bank::create([
             'name_ar'=>'البنك الأهلى',

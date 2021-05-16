@@ -68,4 +68,18 @@ Route::group([
         Route::post('employee/{id}/message', 'EmployeeController@messageEmployee');
 
     });
+    //Contact
+    Route::group([
+        'namespace' => 'Contact',
+        'middleware'=>JwtTokenIsCompany::class
+    ], function () {
+        Route::get('contact-types', 'ContactController@contactTypes');
+        Route::post('contact', 'ContactController@store');
+
+    });
+    // NOTIFICATIONS
+    Route::group(['namespace' => 'Notification', 'prefix' => 'notification','middleware'=>JwtTokenIsCompany::class], function () {
+        Route::post('/', 'NotificationController@index');
+        Route::post('/{id}', 'NotificationController@show');
+    });
 });
