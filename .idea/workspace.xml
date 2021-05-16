@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company">
-      <change afterPath="$PROJECT_DIR$/public/media/images/transfer/I6Iu6cY8P1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +191,7 @@
       <workItem from="1620609888442" duration="13067000" />
       <workItem from="1620680476478" duration="3000" />
       <workItem from="1620858220854" duration="759000" />
+      <workItem from="1621118184523" duration="1052000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -305,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620624584915</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="company">
+      <created>1621118248576</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1621118248576</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

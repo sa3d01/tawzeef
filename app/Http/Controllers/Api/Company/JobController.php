@@ -8,6 +8,7 @@ use App\Http\Resources\JobCollection;
 use App\Http\Resources\JobResourse;
 use App\Models\Job;
 use Carbon\Carbon;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class JobController extends MasterController
 {
@@ -17,25 +18,32 @@ class JobController extends MasterController
         if (request()->input('major_id')){
             $jobs_q=$jobs_q->where('job_id',request()->input('job_id'));
         }
-        $jobs = $jobs_q->get()->filter(function ($job) {
-            $startTime = Carbon::parse($job->start_date)->format('Y-M-d');
-            $endTime = Carbon::parse($job->end_date)->format('Y-M-d');
-            if (Carbon::now()->between($startTime, $endTime)) {
-                return $job;
-            }
-        });
-        return $this->sendResponse(new JobCollection($jobs));
+        $jobs= $jobs_q->where('end_date','>',Carbon::now())->simplePaginate(10);
+        return new JobCollection($jobs);
+//        $jobs = $jobs_q->get()->filter(function ($job) {
+//            $startTime = Carbon::parse($job->start_date)->format('Y-M-d');
+//            $endTime = Carbon::parse($job->end_date)->format('Y-M-d');
+//            if (Carbon::now()->between($startTime, $endTime)) {
+//                return $job;
+//            }
+//        });
+//        return $this->sendResponse(new JobCollection($jobs));
     }
 
-    public function expiredJobs(): object
+    public function expiredJobs()
     {
-        $jobs = Job::all()->filter(function ($job) {
-            $endTime = Carbon::parse($job->end_date)->format('Y-M-d');
-            if (Carbon::now() > $endTime) {
-                return $job;
-            }
-        });
-        return $this->sendResponse(new JobCollection($jobs));
+        $jobs= Job::where('end_date','<',Carbon::now())->simplePaginate(10);
+        return new JobCollection($jobs);
+//        $jobs_q=Job::query();
+//        if (request()->input('major_id')){
+//            $jobs_q=$jobs_q->where('job_id',request()->input('job_id'));
+//        }
+//        $jobs = $jobs_q->get()->filter(function ($job) {
+//            if (Carbon::now() > $job->end_date) {
+//                return $job;
+//            }
+//        });
+//        return $this->sendResponse(new JobCollection($jobs));
     }
 
     public function store(JobStoreRequest $request): object
