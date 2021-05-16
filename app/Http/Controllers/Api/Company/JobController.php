@@ -18,7 +18,7 @@ class JobController extends MasterController
         if (request()->input('major_id')){
             $jobs_q=$jobs_q->where('job_id',request()->input('job_id'));
         }
-        $jobs= $jobs_q->where('end_date','>',Carbon::now())->simplePaginate(10);
+        $jobs= $jobs_q->where('end_date','>',Carbon::now())->paginate(10);
         return new JobCollection($jobs);
 //        $jobs = $jobs_q->get()->filter(function ($job) {
 //            $startTime = Carbon::parse($job->start_date)->format('Y-M-d');
@@ -32,7 +32,7 @@ class JobController extends MasterController
 
     public function expiredJobs()
     {
-        $jobs= Job::where('end_date','<',Carbon::now())->simplePaginate(10);
+        $jobs= Job::where('end_date','<',Carbon::now())->paginate(10);
         return new JobCollection($jobs);
 //        $jobs_q=Job::query();
 //        if (request()->input('major_id')){
