@@ -24,6 +24,10 @@ class MajorSeeder extends Seeder
             'name_en'=>'programming',
         ]);
         Major::create([
+            'name_ar'=>'هندسة',
+            'name_en'=>'engineering',
+        ]);
+        Major::create([
             'name_ar'=>'محاسبة',
             'name_en'=>'commercial',
             'parent_id'=>1
@@ -42,6 +46,11 @@ class MajorSeeder extends Seeder
             'name_ar'=>'برمجة تطبيقات',
             'name_en'=>'ios developer',
             'parent_id'=>2
+        ]);
+        Major::create([
+            'name_ar'=>'مدنى',
+            'name_en'=>'بتاع صبه',
+            'parent_id'=>3
         ]);
 
 

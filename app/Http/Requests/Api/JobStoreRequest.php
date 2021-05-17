@@ -30,15 +30,15 @@ class JobStoreRequest extends ApiMasterRequest
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
             'sex' => 'nullable|in:male,female',
-            'experience_years'=>'nullable|string|max:110',
-            'expected_salary'=>'nullable|string|max:110',
+            'experience_years'=>'nullable',
+            'expected_salary'=>'nullable',
             'country_id' => 'required|numeric|exists:countries,id',
             'city_id' => 'required|numeric|exists:cities,id',
             'description'=>'required',
             'location.lat'=>'nullable',
             'location.lng'=>'nullable',
             'show_company'=>'nullable',
-            'pay_type'=>'required|in:bank,online',
+            'pay_type'=>'nullable|in:bank,online',
             'invoice_image'=>'nullable',
         ];
     }

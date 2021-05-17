@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             CountrySeeder::class,
             CitySeeder::class,
-            MajorSeeder::class
+            MajorSeeder::class,
+            CompanySeeder::class,
+            EmployerSeeder::class,
+            JobSeeder::class
         ]);
     }
 }

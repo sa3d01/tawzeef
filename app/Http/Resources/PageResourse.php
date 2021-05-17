@@ -20,6 +20,7 @@ class PageResourse extends JsonResource
                 'ar'=>$this->note_ar,
                 'en'=>$this->note_en
             ],
+            'media'=>$this->media
         ];
     }
 }

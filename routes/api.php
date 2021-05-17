@@ -60,26 +60,39 @@ Route::group([
     // COMPANY
     Route::group(['namespace' => 'Company', 'prefix' => 'company','middleware'=>JwtTokenIsCompany::class], function () {
         Route::post('job', 'JobController@store');
+        Route::put('job/{id}', 'JobController@update');
+        Route::delete('job/{id}', 'JobController@delete');
         Route::get('active-job', 'JobController@activeJobs');
         Route::get('expired-job', 'JobController@expiredJobs');
         Route::get('job/{id}', 'JobController@show');
         Route::get('find-employee', 'EmployeeController@findEmployee');
         Route::get('employee/{id}', 'EmployeeController@showEmployee');
         Route::post('employee/{id}/message', 'EmployeeController@messageEmployee');
+        Route::get('message', 'EmployeeController@messages');
+
+        Route::get('find-major-salary', 'JobController@findJobSalary');
+        Route::get('find-average-salary', 'JobController@findAverageSalary');
+
 
     });
     //Contact
     Route::group([
         'namespace' => 'Contact',
-        'middleware'=>JwtTokenIsCompany::class
+        'middleware'=>JwtTokenIsValid::class
     ], function () {
         Route::get('contact-types', 'ContactController@contactTypes');
         Route::post('contact', 'ContactController@store');
 
     });
     // NOTIFICATIONS
-    Route::group(['namespace' => 'Notification', 'prefix' => 'notification','middleware'=>JwtTokenIsCompany::class], function () {
-        Route::post('/', 'NotificationController@index');
-        Route::post('/{id}', 'NotificationController@show');
+    Route::group(['namespace' => 'Notification', 'prefix' => 'notification','middleware'=>JwtTokenIsValid::class], function () {
+        Route::get('/', 'NotificationController@index');
+        Route::get('/{id}', 'NotificationController@show');
+    });
+    // employer
+    Route::group(['namespace' => 'Employer', 'prefix' => 'employer','middleware'=>JwtTokenIsValid::class], function () {
+        Route::get('company/{id}', 'EmployeeController@showCompany');
+        Route::post('company/{id}/message', 'CompanyController@messageCompany');
+        Route::get('message', 'CompanyController@messages');
     });
 });

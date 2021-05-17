@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Api\Company;
 
 use App\Http\Controllers\Api\MasterController;
+use App\Http\Resources\MessageCollection;
 use App\Http\Resources\SimpleUserResourse;
 use App\Http\Resources\UserResourse;
 use App\Models\Experience;
 use App\Models\JobRequired;
+use App\Models\Message;
+use App\Models\Notification;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class EmployeeController extends MasterController
 {
@@ -21,11 +25,11 @@ class EmployeeController extends MasterController
             $expected_title_users = JobRequired::where('job_title', 'LIKE', $request['job_title'])->pluck('user_id');
             $employee_q = $employee_q->whereIn('id', $expected_title_users);
         }
-        if ($request['country_id']) {
-            $employee_q = $employee_q->where('country_id', $request['country_id']);
+        if ($request['countries']) {
+            $employee_q = $employee_q->whereIn('country_id', $request['countries']);
         }
-        if ($request['city_id']) {
-            $employee_q = $employee_q->where('city_id', $request['city_id']);
+        if ($request['cities']) {
+            $employee_q = $employee_q->whereIn('city_id', $request['cities']);
         }
         if ($request['sex']) {
             $expected_sex_users = Profile::where('sex', $request['sex'])->pluck('user_id');
@@ -51,8 +55,32 @@ class EmployeeController extends MasterController
     {
         return $this->sendResponse(new UserResourse(User::find($id)));
     }
-    public function messageEmployee($id)
+    public function messages()
     {
+        $messages=Message::where('receiver_id',auth()->id())->get();
+        foreach ($messages as $message){
+            $message->update([
+               'read'=>true
+            ]);
+        }
+        return new MessageCollection(Message::where('receiver_id',auth()->id())->paginate());
+    }
+    public function messageEmployee($id,Request $request)
+    {
+        $sender=User::find(auth()->id());
+        $name=$sender->profile->foundation_name;
+        $message=Message::create([
+            'sender_id'=>auth()->id(),
+            'receiver_id'=>$id,
+            'message'=>$request['message']
+        ]);
+        Notification::create([
+            'receiver_id'=>$id,
+            'model'=>'Message',
+            'model_id'=>$message->id,
+            'note_ar'=>'لديك رسالة جديدة من '.$name,
+            'note_en'=>' you have new message from '.$name
+        ]);
         return $this->sendResponse(new UserResourse(User::find($id)));
     }
 }

@@ -20,8 +20,9 @@ class CreatePagesTable extends Migration
             $table->string('for')->nullable();
             $table->string('title_ar')->nullable();
             $table->string('title_en')->nullable();
-            $table->string('note_ar')->nullable();
-            $table->string('note_en')->nullable();
+            $table->text('note_ar')->nullable();
+            $table->text('note_en')->nullable();
+            $table->string('media')->nullable();
             $table->timestamps();
         });
     }
