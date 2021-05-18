@@ -25,12 +25,12 @@ class EmployeeController extends MasterController
             $expected_title_users = JobRequired::where('job_title', 'LIKE', $request['job_title'])->pluck('user_id');
             $employee_q = $employee_q->whereIn('id', $expected_title_users);
         }
-        if ($request['country']) {
-            $countries=explode($request['country'],',');
+        if ($request['countries']) {
+            $countries=explode($request['countries'],',');
             $employee_q = $employee_q->whereIn('country_id', $countries);
         }
-        if ($request['city']) {
-            $cities=explode($request['city'],',');
+        if ($request['cities']) {
+            $cities=explode($request['cities'],',');
             $employee_q = $employee_q->whereIn('city_id', $cities);
         }
         if ($request['sex']) {
