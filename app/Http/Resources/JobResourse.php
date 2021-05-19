@@ -28,6 +28,9 @@ class JobResourse extends JsonResource
         $arr['location']=$this->location;
         $arr['published_at']=Carbon::parse($this->start_date)->diffForHumans();
         $arr['similar_majors']=new MajorCollection(Major::all());
+        $arr['start_date']=$this->start_date;
+        $arr['end_date']=$this->end_date;
+        $arr['show_company']=$this->show_company;
         return $arr;
     }
 }
