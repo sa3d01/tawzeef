@@ -22,7 +22,7 @@ class EmployeeController extends MasterController
     {
         $employee_q = User::where('type', 'USER');
         if ($request['job_title']) {
-            $expected_title_users = JobRequired::where('job_title', 'LIKE', $request['job_title'])->pluck('user_id');
+            $expected_title_users = JobRequired::where('job_title', 'LIKE', '%'.$request['job_title'].'%')->pluck('user_id');
             $employee_q = $employee_q->whereIn('id', $expected_title_users);
         }
         if ($request['countries']) {
