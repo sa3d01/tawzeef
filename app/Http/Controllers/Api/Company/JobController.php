@@ -88,7 +88,7 @@ class JobController extends MasterController
         $jobs= Job::take(7)->get();
         $data=[];
         foreach ($jobs as $job){
-            $arr['company'] = new SimpleCompanyResourse($job->company);
+            $arr['job'] = new JobResourse($job);
             $arr['expected_salary']=(int)$job->expected_salary;
             $data[]=$arr;
         }
