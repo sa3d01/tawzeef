@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company">
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +196,7 @@
       <workItem from="1621325553334" duration="139000" />
       <workItem from="1621372471686" duration="681000" />
       <workItem from="1621410107285" duration="695000" />
-      <workItem from="1621514071460" duration="407000" />
+      <workItem from="1621514071460" duration="941000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -382,7 +380,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621514108646</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="company">
+      <created>1621514532792</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1621514532792</updated>
+    </task>
+    <task id="LOCAL-00028" summary="company">
+      <created>1621514654022</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1621514654022</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
