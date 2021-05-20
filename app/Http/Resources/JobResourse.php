@@ -31,6 +31,7 @@ class JobResourse extends JsonResource
         $arr['start_date']=Carbon::parse($this->start_date)->format('Y-m-d');
         $arr['end_date']=Carbon::parse($this->end_date)->format('Y-m-d');
         $arr['show_company']=$this->show_company;
+        $arr['my_job']=auth('api')->id()==$this->id;
         return $arr;
     }
 }
