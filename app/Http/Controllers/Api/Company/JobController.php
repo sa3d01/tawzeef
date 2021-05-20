@@ -7,6 +7,7 @@ use App\Http\Requests\Api\JobStoreRequest;
 use App\Http\Resources\JobCollection;
 use App\Http\Resources\JobResourse;
 use App\Http\Resources\SimpleCompanyResourse;
+use App\Http\Resources\SimpleJobResourse;
 use App\Models\Job;
 use App\Models\Major;
 use Carbon\Carbon;
@@ -88,7 +89,7 @@ class JobController extends MasterController
         $jobs= Job::take(7)->get();
         $data=[];
         foreach ($jobs as $job){
-            $arr['job'] = new JobResourse($job);
+            $arr['job'] = new SimpleJobResourse($job);
             $arr['expected_salary']=(int)$job->expected_salary;
             $data[]=$arr;
         }
