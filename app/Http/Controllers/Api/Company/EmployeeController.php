@@ -13,8 +13,6 @@ use App\Models\Notification;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class EmployeeController extends MasterController
 {
@@ -26,11 +24,11 @@ class EmployeeController extends MasterController
             $employee_q = $employee_q->whereIn('id', $expected_title_users);
         }
         if ($request['countries']) {
-            $countries=explode(',',$request['countries']);
+            $countries = explode(',', $request['countries']);
             $employee_q = $employee_q->whereIn('country_id', $countries);
         }
         if ($request['cities']) {
-            $cities=explode(',',$request['cities']);
+            $cities = explode(',', $request['cities']);
             $employee_q = $employee_q->whereIn('city_id', $cities);
         }
         if ($request['sex']) {

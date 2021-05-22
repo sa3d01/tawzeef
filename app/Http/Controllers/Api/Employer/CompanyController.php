@@ -20,6 +20,10 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 class CompanyController extends MasterController
 {
 
+    public function seenCompany()
+    {
+        return SimpleCompanyResourse::collection(User::where('type','COMPANY')->take(5)->get());
+    }
     public function showCompany($id)
     {
         return $this->sendResponse(new SimpleCompanyResourse(User::find($id)));
@@ -52,4 +56,5 @@ class CompanyController extends MasterController
         }
         return new MessageCollection(Message::where('receiver_id',auth()->id())->paginate());
     }
+
 }
