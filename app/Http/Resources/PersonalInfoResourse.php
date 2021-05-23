@@ -12,6 +12,7 @@ class PersonalInfoResourse extends JsonResource
     public function toArray($request): array
     {
         return [
+            'premium'=>$this->profile->premium==1,
             'first_name' => $this->profile->first_name,
             'last_name' => $this->profile->last_name,
             'birthdate' => $this->profile->birthdate?Carbon::parse($this->profile->birthdate)->format('Y-m-d'):"",

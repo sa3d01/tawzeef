@@ -7,6 +7,7 @@ use App\Http\Resources\MessageCollection;
 use App\Http\Resources\SimpleCompanyResourse;
 use App\Http\Resources\SimpleUserResourse;
 use App\Http\Resources\UserResourse;
+use App\Models\CompanySeen;
 use App\Models\Experience;
 use App\Models\JobRequired;
 use App\Models\Message;
@@ -22,7 +23,8 @@ class CompanyController extends MasterController
 
     public function seenCompany()
     {
-        return SimpleCompanyResourse::collection(User::where('type','COMPANY')->take(5)->get());
+        $companies_id=CompanySeen::where('user_id',auth('api')->id())->pluck('company_id')->toArray();
+        return SimpleCompanyResourse::collection(User::whereIn('id',$companies_id)->get());
     }
     public function showCompany($id)
     {

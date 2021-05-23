@@ -24,6 +24,7 @@ class SettingController extends MasterController
         $data['mobile'] = $setting->mobile;
         $data['email'] = $setting->email;
         $data['create_job'] = $setting->create_job;
+        $data['premium'] = $setting->premium;
         $data['socials'] = new SocialCollection(Socials::where('user_id',null)->get());
         return $this->sendResponse($data);
     }

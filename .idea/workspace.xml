@@ -1,13 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/JobController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/cv/89HRwVenM2.pdf" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="employer">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/CompanyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CompanyResourse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CvResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/AlertJob.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CompanySeen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JobSubscribe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PremiumRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_124351_add_premium_to_user_profiles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_124757_create_premium_requests_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_130212_add_premium_to_settings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_130726_create_alert_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_131718_create_company_seens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_132522_create_job_subscribes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_153420_add_cover_to_profiles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_153833_add_to_socials_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_155657_add_location_to_profiles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/cv/URxAnq27Wj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/cv/cxz8s9RFSu.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/cv/xfYIUxmaE7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/3BLRP5naAC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/3GUJw7qcuZ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/74yd1Ccq6G.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/9oHq2qfDeq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/AYf0YjcRXd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/DVQQQz1mvT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/HpGIfpcxOZ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/P6FTY12pNg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/TSxPLY0CVa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/WoBY0B9Y0K.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/XkxCNvWGiA.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/gM4OpKpQYr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/hkpy5qOWWk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/jq2w4gRpfP.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/q70gvT4MlD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/vRJdkC5x0S.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/user/yfcMQG7mmQ.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/General/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/General/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CompanyLoginResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CompanyLoginResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/JobResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/JobResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/PersonalInfoResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PersonalInfoResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleJobResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleJobResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserLoginResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserLoginResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Socials.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Socials.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,18 +201,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Resources" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Company" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Employer" />
-      <recent name="$PROJECT_DIR$/app/Http/Resources" />
       <recent name="$PROJECT_DIR$/database/seeders" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Company" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,7 +255,10 @@
       <workItem from="1621410107285" duration="695000" />
       <workItem from="1621514071460" duration="2374000" />
       <workItem from="1621666280004" duration="18000" />
-      <workItem from="1621673904696" duration="2170000" />
+      <workItem from="1621673904696" duration="2207000" />
+      <workItem from="1621676333743" duration="2237000" />
+      <workItem from="1621690666755" duration="32000" />
+      <workItem from="1621769881439" duration="13462000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -432,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621516194289</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="employer">
+      <created>1621676089315</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1621676089315</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,6 +514,7 @@
     <MESSAGE value="initial" />
     <MESSAGE value="profile user" />
     <MESSAGE value="company" />
-    <option name="LAST_COMMIT_MESSAGE" value="company" />
+    <MESSAGE value="employer" />
+    <option name="LAST_COMMIT_MESSAGE" value="employer" />
   </component>
 </project>

@@ -165,7 +165,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function cv(): object
     {
-        return $this->hasOne(Cv::class);
+        return $this->hasMany(Cv::class);
     }
 
     public function profile(): object

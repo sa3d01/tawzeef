@@ -8,26 +8,32 @@ use App\Http\Requests\Api\Auth\JobRequiredUpdateRequest;
 use App\Http\Requests\Api\Auth\ProfileUpdateRequest;
 use App\Http\Requests\Api\Auth\QulificationUpdateRequest;
 use App\Http\Requests\Api\Auth\SocialUpdateRequest;
+use App\Http\Resources\CvResource;
 use App\Http\Resources\ExperienceResourse;
 use App\Http\Resources\JobRequiredResourse;
 use App\Http\Resources\MajorCollection;
 use App\Http\Resources\MembershipCollection;
 use App\Http\Resources\PersonalInfoResourse;
 use App\Http\Resources\QulificationResourse;
+use App\Http\Resources\SimpleCompanyResourse;
 use App\Http\Resources\SimpleUserResourse;
 use App\Http\Resources\SkillCollection;
 use App\Http\Resources\SocialResourse;
 use App\Http\Resources\TrainingCoursesCollection;
 use App\Http\Resources\UserResourse;
+use App\Models\Cv;
 use App\Models\Experience;
 use App\Models\JobRequired;
 use App\Models\Major;
 use App\Models\Membership;
+use App\Models\PremiumRequest;
 use App\Models\Qualification;
 use App\Models\Skill;
 use App\Models\Socials;
 use App\Models\TrainingCourse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\Object_;
 
 class UserController extends MasterController
@@ -35,6 +41,9 @@ class UserController extends MasterController
     public function profile(): object
     {
         $user = auth('api')->user();
+        if ($user->type=='COMPANY'){
+            return $this->sendResponse(new SimpleCompanyResourse($user));
+        }
         return $this->sendResponse(new UserResourse($user));
     }
 
@@ -42,6 +51,11 @@ class UserController extends MasterController
     {
         $user = auth('api')->user();
         return $this->sendResponse(new SimpleUserResourse($user));
+    }
+    public function userCv(): object
+    {
+        $user = auth('api')->user();
+        return $this->sendResponse(CvResource::collection($user->cv));
     }
 
     public function updateAvatar(Request $request):object
@@ -54,7 +68,44 @@ class UserController extends MasterController
         $arr['avatar'] = $user->avatar;
         return $this->sendResponse($arr);
     }
-
+    public function premium(Request $request)
+    {
+        $this->validate($request, ['pay_type' => 'required','invoice_image'=>'nullable']);
+        PremiumRequest::create([
+            'pay_type'=>$request['pay_type'],
+            'invoice_image'=>$request['invoice_image'],
+            'user_id'=>auth('api')->id(),
+        ]);
+        //todo:delete later
+        $user=auth('api')->user();
+        $user->profile->update([
+           'premium'=>true
+        ]);
+        return $this->sendResponse(new SimpleUserResourse($user));
+    }
+    function uploadFile($file,$dest)
+    {
+        $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $file->move($dest, $filename);
+        return $filename;
+    }
+    public function uploadCv(Request $request)
+    {
+        $this->validate($request, ['cv' => 'required']);
+        $user = auth('api')->user();
+        $cv = $request['cv'];
+        $filename = null;
+        if (is_file($cv)) {
+            $filename = $this->uploadFile($cv,'media/files/cv/');
+        } elseif (filter_var($cv, FILTER_VALIDATE_URL) === True) {
+            $filename = $cv;
+        }
+        Cv::create([
+            'user_id'=>auth('api')->id(),
+            'file'=> $filename
+        ]);
+        return $this->sendResponse(CvResource::collection($user->cv));
+    }
     public function personalInfo(): object
     {
         $user = auth('api')->user();

@@ -2,11 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Car;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
-use phpDocumentor\Reflection\Types\Object_;
 
 class CompanyLoginResourse extends JsonResource
 {
@@ -29,6 +27,7 @@ class CompanyLoginResourse extends JsonResource
                 'type' => $this->type,
                 'email' => $this->email,
                 'avatar' => $this->avatar,
+                'cover' => $this->profile->cover,
                 'foundation_name' => $this->profile->foundation_name,
             ],
             "access_token" => [

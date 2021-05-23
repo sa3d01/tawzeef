@@ -35,6 +35,9 @@ Route::group([
         Route::get('simple-profile', 'UserController@simpleProfile');
         Route::get('profile', 'UserController@profile');
         Route::post('update-avatar', 'UserController@updateAvatar');
+        Route::get('cv', 'UserController@userCv');
+        Route::post('upload-cv', 'UserController@uploadCv');
+        Route::post('premium', 'UserController@premium');
 
         Route::get('personal-info', 'UserController@personalInfo');
         Route::post('update-personal-info', 'UserController@updateProfile');
@@ -91,6 +94,10 @@ Route::group([
         Route::get('find-major-salary', 'JobController@findJobSalary');
         Route::get('find-average-salary', 'JobController@findAverageSalary');
 
+        Route::get('profile', 'CompanyController@profile');
+        Route::post('update-profile', 'CompanyController@updateProfile');
+
+
 
     });
     // employer
@@ -99,6 +106,7 @@ Route::group([
         Route::post('job-alert', 'JobController@notifyNewJob');
         Route::get('seen/company', 'CompanyController@seenCompany');
         Route::get('find-job', 'JobController@findJob');
+        Route::post('subscribe-job', 'JobController@subscribeJob');
         Route::get('company/{id}', 'CompanyController@showCompany');
         Route::post('company/{id}/message', 'CompanyController@messageCompany');
         Route::get('message', 'CompanyController@messages');

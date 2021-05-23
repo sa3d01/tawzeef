@@ -2,11 +2,11 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Job;
+use App\Models\JobSubscribe;
 use App\Models\Major;
-use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class JobResourse extends JsonResource
 {
@@ -28,10 +28,23 @@ class JobResourse extends JsonResource
         $arr['location']=$this->location;
         $arr['published_at']=Carbon::parse($this->start_date)->diffForHumans();
         $arr['similar_majors']=new MajorCollection(Major::all());
+        $arr['similar_jobs']=new JobCollection(Job::where('major_id',$this->major_id)->get());
+        $arr['recommended_jobs']=new JobCollection(Job::where('major_id',$this->major_id)->get());
         $arr['start_date']=Carbon::parse($this->start_date)->format('Y-m-d');
         $arr['end_date']=Carbon::parse($this->end_date)->format('Y-m-d');
         $arr['show_company']=$this->show_company;
         $arr['my_job']=auth('api')->id()==$this->company->id;
+        $arr['subscribed']=false;
+        if (auth('api')->check()){
+            $subscribed=JobSubscribe::where([
+                'user_id'=>auth('api')->id(),
+                'job_id'=>$this->id,
+            ])->first();
+            if ($subscribed){
+                $arr['subscribed']=true;
+            }
+        }
+
         return $arr;
     }
 }

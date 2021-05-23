@@ -12,5 +12,6 @@ class Setting extends Model
         'mobile',
         'email',
         'create_job',
+        'premium'
     ];
 }

@@ -6,9 +6,11 @@ use App\Http\Controllers\Api\MasterController;
 use App\Http\Resources\JobCollection;
 use App\Http\Resources\JobResourse;
 use App\Http\Resources\SimpleUserResourse;
+use App\Models\AlertJob;
 use App\Models\Experience;
 use App\Models\Job;
 use App\Models\JobRequired;
+use App\Models\JobSubscribe;
 use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
@@ -28,12 +30,18 @@ class JobController extends MasterController
     public function show($id): object
     {
         $job = Job::find($id);
-
         return $this->sendResponse(new JobResourse($job));
     }
 
     public function notifyNewJob(Request $request):object
     {
+        AlertJob::create([
+            'user_id'=>auth('api')->id(),
+            'country_id'=>$request['country_id'],
+            'city_id'=>$request['city_id'],
+            'notify'=>$request['notify'],
+            'hashtags'=>$request['hashtags'],
+        ]);
         return $this->activeJobs();
     }
 
@@ -55,24 +63,40 @@ class JobController extends MasterController
             $cities=explode(',',$request['cities']);
             $job_q = $job_q->whereIn('city_id', $cities);
         }
+        if ($request['working_types']) {
+            $working_types=explode(',',$request['working_types']);
+            $job_q = $job_q->whereIn('working_type', $working_types);
+        }
+        if ($request['levels']) {
+            $levels=explode(',',$request['levels']);
+            $job_q = $job_q->whereIn('level', $levels);
+        }
         if ($request['sex']) {
-            $expected_sex_users = Profile::where('sex', $request['sex'])->pluck('user_id');
-            $job_q = $job_q->whereIn('id', $expected_sex_users);
+            $job_q = $job_q->where('sex', $request['sex']);
         }
-        if ($request['salary_from']) {
-            $expected_salary_users = JobRequired::where('expected_salary', '>', $request['salary_from'])->pluck('user_id');
-            $job_q = $job_q->whereIn('id', $expected_salary_users);
-        }
-        if ($request['salary_to']) {
-            $expected_salary_users = JobRequired::where('expected_salary', '<', $request['salary_to'])->pluck('user_id');
-            $job_q = $job_q->whereIn('id', $expected_salary_users);
+        if ($request['expected_salary']) {
+            $job_q = $job_q->where('expected_salary', $request['salary_from']);
         }
         if ($request['experience_years']) {
-            $experience_users = Experience::where('experience_years', $request['experience_years'])->pluck('user_id');
-            $job_q = $job_q->whereIn('id', $experience_users);
+            $job_q = $job_q->where('experience_years', $request['experience_years']);
         }
-        $employee = $job_q->get();
-        return $this->sendResponse(SimpleUserResourse::collection($employee));
+        $jobs = $job_q->get();
+        return $this->sendResponse(new JobCollection($jobs));
+    }
+    public function subscribeJob(Request $request)
+    {
+        $data=[
+            'user_id'=>auth('api')->id(),
+            'job_id'=>$request['job_id'],
+            'cv_id'=>$request['cv_id'],
+            'message'=>$request['message']
+        ];
+        $subscribed=JobSubscribe::where($data)->first();
+        if ($subscribed){
+            return $this->sendError('some thing error');
+        }
+        JobSubscribe::create($data);
+        return $this->sendResponse(new JobResourse(Job::find($request['job_id'])));
     }
 
 }

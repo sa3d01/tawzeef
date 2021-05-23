@@ -16,5 +16,7 @@ class Socials extends Model
         'insta',
         'site',
         'medium',
+        'youtube',
+        'linkedin'
     ];
 }

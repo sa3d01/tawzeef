@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Job;
+use App\Models\JobSubscribe;
 use App\Models\Major;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -29,6 +31,16 @@ class JobCollection extends ResourceCollection
             $arr['published_at']=Carbon::parse($obj->start_date)->diffForHumans();
             $arr['my_job']=auth('api')->id()==$obj->company->id;
             $arr['similar_majors']=new MajorCollection(Major::all());
+            $arr['subscribed']=false;
+            if (auth('api')->check()){
+                $subscribed=JobSubscribe::where([
+                    'user_id'=>auth('api')->id(),
+                    'job_id'=>$obj->id,
+                ])->first();
+                if ($subscribed){
+                    $arr['subscribed']=true;
+                }
+            }
             $data[] = $arr;
         }
         return $data;

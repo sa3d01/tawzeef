@@ -20,8 +20,9 @@ class UserResourse extends JsonResource
     {
         return [
             'id' => (int)$this->id,
+            'premium'=>$this->profile->premium==1,
             'type' => $this->type,
-            'cv' => $this->cv?$this->cv->file:'',
+            'cv' => CvResource::collection($this->cv),
             'job_title' => $this->profile->job_title,
             'avatar' => $this->avatar,
             'latest_updated_at' => Carbon::parse($this->profile->updated_at)->format('Y-m-d'),

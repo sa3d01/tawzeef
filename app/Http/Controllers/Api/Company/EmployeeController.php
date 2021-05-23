@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\MasterController;
 use App\Http\Resources\MessageCollection;
 use App\Http\Resources\SimpleUserResourse;
 use App\Http\Resources\UserResourse;
+use App\Models\CompanySeen;
 use App\Models\Experience;
 use App\Models\JobRequired;
 use App\Models\Message;
@@ -53,6 +54,16 @@ class EmployeeController extends MasterController
 
     public function showEmployee($id)
     {
+        $seen=CompanySeen::where([
+            'company_id'=>auth('api')->id(),
+            'user_id'=>$id
+        ])->latest()->first();
+        if (!$seen){
+            CompanySeen::create([
+                'company_id'=>auth('api')->id(),
+                'user_id'=>$id
+            ]);
+        }
         return $this->sendResponse(new UserResourse(User::find($id)));
     }
     public function messages()
