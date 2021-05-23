@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             SettingSeeder::class,
-            CountrySeeder::class,
-            CitySeeder::class,
-            MajorSeeder::class,
-            CompanySeeder::class,
-            EmployerSeeder::class,
-            JobSeeder::class
+//            CountrySeeder::class,
+//            CitySeeder::class,
+//            MajorSeeder::class,
+//            CompanySeeder::class,
+//            EmployerSeeder::class,
+//            JobSeeder::class
         ]);
     }
 }

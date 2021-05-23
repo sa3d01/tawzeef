@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Major extends Model
+class HiringAgent extends Model
 {
     use HasFactory;
-    protected $fillable = ['name_ar','name_en','banned','parent_id','image'];
+    protected $fillable = ['logo','status'];
     private function upload_file($file)
     {
         $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
-        $file->move('media/images/major/', $filename);
+        $file->move('media/images/agent/', $filename);
         return $filename;
     }
 
@@ -26,22 +26,22 @@ class Major extends Model
         }
     }
 
-    protected function setImageAttribute()
+    protected function setLogoAttribute()
     {
-        $image = request('image');
+        $image = request('logo');
         $filename = null;
         if (is_file($image)) {
             $filename = $this->upload_file($image);
         } elseif (filter_var($image, FILTER_VALIDATE_URL) === True) {
             $filename = $image;
         }
-        $this->attributes['image'] = $filename;
+        $this->attributes['logo'] = $filename;
     }
-    protected function getImageAttribute(): string
+    protected function getLogoAttribute(): string
     {
         try {
-            if ($this->attributes['image'])
-                return asset('media/images/major') . '/' . $this->attributes['image'];
+            if ($this->attributes['logo'])
+                return asset('media/images/agent') . '/' . $this->attributes['logo'];
             return "https://tawzeef-fundementals.herokuapp.com/_nuxt/img/logo.19a1d44.svg";
         } catch (\Exception $e) {
             return "https://tawzeef-fundementals.herokuapp.com/_nuxt/img/logo.19a1d44.svg";

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Job;
 use App\Models\Major;
 use App\Models\Socials;
 use Carbon\Carbon;
@@ -18,6 +19,7 @@ class SimpleCompanyResourse extends JsonResource
      */
     public function toArray($request)
     {
+        $jobs_count=Job::where('company_id',$this->id)->count();
         return [
             'id' => (int)$this->id,
             'type' => $this->type,
@@ -26,6 +28,7 @@ class SimpleCompanyResourse extends JsonResource
             'cover' => $this->profile->cover,
             'foundation_name' => $this->profile->foundation_name,
             'description' => $this->profile->description,
+            'jobs_count' => $jobs_count,
         ];
     }
 }

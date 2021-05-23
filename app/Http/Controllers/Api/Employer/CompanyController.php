@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Api\Employer;
 
 use App\Http\Controllers\Api\MasterController;
+use App\Http\Resources\CompanyResourse;
+use App\Http\Resources\JobCollection;
 use App\Http\Resources\MessageCollection;
 use App\Http\Resources\SimpleCompanyResourse;
 use App\Http\Resources\SimpleUserResourse;
 use App\Http\Resources\UserResourse;
 use App\Models\CompanySeen;
 use App\Models\Experience;
+use App\Models\Job;
 use App\Models\JobRequired;
 use App\Models\Message;
 use App\Models\Notification;
@@ -28,7 +31,12 @@ class CompanyController extends MasterController
     }
     public function showCompany($id)
     {
-        return $this->sendResponse(new SimpleCompanyResourse(User::find($id)));
+        $company=User::find($id);
+        $data['company']=new CompanyResourse($company);
+        $data['similar_companies']=SimpleCompanyResourse::collection(User::where(['type'=>'COMPANY','major_id'=>$company->major_id])->get());
+        $jobs=Job::where('company_id',$company->id)->get();
+        $data['jobs']=new JobCollection($jobs);
+        return $this->sendResponse($data);
     }
     public function messageCompany($id,Request $request)
     {

@@ -77,6 +77,11 @@ Route::group([
     // Visitor
     Route::group(['namespace' => 'Visitor', 'prefix' => 'visitor'], function () {
         Route::post('job-email', 'JobController@emailNewJob');
+        Route::get('majors', 'JobController@majors');
+        Route::get('majors/{id}/jobs', 'JobController@majorJobs');
+        Route::get('hiring-agents', 'JobController@hiringAgents');
+        Route::get('active-companies', 'JobController@activeCompanies');
+        Route::get('hiring-laws', 'JobController@hiringLaws');
     });
     // COMPANY
     Route::group(['namespace' => 'Company', 'prefix' => 'company','middleware'=>JwtTokenIsCompany::class], function () {
