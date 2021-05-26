@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="employer-company">
-      <change afterPath="$PROJECT_DIR$/app/Models/HiringAgent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/HiringLaw.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_170928_create_hiring_agents_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_172818_add_image_to_majors_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_23_174636_create_hiring_laws_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MajorCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MajorCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/MajorResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/MajorResourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Major.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Major.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,6 +207,8 @@
       <workItem from="1621690666755" duration="32000" />
       <workItem from="1621769881439" duration="14377000" />
       <workItem from="1621788681952" duration="3951000" />
+      <workItem from="1621859682626" duration="5000" />
+      <workItem from="1622027079209" duration="548000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>

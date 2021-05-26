@@ -26,6 +26,14 @@ class JobController extends MasterController
         $jobs = $jobs_q->where('end_date', '>', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
+    public function expiredJobs(): object
+    {
+        $user = auth('api')->user();
+        $jobs_q = Job::query();
+        $jobs_q = $jobs_q->where('major_id', $user->major_id);
+        $jobs = $jobs_q->where('end_date', '<', Carbon::now())->paginate(10);
+        return new JobCollection($jobs);
+    }
 
     public function show($id): object
     {

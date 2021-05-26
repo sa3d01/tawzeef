@@ -108,6 +108,7 @@ Route::group([
     // employer
     Route::group(['namespace' => 'Employer', 'prefix' => 'employer','middleware'=>JwtTokenIsValid::class], function () {
         Route::get('active-job', 'JobController@activeJobs');
+        Route::get('expired-job', 'JobController@expiredJobs');
         Route::post('job-alert', 'JobController@notifyNewJob');
         Route::get('seen/company', 'CompanyController@seenCompany');
         Route::get('find-job', 'JobController@findJob');
@@ -115,6 +116,7 @@ Route::group([
         Route::get('company/{id}', 'CompanyController@showCompany');
         Route::post('company/{id}/message', 'CompanyController@messageCompany');
         Route::get('message', 'CompanyController@messages');
+        Route::get('job/{id}', 'JobController@show');
     });
 
 });
