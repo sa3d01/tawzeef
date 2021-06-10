@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Blog;
 use App\Models\City;
 use App\Models\Profile;
 use App\Models\User;
@@ -103,6 +104,50 @@ class CompanySeeder extends Seeder
 ',
             'commercial_file'=>'IxrWG8Zsec.pdf'
         ]);
-
+        Blog::create([
+            'type'=>'new',
+            'writer_id'=>1,
+            'title_ar'=>'كيفية التعلم عن بعد',
+            'title_en'=>'كيفية التعلم عن بعد',
+            'note_ar'=>'كيفية التعلم عن بعد',
+            'note_en'=>'كيفية التعلم عن بعد',
+            'media_type'=>'image',
+        ]);
+        Blog::create([
+            'type'=>'new',
+            'writer_id'=>1,
+            'title_ar'=>'2كيفية التعلم عن بعد',
+            'title_en'=>'2كيفية التعلم عن بعد',
+            'note_ar'=>'كيفية التعلم عن بعد',
+            'note_en'=>'كيفية التعلم عن بعد',
+            'media_type'=>'image',
+        ]);
+        Blog::create([
+            'type'=>'blog',
+            'writer_id'=>1,
+            'title_ar'=>'كيفية التعلم عن بعد',
+            'title_en'=>'كيفية التعلم عن بعد',
+            'note_ar'=>'كيفية التعلم عن بعد',
+            'note_en'=>'كيفية التعلم عن بعد',
+            'media_type'=>'image',
+        ]);
+        Blog::create([
+            'type'=>'blog',
+            'writer_id'=>1,
+            'title_ar'=>'كيفية التعلم ',
+            'title_en'=>'كيفية التعلم ',
+            'note_ar'=>'كيفية التعلم ',
+            'note_en'=>'كيفية التعلم ',
+            'media_type'=>'image',
+        ]);
+        Blog::create([
+            'type'=>'blog',
+            'writer_id'=>1,
+            'title_ar'=>'كيفية التعلم2 ',
+            'title_en'=>'كيفية التعلم2 ',
+            'note_ar'=>'كيفية التعلم ',
+            'note_en'=>'كيفية التعلم ',
+            'media_type'=>'image',
+        ]);
     }
 }

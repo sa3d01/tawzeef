@@ -82,6 +82,19 @@ Route::group([
         Route::get('hiring-agents', 'JobController@hiringAgents');
         Route::get('active-companies', 'JobController@activeCompanies');
         Route::get('hiring-laws', 'JobController@hiringLaws');
+
+        Route::get('news', 'BlogController@news');
+        Route::get('news/{id}', 'BlogController@show');
+        Route::get('news/{id}/comments', 'BlogController@comments');
+        Route::get('news/{id}/related', 'BlogController@related');
+        Route::post('news/{id}/comment', 'BlogController@storeComment')->middleware(JwtTokenIsValid::class);
+
+        Route::get('blogs', 'BlogController@blogs');
+        Route::get('blogs/{id}', 'BlogController@show');
+        Route::get('blogs/{id}/comments', 'BlogController@comments');
+        Route::get('blogs/{id}/related', 'BlogController@related');
+        Route::post('blogs/{id}/comment', 'BlogController@storeComment')->middleware(JwtTokenIsValid::class);
+
     });
     // COMPANY
     Route::group(['namespace' => 'Company', 'prefix' => 'company','middleware'=>JwtTokenIsCompany::class], function () {

@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="employer-company">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/BlogController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BlogCommentResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BlogResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BlogSimpleResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Blog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/BlogComment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/BlogSeen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_10_111316_create_blogs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_10_112923_create_blog_seens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_10_112939_create_blog_comments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/files/cv/TEIsitvtIh.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,6 +164,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Resources" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -156,10 +175,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Resources" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Company" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Employer" />
-      <recent name="$PROJECT_DIR$/database/seeders" />
     </key>
   </component>
   <component name="RunManager">
@@ -209,6 +228,10 @@
       <workItem from="1621788681952" duration="3951000" />
       <workItem from="1621859682626" duration="5000" />
       <workItem from="1622027079209" duration="548000" />
+      <workItem from="1623146248741" duration="3113000" />
+      <workItem from="1623320523528" duration="222000" />
+      <workItem from="1623321424071" duration="591000" />
+      <workItem from="1623322504166" duration="6406000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
