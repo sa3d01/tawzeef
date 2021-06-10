@@ -8,6 +8,7 @@ use App\Http\Resources\BlogResource;
 use App\Http\Resources\BlogSimpleResource;
 use App\Models\Blog;
 use App\Models\BlogComment;
+use App\Models\BlogSeen;
 use Illuminate\Http\Request;
 
 class BlogController extends MasterController
@@ -27,6 +28,12 @@ class BlogController extends MasterController
     public function show($id): object
     {
         $row = Blog::find($id);
+        if (auth('api')->check()){
+            BlogSeen::create([
+               'blog_id'=>$id,
+               'user_id'=>auth('api')->id()
+            ]);
+        }
         return $this->sendResponse(new BlogResource($row));
     }
 
