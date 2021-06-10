@@ -36,7 +36,12 @@ class ContactController extends MasterController
     public function store(ContactRequest $request): object
     {
         $data = $request->validated();
-        $data['user_id'] = auth('api')->id();
+        if (auth('api')->check()){
+            $data['user_id'] = auth('api')->id();
+        }else{
+            $data['name'] =$request['name'];
+            $data['phone'] =$request['phone'];
+        }
         $contact=Contact::create($data);
 //        $this->notifyAdmin($contact);
         return $this->sendResponse([], " تم الارسال بنجاح .. يرجى انتظار رد الإدارة");

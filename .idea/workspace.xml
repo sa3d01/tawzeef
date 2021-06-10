@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="employer-company">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/BlogController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BlogCommentResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BlogResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BlogSimpleResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Blog.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/BlogComment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/BlogSeen.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_10_111316_create_blogs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_10_112923_create_blog_seens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_10_112939_create_blog_comments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/cv/TEIsitvtIh.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="blog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CompanySeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Contact/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Contact/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_16_192006_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_16_192006_create_contacts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +218,7 @@
       <workItem from="1623146248741" duration="3113000" />
       <workItem from="1623320523528" duration="222000" />
       <workItem from="1623321424071" duration="591000" />
-      <workItem from="1623322504166" duration="6406000" />
+      <workItem from="1623322504166" duration="8968000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -471,7 +458,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621787565103</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="blog">
+      <created>1623330970278</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1623330970278</updated>
+    </task>
+    <task id="LOCAL-00036" summary="blog">
+      <created>1623333067750</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1623333067750</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,6 +497,7 @@
     <MESSAGE value="company" />
     <MESSAGE value="employer" />
     <MESSAGE value="employer-company" />
-    <option name="LAST_COMMIT_MESSAGE" value="employer-company" />
+    <MESSAGE value="blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog" />
   </component>
 </project>
