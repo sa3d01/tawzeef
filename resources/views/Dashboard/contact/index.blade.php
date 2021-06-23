@@ -28,19 +28,15 @@
                                     <td>
                                         @if($row->user->type=='USER')
                                             <a href="{{route('admin.user.show',$row->user_id)}}">
-                                                {{$row->user->name}}
-                                            </a>
-                                        @elseif($row->user->type=='PROVIDER')
-                                            <a href="{{route('admin.provider.show',$row->user_id)}}">
-                                                {{$row->user->name}}
+                                                {{$row->user->profile->first_name.' '.$row->user->profile->last_name}}
                                             </a>
                                         @else
-                                            <a href="{{route('admin.delivery.show',$row->user_id)}}">
-                                                {{$row->user->name}}
+                                            <a href="{{route('admin.company.show',$row->user_id)}}">
+                                                {{$row->user->profile->foundation_name}}
                                             </a>
                                         @endif
                                     </td>
-                                    <td>{{$row->contactType->name}}</td>
+                                    <td>{{$row->contactType->name_ar}}</td>
                                     <td data-toggle="modal" data-target="#msgModal{{$row->id}}">
                                         {{\Illuminate\Support\Str::limit($row->message,50)}}
                                     </td>

@@ -43,7 +43,7 @@ class ContactController extends MasterController
             $data['phone'] =$request['phone'];
         }
         $contact=Contact::create($data);
-//        $this->notifyAdmin($contact);
+        $this->notifyAdmin($contact);
         return $this->sendResponse([], " تم الارسال بنجاح .. يرجى انتظار رد الإدارة");
     }
 
