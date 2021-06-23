@@ -29,7 +29,7 @@ class ContactController extends MasterController
     public function replyContact($id, Request $request)
     {
         $data['title'] = 'رسالة إدارية';
-        $data['note'] = $request['note'];
+        $data['note'] = $request['note_ar'];
         $contact = Contact::find($id);
 
         Notification::create([
