@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Notification extends Model
 {
     use HasFactory;
-    protected $fillable = ['receiver_id','model','model_id','note_ar','note_en','read','type','admin_notify_type','receivers'];
+    protected $fillable = ['receiver_id','model','model_id','note_ar','note_en','read','type','admin_notify_type','receivers','more_details'];
     protected $casts = [
-        'receivers' => 'array'
+        'receivers' => 'array',
+        'more_details' => 'json'
     ];
 
     public function receiver():object
