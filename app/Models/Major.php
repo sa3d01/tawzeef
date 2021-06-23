@@ -42,9 +42,9 @@ class Major extends Model
         try {
             if ($this->attributes['image'])
                 return asset('media/images/major') . '/' . $this->attributes['image'];
-            return "https://tawzeef-fundementals.herokuapp.com/_nuxt/img/logo.19a1d44.svg";
+            return asset('media/images/logo.png');
         } catch (\Exception $e) {
-            return "https://tawzeef-fundementals.herokuapp.com/_nuxt/img/logo.19a1d44.svg";
+            return asset('media/images/logo.png');
         }
     }
 }

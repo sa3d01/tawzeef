@@ -33,9 +33,22 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::post('user/{id}/ban', 'UserController@ban')->name('user.ban');
     Route::post('user/{id}/activate', 'UserController@activate')->name('user.activate');
 
-    Route::resource('company', 'UserController');
-    Route::post('company/{id}/ban', 'UserController@ban')->name('company.ban');
-    Route::post('company/{id}/activate', 'UserController@activate')->name('company.activate');
+    Route::resource('company', 'CompanyController');
+    Route::post('company/{id}/ban', 'CompanyController@ban')->name('company.ban');
+    Route::post('company/{id}/activate', 'CompanyController@activate')->name('company.activate');
+
+    Route::resource('major', 'MajorController');
+    Route::post('major/{id}/ban', 'MajorController@ban')->name('major.ban');
+    Route::post('major/{id}/activate', 'MajorController@activate')->name('major.activate');
+
+    Route::resource('country', 'CountryController');
+    Route::post('country/{id}/ban', 'CountryController@ban')->name('country.ban');
+    Route::post('country/{id}/activate', 'CountryController@activate')->name('country.activate');
+
+    Route::resource('city', 'CityController');
+    Route::post('city/{id}/ban', 'CityController@ban')->name('city.ban');
+    Route::post('city/{id}/activate', 'CityController@activate')->name('city.activate');
+
 
     Route::resource('notification', 'NotificationController');
     Route::post('reply-contact/{id}', 'ContactController@replyContact')->name('contact.reply');

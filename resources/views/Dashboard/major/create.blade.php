@@ -1,5 +1,5 @@
 @extends('Dashboard.layouts.master')
-@section('title', 'الإعدادات العامة')
+@section('title', 'إضافة تخصص')
 @section('styles')
     <link href="{{asset('assets/libs/dropify/dist/css/dropify.min.css')}}" rel="stylesheet" type="text/css" />
 @endsection
@@ -17,47 +17,26 @@
                         </div>
                     @endif
                     <div class="card-box">
-                        <form method="POST" action="{{route('admin.settings.update')}}" enctype="multipart/form-data" data-parsley-validate novalidate>
+                        <form method="POST" action="{{route('admin.major.store')}}" enctype="multipart/form-data" data-parsley-validate novalidate>
                             @csrf
-                            @method('PUT')
+                            @method('POST')
                             <div class="form-group">
-                                <label for="mobile">رقم الهاتف للتواصل*</label>
-                                <input type="text" name="mobile" required class="form-control" id="mobile" value="{{$setting->mobile}}">
+                                <label for="name_ar">الاسم باللغة العربية*</label>
+                                <input type="text" name="name_ar" required class="form-control" id="name_ar">
                             </div>
                             <div class="form-group">
-                                <label for="email">البريد الإلكترونى للتواصل*</label>
-                                <input type="email" name="email" required class="form-control" id="email" value="{{$setting->email}}">
+                                <label for="name_en">الاسم باللغة الانجليزية*</label>
+                                <input type="text" name="name_en" required class="form-control" id="name_en">
                             </div>
                             <div class="form-group">
-                                <label for="create_job">سعر إضافة وظيفة*</label>
-                                <input type="number" min="1" name="create_job" required class="form-control" id="create_job" value="{{$setting->create_job}}">
+                                <label for="image">الشعار</label>
+                                <div class="card-box">
+                                    <input name="image" id="input-file-now-custom-1 image" type="file" class="dropify"   />
+                                </div>
                             </div>
-                            @php
-                                $facebook=\App\Models\Socials::where('user_id',null)->value('facebook');
-                                $twitter=\App\Models\Socials::where('user_id',null)->value('twitter');
-                                $insta=\App\Models\Socials::where('user_id',null)->value('insta');
-                                $youtube=\App\Models\Socials::where('user_id',null)->value('youtube');
-                            @endphp
-                            <div class="form-group">
-                                <label for="snap">رابط youtube*</label>
-                                <input type="url" name="youtube" required class="form-control" id="youtube" value="{{$youtube}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="twitter">رابط twitter*</label>
-                                <input type="url" name="twitter" required class="form-control" id="twitter" value="{{$twitter}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="facebook">رابط facebook*</label>
-                                <input type="url" name="facebook" required class="form-control" id="facebook" value="{{$facebook}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="insta">رابط instagram*</label>
-                                <input type="url" name="insta" required class="form-control" id="insta" value="{{$insta}}">
-                            </div>
-
                             <div class="form-group text-right mb-0">
                                 <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
-                                    تعديل
+                                    تأكيد
                                 </button>
                             </div>
                         </form>
