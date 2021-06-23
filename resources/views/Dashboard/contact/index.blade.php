@@ -91,7 +91,7 @@
                                                                 <label for="replyMsg">
                                                                     نص الرسالة
                                                                 </label>
-                                                                <textarea required class="col-md-8" id="replyMsg" name="note_ar"></textarea>
+                                                                <textarea required class="col-md-8" id="replyMsg" name="note"></textarea>
                                                             </div>
                                                             <button class="btn btn-primary" type="submit"> إرسال </button>
                                                         </form>
