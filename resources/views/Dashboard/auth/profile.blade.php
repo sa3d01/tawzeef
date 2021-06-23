@@ -20,11 +20,6 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="userName">الإسم*</label>
-                            <input type="text" name="name" required
-                                   value="{{auth()->user()->name}}" class="form-control" id="userName">
-                        </div>
-                        <div class="form-group">
                             <label for="emailAddress">البريد الإلكترونى*</label>
                             <input type="email" name="email" required pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
                                    value="{{auth()->user()->email}}" class="form-control" id="emailAddress">
@@ -32,7 +27,7 @@
                         <div class="form-group">
                             <label for="image">الصورة الشخصية</label>
                             <div class="card-box">
-                                <input name="image" id="input-file-now-custom-1 image" type="file" class="dropify" data-default-file="{{auth()->user()->image}}"  />
+                                <input name="avatar" id="input-file-now-custom-1 image" type="file" class="dropify" data-default-file="{{auth()->user()->avatar}}"  />
                             </div>
                         </div>
                         <div class="form-group">

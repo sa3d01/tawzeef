@@ -4,95 +4,80 @@
     <div class="content">
         <div class="container-fluid">
             @include('Dashboard.Partials.main-cards')
-{{--            @include('Dashboard.Partials.charts')--}}
-            @include('Dashboard.Partials.new_providers')
-{{--            @include('Dashboard.Partials.new_orders')--}}
+            @include('Dashboard.Partials.charts')
+            @include('Dashboard.Partials.new_companies')
+            @include('Dashboard.Partials.new_jobs')
         </div>
     </div>
 @endsection
 @section('script')
     <script>
         let users=document.getElementById('morris-donut-users').getAttribute('data-users');
-        let providers=document.getElementById('morris-donut-users').getAttribute('data-providers');
-        let deliveries=document.getElementById('morris-donut-users').getAttribute('data-deliveries');
-        let families=document.getElementById('morris-donut-users').getAttribute('data-families');
+        let companies=document.getElementById('morris-donut-users').getAttribute('data-companies');
         Morris.Donut({
             element: 'morris-donut-users',
             resize: true,
             colors: [
                 '#f05050',
                 '#648b55',
-                '#ffbd4a',
-                '#4080ff',
             ],
             data: [
                 {label:"المستخدمين", value:users},
-                {label:"مقدمى الخدمات", value:providers},
-                {label:"الأسر المنتجة", value:families},
-                {label:"مندوبى التوصيل", value:deliveries},
+                {label:"الشركات", value:companies},
             ]
         });
 
 
-        let orders=[];
-        let seven_orders=$('#seven-orders');
-        seven_orders.find('div').each(function(){
-            let obj = JSON.parse($(this).attr('data-order'));
-            orders.push(obj);
+        let jobs=[];
+        let last_week_jobs=$('#last_week_jobs');
+        last_week_jobs.find('div').each(function(){
+            let obj = JSON.parse($(this).attr('data-job'));
+            jobs.push(obj);
         });
-        const groups = orders.reduce((dates, order) => {
-            const date =new Date(order.created_at).getDate();
+        const groups = jobs.reduce((dates, job) => {
+            const date =new Date(job.created_at).getDate();
             if (!dates[date]) {
                 dates[date] = [];
             }
-            dates[date].push(order);
+            dates[date].push(job);
             return dates;
         }, {});
         const groupArrays = Object.keys(groups).map((date) => {
             return {
                 date,
-                orders: groups[date]
+                jobs: groups[date]
             };
         });
-        let orders_data=[];
-        let new_orders=0;
-        let pre_paid_orders=0;
-        let in_progress_orders=0;
-        let completed_orders=0;
-        let rejected_orders=0;
+        let jobs_data=[];
+        let active_jobs=0;
+        let expired_jobs=0;
         let i=0;
         let o=0;
+        let now=new Date();
         for (i ; i<groupArrays.length ; i++){
-            for (o ; o<groupArrays[i]['orders'].length ; o++){
-                if (groupArrays[i]['orders'][o].status==='new'){
-                    new_orders++;
-                }else if(groupArrays[i]['orders'][o].status==='rejected'){
-                    rejected_orders++;
-                }else if(groupArrays[i]['orders'][o].status==='pre_paid'){
-                    pre_paid_orders++;
-                }else if(groupArrays[i]['orders'][o].status==='in_progress'){
-                    in_progress_orders++;
+            for (o ; o<groupArrays[i]['jobs'].length ; o++){
+                var end_date=groupArrays[i]['jobs'][o].end_date;
+                var end_date_stamp=Date.parse(end_date);
+                if (new Date(end_date_stamp).toLocaleDateString() > now.toLocaleDateString()){
+                    active_jobs++;
                 }else{
-                    completed_orders++;
+                    expired_jobs++;
                 }
             }
-            orders_data.push({ day: groupArrays[i]['date'], completed: completed_orders, in_progress: in_progress_orders , pre_paid: pre_paid_orders ,new: new_orders, rejected: rejected_orders});
+            jobs_data.push({ day: groupArrays[i]['date'],active: active_jobs, expired: expired_jobs});
             o=0;
-            completed_orders=0;
-            in_progress_orders=0;
-            pre_paid_orders=0;
-            new_orders=0;
-            rejected_orders=0;
+            active_jobs=0;
+            expired_jobs=0;
         }
-        // console.log(orders_data)
+        console.log(jobs_data)
         new Morris.Line({
-            element: 'morris-line-orders',
-            data: orders_data,
+            element: 'morris-line-jobs',
+            data: jobs_data,
             xkey: 'day',
             parseTime: false,
-            ykeys: ['new','pre_paid','in_progress','rejected','completed'],
-            labels: ['new','pre_paid','in_progress','rejected','completed'],
-            lineColors: ['#214185','#e56119','#db110d','#0b0b0b','#32a852']
+            ykeys: ['active','expired'],
+            labels: ['active','expired'],
+            lineColors: ['#214185','#db110d']
         });
     </script>
 @endsection

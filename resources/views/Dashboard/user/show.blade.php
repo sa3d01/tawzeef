@@ -8,53 +8,46 @@
             <div class="row">
                 <div class="col-xl-6">
                     <div class="card-box">
-                        <h4 class="header-title mt-0 mb-3">البيانات الرئيسية</h4>
-                        <img class="card-img-top img-fluid" style="max-height: 400px" src="{{$user->image}}" alt="Card image cap">
+                        <h4 class="header-title mt-0 mb-3">المعلومات الشخصية</h4>
+                        <img class="card-img-top img-fluid" style="max-height: 400px" src="{{$user->avatar}}" alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">{{$user->name}}</h4>
+                            <h4 class="card-title">{{$user->profile->first_name.' '.$user->profile->last_name}}</h4>
                             <p class="card-text">ID : {{$user->id}}</p>
                         </div>
                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>البريد : </strong><span>{{$user->email}}</span></li>
                             <li class="list-group-item"><strong>الهاتف : </strong><span>{{$user->phone}}</span></li>
-                            <li class="list-group-item"><strong>المدينة : </strong><span>{{$user->city->name}}</span></li>
-                            <li class="list-group-item"><strong>الحى : </strong><span>{{$user->district->name}}</span></li>
+                            <li class="list-group-item"><strong>الدولة : </strong><span>{{$user->country->name_ar}}</span></li>
+                            <li class="list-group-item"><strong>المدينة : </strong><span>{{$user->city->name_ar}}</span></li>
+                            <li class="list-group-item"><strong>التخصص : </strong><span>{{$user->major->name_ar}}</span></li>
+                            <li class="list-group-item"><strong>تاريخ الميلاد : </strong><span>{{$user->birthdate}}</span></li>
                             <li class="list-group-item"><strong>تاريخ الانضمام : </strong><span>{{$user->created_at}}</span></li>
                         </ul>
                     </div>
                 </div>
+                @if($user->qualification)
                 <div class="col-xl-6">
                     <div class="card-box">
-                        <h4 class="header-title mt-0 mb-3">الموقع</h4>
-                        <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjBZsq9Q11itd0Vjz_05CtBmnxoQIEGK8&&callback=initMap" type="text/javascript">
-                        </script>
-                        <div id="map" class="gmaps" style="position: relative; overflow: hidden;" data-lat="{{$user->location['lat']}}" data-lng="{{$user->location['lng']}}"></div>
+                        <h4 class="header-title mt-0 mb-3">المؤهلات العلمية</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>المؤهل : </strong><span>{{$user->qualification->qualification_type}}</span></li>
+                            <li class="list-group-item"><strong>الموسسة : </strong><span>{{$user->qualification->foundation_name}}</span></li>
+                            <li class="list-group-item"><strong>الدولة : </strong><span>{{$user->qualification->country->name_ar}}</span></li>
+                            <li class="list-group-item"><strong>المدينة : </strong><span>{{$user->qualification->city->name_ar}}</span></li>
+                            <li class="list-group-item"><strong>نظام حساب المتوسط : </strong><span>{{$user->qualification->average_calculation_system}}</span></li>
+                            <li class="list-group-item"><strong>تاريخ التخرج : </strong><span>{{$user->qualification->graduation_date}}</span></li>
+                            <li class="list-group-item"><strong>التقدير : </strong><span>{{$user->qualification->graduation_degree}}</span></li>
+                            <li class="list-group-item"><strong>التخصص : </strong><span>{{$user->qualification->specialization}}</span></li>
+                            <li class="list-group-item"><strong>شهادة التخرج : </strong>
+                                <span>{{$user->qualification->graduation_file}}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
+                @endif
             </div>
 
         </div>
     </div>
 @endsection
-@section('script')
-    <script type="text/javascript">
-        let map;
-        let marker;
-        function initMap() {
-            // show map
-            let lat_str = document.getElementById('map').getAttribute("data-lat");
-            let long_str = document.getElementById('map').getAttribute("data-lng");
-            let uluru = {lat:parseFloat(lat_str), lng: parseFloat(long_str)};
-            let centerOfOldMap = new google.maps.LatLng(uluru);
-            let oldMapOptions = {
-                center: centerOfOldMap,
-                zoom: 10
-            };
-            map = new google.maps.Map(document.getElementById('map'), oldMapOptions);
-            marker = new google.maps.Marker({position: centerOfOldMap,animation:google.maps.Animation.BOUNCE});
-            marker.setMap(map);
-        }
-        google.maps.event.addDomListener(window, 'load', initMap);
-    </script>
-@endsection
+

@@ -1,7 +1,7 @@
 <div class="user-box text-center">
     <img src="{{auth()->user()->avatar}}" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail avatar-lg">
     <div class="dropdown">
-        <a href="#" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown">{{auth()->id()}}</a>
+        <a href="#" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown">{{auth()->user()->email}}</a>
         <div class="dropdown-menu user-pro-dropdown">
             <!-- item-->
             <a href="{{route('admin.profile')}}" class="dropdown-item notify-item">

@@ -17,6 +17,8 @@
                             <tr>
                                 <th>الإسم</th>
                                 <th>رقم الجوال</th>
+                                <th>البريد الالكتروني</th>
+                                <th>التخصص</th>
                                 <th>المدينة</th>
                                 <th>الحالة</th>
                                 <th>العمليات المتاحة</th>
@@ -25,9 +27,11 @@
                             <tbody>
                             @foreach($rows as $row)
                                 <tr>
-                                    <td>{{$row->name}}</td>
+                                    <td>{{$row->profile->first_name.' '.$row->profile->last_name}}</td>
                                     <td>{{$row->phone}}</td>
-                                    <td>{{$row->city->name}}</td>
+                                    <td>{{$row->email}}</td>
+                                    <td>{{$row->major->name_ar}}</td>
+                                    <td>{{$row->city->name_ar}}</td>
                                     <td>
                                         <span class="badge @if($row->banned==0) badge-success @else badge-danger @endif">
                                             {{$row->banned==0?'مفعل':'غير مفعل'}}
