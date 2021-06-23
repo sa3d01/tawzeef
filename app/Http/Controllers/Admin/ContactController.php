@@ -31,20 +31,7 @@ class ContactController extends MasterController
         $data['title'] = 'رسالة إدارية';
         $data['note'] = $request['note'];
         $contact = Contact::find($id);
-        $push = new PushNotification('fcm');
-        $push->setMessage([
-            'notification' => array('title' => $data['note'], 'sound' => 'default'),
-            'data' => [
-                'title' => $data['note'],
-                'body' => $data['note'],
-                'status' => 'admin',
-                'type' => 'admin',
-            ],
-            'priority' => 'high',
-        ])
-            ->setDevicesToken((array)$contact->user->device['id'])
-            ->send()
-            ->getFeedback();
+
         Notification::create([
             'receiver_id' => $contact->user_id,
             'admin_notify_type' => 'single',
