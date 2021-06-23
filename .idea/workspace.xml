@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="admin-panel">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Dashboard/Auth/ProfileUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Dashboard/SliderStoreRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/images/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/Partials/new_jobs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MasterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_16_192006_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_16_192006_create_contacts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/Partials/charts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/Partials/charts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/Partials/main-cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/Partials/main-cards.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/Partials/new_orders.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/Partials/new_providers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/Partials/new_companies.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/auth/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/auth/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/account.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/account.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/user/show.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="admin-panel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,7 +217,7 @@
       <workItem from="1623933747411" duration="613000" />
       <workItem from="1623937921021" duration="599000" />
       <workItem from="1624379969020" duration="2538000" />
-      <workItem from="1624456553300" duration="13701000" />
+      <workItem from="1624456553300" duration="14060000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -517,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624462457182</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="admin-panel">
+      <created>1624473917751</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1624473917751</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
