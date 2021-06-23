@@ -91,7 +91,7 @@
                                                                 <label for="replyMsg">
                                                                     نص الرسالة
                                                                 </label>
-                                                                <textarea required class="col-md-8" id="replyMsg" name="note"></textarea>
+                                                                <textarea required class="col-md-8" id="replyMsg" name="note_ar"></textarea>
                                                             </div>
                                                             <button class="btn btn-primary" type="submit"> إرسال </button>
                                                         </form>
@@ -121,7 +121,7 @@
                                                             @foreach(\App\Models\Notification::where('more_details->type','admin_reply')->where('more_details->contact_id',$row->id)->latest()->get() as $reply)
                                                                 <tr>
                                                                     <td>
-                                                                        {{$reply->note}}
+                                                                        {{$reply->note_ar}}
                                                                     </td>
                                                                     <td>{{\Carbon\Carbon::parse($reply->created_at)->format('Y-m-d H:i')}}</td>
                                                                 </tr>
