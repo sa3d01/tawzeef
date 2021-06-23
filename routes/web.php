@@ -28,9 +28,14 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::put('/profile', 'AdminController@updateProfile')->name('profile.update');
 
     Route::get('/', 'HomeController@index')->name('home');
+
     Route::resource('user', 'UserController');
     Route::post('user/{id}/ban', 'UserController@ban')->name('user.ban');
     Route::post('user/{id}/activate', 'UserController@activate')->name('user.activate');
+
+    Route::resource('company', 'UserController');
+    Route::post('company/{id}/ban', 'UserController@ban')->name('company.ban');
+    Route::post('company/{id}/activate', 'UserController@activate')->name('company.activate');
 
     Route::resource('notification', 'NotificationController');
     Route::post('reply-contact/{id}', 'ContactController@replyContact')->name('contact.reply');
@@ -39,6 +44,8 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::resource('bank', 'BankController');
     Route::post('bank/{id}/ban', 'BankController@ban')->name('bank.ban');
     Route::post('bank/{id}/activate', 'BankController@activate')->name('bank.activate');
+
+    Route::resource('job', 'JobController');
 
     Route::resource('contact_type', 'ContactTypeController');
     Route::post('contact_type/{id}/ban', 'ContactTypeController@ban')->name('contact_type.ban');
