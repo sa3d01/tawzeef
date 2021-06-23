@@ -9,7 +9,7 @@
                 <div class="col-xl-6">
                     <div class="card-box">
                         <h4 class="header-title mt-0 mb-3">المعلومات الشخصية</h4>
-                        <img class="card-img-top img-fluid" style="max-height: 400px" src="{{$user->avatar}}" alt="Card image cap">
+                        <img class="card-img-top img-fluid" style="max-height: 400px" src="{{$user->avatar}}" alt="avatar">
                         <div class="card-body">
                             <h4 class="card-title">{{$user->profile->first_name.' '.$user->profile->last_name}}</h4>
                             <p class="card-text">ID : {{$user->id}}</p>
@@ -39,13 +39,14 @@
                             <li class="list-group-item"><strong>التقدير : </strong><span>{{$user->qualification->graduation_degree}}</span></li>
                             <li class="list-group-item"><strong>التخصص : </strong><span>{{$user->qualification->specialization}}</span></li>
                             <li class="list-group-item"><strong>شهادة التخرج : </strong>
-                                <span>{{$user->qualification->graduation_file}}</span>
+                                    <img class="card-img-top img-fluid" style="max-height: 100px;max-width: 100px" src="{{$user->qualification->graduation_file}}">
                             </li>
                         </ul>
                     </div>
                 </div>
                 @endif
             </div>
+
 
         </div>
     </div>
