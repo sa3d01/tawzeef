@@ -17,8 +17,7 @@ class BankController extends MasterController
 
     public function index()
     {
-        $users=User::where('type','ADMIN')->pluck('id');
-        $rows = $this->model->whereIn('user_id',$users)->latest()->get();
+        $rows = $this->model->where('user_id',null)->latest()->get();
         return view('Dashboard.bank.index', compact('rows'));
     }
     public function create()
@@ -28,7 +27,6 @@ class BankController extends MasterController
     public function store(Request $request)
     {
         $data=$request->all();
-        $data['user_id']=auth()->id();
         $this->model->create($data);
         return redirect()->route('admin.bank.index')->with('created');
     }

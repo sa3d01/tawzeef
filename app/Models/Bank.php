@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Bank extends Model
 {
@@ -15,14 +16,28 @@ class Bank extends Model
         'name_en',
         'account_number',
     ];
+    private function upload_file($file)
+    {
+        $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $file->move('media/images/bank/', $filename);
+        return $filename;
+    }
+    protected function setLogoAttribute()
+    {
+        $logo = request('logo');
+        if (is_file($logo)) {
+            $filename = $this->upload_file($logo);
+            $this->attributes['logo'] = $filename;
+        }
+    }
     protected function getLogoAttribute(): string
     {
         try {
             if ($this->attributes['logo'])
                 return asset('media/images/bank') . '/' . $this->attributes['logo'];
-            return "";
+            return asset('media/images/logo.png');
         } catch (\Exception $e) {
-            return "";
+            return asset('media/images/logo.png');
         }
     }
 }

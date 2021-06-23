@@ -21,12 +21,21 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="name">العنوان*</label>
-                                <input type="text" name="title" required class="form-control" id="title" value="{{$page->title}}">
+                                <label for="title_ar">العنوان باللغة العربية*</label>
+                                <input type="text" name="title_ar" required class="form-control" id="title_ar" value="{{$page->title_ar}}">
                             </div>
                             <div class="form-group">
-                                <label for="note">المحتوى*</label>
-                                <textarea cols="5" rows="12" name="note" required class="form-control" id="note">{{$page->note}}</textarea>
+                                <label for="note_ar">المحتوى باللغة العربية*</label>
+                                <textarea cols="5" rows="12" name="note_ar" required class="form-control" id="note_ar">{{$page->note_ar}}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title_en">العنوان باللغة الانجليزية*</label>
+                                <input type="text" name="title_en" required class="form-control" id="title_en" value="{{$page->title_en}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="note_en">المحتوى باللغة الانجليزية*</label>
+                                <textarea cols="5" rows="12" name="note_en" required class="form-control" id="note_en">{{$page->note_en}}</textarea>
                             </div>
                             <div class="form-group text-right mb-0">
                                 <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">

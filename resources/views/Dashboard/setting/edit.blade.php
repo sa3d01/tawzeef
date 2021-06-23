@@ -32,6 +32,10 @@
                                 <label for="create_job">سعر إضافة وظيفة*</label>
                                 <input type="number" min="1" name="create_job" required class="form-control" id="create_job" value="{{$setting->create_job}}">
                             </div>
+                            <div class="form-group">
+                                <label for="premium">سعر الترقية لحساب بريميوم*</label>
+                                <input type="number" min="1" name="premium" required class="form-control" id="premium" value="{{$setting->premium}}">
+                            </div>
                             @php
                                 $facebook=\App\Models\Socials::where('user_id',null)->value('facebook');
                                 $twitter=\App\Models\Socials::where('user_id',null)->value('twitter');

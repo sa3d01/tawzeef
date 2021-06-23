@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="admin-panel">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CompanyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MajorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/images/major/XJYkJzHT5j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/images/major/XhR0nSOXD9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/company/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/company/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/major/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/major/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/major/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CountryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/bank/CE1AWOwXpj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/bank/cHMs4YOzZP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/bank/dzOhZcflNP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/city/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/city/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/city/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/country/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/country/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/country/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Major.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Major.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BankController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Bank.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bank.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/City.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/bank/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/bank/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/bank/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/bank/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/bank/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/bank/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/contact-type/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/contact-type/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/contact-type/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/contact-type/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/page/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/page/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/setting/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/setting/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +171,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard/major" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -172,9 +182,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/Dashboard/major" />
       <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/resources/views/Dashboard/major" />
       <recent name="$PROJECT_DIR$/public/media/images" />
       <recent name="$PROJECT_DIR$/app/Http/Requests" />
     </key>
@@ -233,7 +243,7 @@
       <workItem from="1623933747411" duration="613000" />
       <workItem from="1623937921021" duration="599000" />
       <workItem from="1624379969020" duration="2538000" />
-      <workItem from="1624456553300" duration="18364000" />
+      <workItem from="1624456553300" duration="22686000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1619326377861</created>
@@ -543,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624475791949</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="admin-panel">
+      <created>1624478845397</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1624478845397</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

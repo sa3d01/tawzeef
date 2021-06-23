@@ -77,7 +77,7 @@
                             <a href="{{route('admin.page.edit',['type'=>'terms','for'=>'user'])}}">الشروط والأحكام للموظفين</a>
                         </li>
                         <li>
-                            <a href="{{route('admin.page.edit',['type'=>'terms','for'=>'provider'])}}">الشروط والأحكام للشركات</a>
+                            <a href="{{route('admin.page.edit',['type'=>'terms','for'=>'company'])}}">الشروط والأحكام للشركات</a>
                         </li>
                     </ul>
                 </li>

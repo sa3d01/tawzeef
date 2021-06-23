@@ -21,8 +21,12 @@
                             @csrf
                             @method('POST')
                             <div class="form-group">
-                                <label for="name">الإسم*</label>
-                                <input type="text" name="name" required class="form-control" id="name">
+                                <label for="name_ar">الإسم باللغة العربية*</label>
+                                <input type="text" name="name_ar" required class="form-control" id="name_ar">
+                            </div>
+                            <div class="form-group">
+                                <label for="name_en">الإسم باللغة الانجليزية*</label>
+                                <input type="text" name="name_en" required class="form-control" id="name_en">
                             </div>
                             <div class="form-group text-right mb-0">
                                 <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">

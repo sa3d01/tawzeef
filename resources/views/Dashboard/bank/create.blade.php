@@ -21,8 +21,12 @@
                             @csrf
                             @method('POST')
                             <div class="form-group">
-                                <label for="name">اسم البنك*</label>
-                                <input type="text" name="name" required class="form-control" id="name">
+                                <label for="name_ar">اسم البنك باللغة العربية*</label>
+                                <input type="text" name="name_ar" required class="form-control" id="name_ar">
+                            </div>
+                            <div class="form-group">
+                                <label for="name_en">اسم البنك باللغة الانجليزية*</label>
+                                <input type="text" name="name_en" required class="form-control" id="name_en">
                             </div>
                             <div class="form-group">
                                 <label for="name">رقم الحساب*</label>
