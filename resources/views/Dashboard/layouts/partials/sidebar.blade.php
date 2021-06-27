@@ -53,6 +53,9 @@
                     <a href="{{route('admin.contact_type.index')}}">أنواع التواصل</a>
                 </li>
                 <li>
+                    <a href="{{route('admin.hiring_agent.index')}}">وكالات التوظيف</a>
+                </li>
+                <li>
                     <a href="javascript: void(0);" aria-expanded="false">الصفحات
                         <span class="menu-arrow"></span>
                     </a>
@@ -72,7 +75,6 @@
                         <li>
                             <a href="{{route('admin.page.edit',['type'=>'who_finding_jobs','for'=>'all'])}}">أشخاص وجدوا وظائف</a>
                         </li>
-
                         <li>
                             <a href="{{route('admin.page.edit',['type'=>'terms','for'=>'user'])}}">الشروط والأحكام للموظفين</a>
                         </li>

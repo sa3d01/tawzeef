@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="admin-panel">
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/contact/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HiringAgentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/images/agent/DpBqK1Zmfv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +154,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -158,11 +165,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent" />
       <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/Dashboard/major" />
       <recent name="$PROJECT_DIR$/public/media/images" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,28 +226,10 @@
       <workItem from="1623933747411" duration="613000" />
       <workItem from="1623937921021" duration="599000" />
       <workItem from="1624379969020" duration="2538000" />
-      <workItem from="1624456553300" duration="24207000" />
-    </task>
-    <task id="LOCAL-00001" summary="initial">
-      <created>1619326377861</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1619326377861</updated>
-    </task>
-    <task id="LOCAL-00002" summary="initial">
-      <created>1619326488836</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1619326488836</updated>
-    </task>
-    <task id="LOCAL-00003" summary="initial">
-      <created>1619326759096</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619326759096</updated>
+      <workItem from="1624456553300" duration="24739000" />
+      <workItem from="1624738140310" duration="654000" />
+      <workItem from="1624802519225" duration="2509000" />
+      <workItem from="1624830391127" duration="1913000" />
     </task>
     <task id="LOCAL-00004" summary="initial">
       <created>1619327215817</created>
@@ -564,7 +553,28 @@
       <option name="project" value="LOCAL" />
       <updated>1624486494490</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="admin-panel">
+      <created>1624486672843</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1624486672845</updated>
+    </task>
+    <task id="LOCAL-00051" summary="admin-panel">
+      <created>1624486767107</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1624486767107</updated>
+    </task>
+    <task id="LOCAL-00052" summary="admin-panel">
+      <created>1624486852702</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1624486852702</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

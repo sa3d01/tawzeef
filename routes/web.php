@@ -64,6 +64,10 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::post('contact_type/{id}/ban', 'ContactTypeController@ban')->name('contact_type.ban');
     Route::post('contact_type/{id}/activate', 'ContactTypeController@activate')->name('contact_type.activate');
 
+    Route::resource('hiring_agent', 'HiringAgentController');
+    Route::post('hiring_agent/{id}/ban', 'HiringAgentController@ban')->name('hiring_agent.ban');
+    Route::post('hiring_agent/{id}/activate', 'HiringAgentController@activate')->name('hiring_agent.activate');
+
     Route::get('page/{type}/{for}', 'PageController@page')->name('page.edit');
     Route::put('page/{id}', 'PageController@update')->name('page.update');
 
