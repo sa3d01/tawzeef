@@ -76,6 +76,7 @@ class RegisterController extends MasterController
         $data['commercial_file'] = $filename;
         Profile::create($data);
         //verification email
+
         return $this->sendResponse(new CompanyLoginResourse($user));
     }
 
