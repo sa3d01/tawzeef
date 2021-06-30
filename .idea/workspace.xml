@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="admin-panel">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HiringAgentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/images/agent/DpBqK1Zmfv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent/index.blade.php" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="admin-panel \ hiring-agent">
+      <change afterPath="$PROJECT_DIR$/app/Mail/VerifyMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/VerifyUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_30_003825_create_verify_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/verifyUser.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,14 +230,8 @@
       <workItem from="1624456553300" duration="24739000" />
       <workItem from="1624738140310" duration="654000" />
       <workItem from="1624802519225" duration="2509000" />
-      <workItem from="1624830391127" duration="1913000" />
-    </task>
-    <task id="LOCAL-00004" summary="initial">
-      <created>1619327215817</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619327215817</updated>
+      <workItem from="1624830391127" duration="2722000" />
+      <workItem from="1625012242742" duration="2691000" />
     </task>
     <task id="LOCAL-00005" summary="initial">
       <created>1619385307085</created>
@@ -574,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624486852702</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="admin-panel \ hiring-agent">
+      <created>1624836718658</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1624836718658</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,6 +605,7 @@
     <MESSAGE value="bugs" />
     <MESSAGE value="new domain configs" />
     <MESSAGE value="admin-panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin-panel" />
+    <MESSAGE value="admin-panel \ hiring-agent" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin-panel \ hiring-agent" />
   </component>
 </project>

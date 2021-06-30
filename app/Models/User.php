@@ -35,6 +35,7 @@ class User extends Authenticatable implements JWTSubject
         'avatar',
         'phone',
         'email',
+        'email_verified_at',
         'password',
         'country_id',
         'city_id',
@@ -66,7 +67,7 @@ class User extends Authenticatable implements JWTSubject
      */
 
     protected $casts = [
-        'email_verified_at' => 'datetime',
+//        'email_verified_at' => 'datetime',
         'last_login_at' => 'datetime',
     ];
 
@@ -206,5 +207,10 @@ class User extends Authenticatable implements JWTSubject
     public function TrainingCourses(): object
     {
         return $this->hasMany(TrainingCourse::class);
+    }
+
+    public function verifyUser(): object
+    {
+        return $this->hasOne(VerifyUser::class);
     }
 }

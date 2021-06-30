@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('admin.home');
 });
-
+Route::get('/user/verify/{token}', 'App\Http\Controllers\Api\Auth\RegisterController@verifyUser');
 Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')->group(function() {
     Route::namespace('Auth')->group(function(){
         Route::get('/login','LoginController@showLoginForm')->name('login');
