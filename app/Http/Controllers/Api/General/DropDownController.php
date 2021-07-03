@@ -10,7 +10,9 @@ use App\Http\Resources\MajorCollection;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\DropDown;
+use App\Models\HearBy;
 use App\Models\Major;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class DropDownController extends MasterController
 {
@@ -34,6 +36,10 @@ class DropDownController extends MasterController
     public function majors():object
     {
         return $this->sendResponse(new MajorCollection(Major::where('parent_id',null)->get()));
+    }
+    public function hearBy():object
+    {
+        return $this->sendResponse(new CityCollection(HearBy::where('banned',0)->get()));
     }
     public function subMajors($major_id):object
     {

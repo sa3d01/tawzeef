@@ -12,6 +12,7 @@ Route::group([
     Route::group(['namespace' => 'General', 'prefix' => 'general'], function () {
         Route::get('settings', 'SettingController@getSettings');
         Route::get('banks', 'BankController@index');
+        Route::get('hear_by', 'DropDownController@hearBy');
         Route::get('countries', 'DropDownController@countries');
         Route::get('countries/{countryId}/cities', 'DropDownController@cities');
         Route::get('majors', 'DropDownController@majors');

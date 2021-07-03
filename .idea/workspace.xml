@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="reset password">
-      <change beforePath="$PROJECT_DIR$/app/Models/PasswordReset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PasswordReset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/UserPasswordResetTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/UserPasswordResetTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HearByController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/HearBy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_07_03_212419_create_hear_bies_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hear-by/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hear-by/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hear-by/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/General/DropDownController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/General/DropDownController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +158,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/emails" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -159,11 +169,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
       <recent name="$PROJECT_DIR$/resources/views/emails" />
       <recent name="$PROJECT_DIR$/app/Mail" />
       <recent name="$PROJECT_DIR$/app/Traits" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api/Auth" />
-      <recent name="$PROJECT_DIR$/resources/views/Dashboard/hiring-agent" />
     </key>
   </component>
   <component name="RunManager">
@@ -226,14 +236,7 @@
       <workItem from="1624830391127" duration="2722000" />
       <workItem from="1625012242742" duration="3849000" />
       <workItem from="1625068343717" duration="2912000" />
-      <workItem from="1625335865420" duration="6964000" />
-    </task>
-    <task id="LOCAL-00015" summary="profile user">
-      <created>1620047466204</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1620047466204</updated>
+      <workItem from="1625335865420" duration="9444000" />
     </task>
     <task id="LOCAL-00016" summary="company">
       <created>1620624584915</created>
@@ -571,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625346224587</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="reset password">
+      <created>1625346628455</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1625346628455</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

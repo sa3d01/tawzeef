@@ -42,6 +42,7 @@ class User extends Authenticatable implements JWTSubject
         'major_id',
         'members_count',
         'hear_by',
+        'hear_by_id',
         'banned',
         'last_login_at',
         'last_ip',
@@ -113,6 +114,10 @@ class User extends Authenticatable implements JWTSubject
     public function city(): object
     {
         return $this->belongsTo(City::class);
+    }
+    public function hear_by(): object
+    {
+        return $this->belongsTo(HearBy::class,'hear_by_id','id');
     }
 
     public function major(): object

@@ -50,6 +50,9 @@
                     <a href="{{route('admin.bank.index')}}">الحسابات البنكية</a>
                 </li>
                 <li>
+                    <a href="{{route('admin.hear_by.index')}}">من أين سمعت عنا</a>
+                </li>
+                <li>
                     <a href="{{route('admin.contact_type.index')}}">أنواع التواصل</a>
                 </li>
                 <li>

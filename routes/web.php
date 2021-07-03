@@ -60,6 +60,10 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
 
     Route::resource('job', 'JobController');
 
+    Route::resource('hear_by', 'HearByController');
+    Route::post('hear_by/{id}/ban', 'HearByController@ban')->name('hear_by.ban');
+    Route::post('hear_by/{id}/activate', 'HearByController@activate')->name('hear_by.activate');
+
     Route::resource('contact_type', 'ContactTypeController');
     Route::post('contact_type/{id}/ban', 'ContactTypeController@ban')->name('contact_type.ban');
     Route::post('contact_type/{id}/activate', 'ContactTypeController@activate')->name('contact_type.activate');
