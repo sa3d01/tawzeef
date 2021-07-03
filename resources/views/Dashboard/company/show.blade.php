@@ -20,6 +20,7 @@
                             <li class="list-group-item"><strong>الدولة : </strong><span>{{$user->country->name_ar}}</span></li>
                             <li class="list-group-item"><strong>المدينة : </strong><span>{{$user->city->name_ar}}</span></li>
                             <li class="list-group-item"><strong>التخصص : </strong><span>{{$user->major->name_ar}}</span></li>
+                            <li class="list-group-item"><strong>سمع عنا عن طريق : </strong><span>{{$user->hear_by?$user->hear_by->name_ar:""}}</span></li>
                             <li class="list-group-item"><strong>تاريخ الميلاد : </strong><span>{{$user->birthdate}}</span></li>
                             <li class="list-group-item"><strong>تاريخ الانضمام : </strong><span>{{$user->created_at}}</span></li>
                         </ul>

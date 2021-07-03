@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="reset password">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HearByController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/HearBy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_07_03_212419_create_hear_bies_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hear-by/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hear-by/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/hear-by/index.blade.php" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="hear by">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/General/DropDownController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/General/DropDownController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/UserRegisterationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/UserRegisterationRequest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,14 +227,7 @@
       <workItem from="1624830391127" duration="2722000" />
       <workItem from="1625012242742" duration="3849000" />
       <workItem from="1625068343717" duration="2912000" />
-      <workItem from="1625335865420" duration="9444000" />
-    </task>
-    <task id="LOCAL-00016" summary="company">
-      <created>1620624584915</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1620624584915</updated>
+      <workItem from="1625335865420" duration="10336000" />
     </task>
     <task id="LOCAL-00017" summary="company">
       <created>1621118248576</created>
@@ -581,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625346628455</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="hear by">
+      <created>1625348958981</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1625348958981</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,6 +604,7 @@
     <MESSAGE value="admin-panel \ hiring-agent" />
     <MESSAGE value="verify mail" />
     <MESSAGE value="reset password" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset password" />
+    <MESSAGE value="hear by" />
+    <option name="LAST_COMMIT_MESSAGE" value="hear by" />
   </component>
 </project>

@@ -33,7 +33,7 @@ class UserRegisterationRequest extends ApiMasterRequest
             'city_id' => 'required|numeric|exists:cities,id',
             'major_id' => 'required|numeric|exists:majors,id',
             'job_title' => 'required',
-            'hear_by' => 'required|in:friend,ad,social,google',
+            'hear_by_id' => 'required|numeric|exists:hear_bies,id',
             'cv' => 'required',
         ];
     }

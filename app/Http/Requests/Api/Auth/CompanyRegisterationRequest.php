@@ -30,7 +30,7 @@ class CompanyRegisterationRequest extends ApiMasterRequest
             'password' => 'required|string|min:6|max:15',
             'country_id' => 'required|numeric|exists:countries,id',
             'city_id' => 'required|numeric|exists:cities,id',
-            'hear_by' => 'required|in:friend,ad,social,google',
+            'hear_by_id' => 'required|numeric|exists:hear_bies,id',
             'major_id' => 'required|numeric|exists:majors,id',
             'working_type' => 'required|in:full_time,part_time,remotely',
             'commercial_file' => 'required',
