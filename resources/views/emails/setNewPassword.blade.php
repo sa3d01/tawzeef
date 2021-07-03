@@ -13,6 +13,6 @@ $passwordResetObject = \App\Models\PasswordReset::where([
     'email' => $user['email']
 ])->latest()->first();
 ?>
-<a href="{{url('https://bebaan.net/auth/reset-password', $passwordResetObject->token)}}">Set New Password</a>
+<a href="https://bebaan.net/auth/reset-password/'.{{$passwordResetObject->token}}.'">Set New Password</a>
 </body>
 </html>
