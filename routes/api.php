@@ -22,6 +22,11 @@ Route::group([
     Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
         Route::post('user/register', 'RegisterController@userRegister');
         Route::post('company/register', 'RegisterController@companyRegister');
+
+        Route::post('forget-password/{email}','ForgotPasswordController@sendResetLink');
+        Route::get('reset-password/{email}/{token}','ForgotPasswordController@validateToken');
+        Route::post('reset-password/{email}/{token}','ForgotPasswordController@setPassword');
+
         Route::post('login', 'LoginController@login');
         // AuthedUser
         Route::group([
