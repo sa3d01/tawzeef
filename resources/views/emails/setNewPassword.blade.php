@@ -13,6 +13,6 @@ $passwordResetObject = \App\Models\PasswordReset::where([
     'email' => $user['email']
 ])->latest()->first();
 ?>
-<a href="{{url('auth/reset-password',$user->email, $passwordResetObject->token)}}">Set New Password</a>
+<a href="{{url('auth/reset-password', $passwordResetObject->token)}}">Set New Password</a>
 </body>
 </html>

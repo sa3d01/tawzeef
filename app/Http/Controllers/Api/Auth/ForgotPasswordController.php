@@ -37,28 +37,28 @@ class ForgotPasswordController extends MasterController
         return response()->json($response);
     }
 
-    public function validateToken($email,$token):object
+    public function validateToken($token,Request $request):object
     {
         $passwordResetObject = PasswordReset::where([
-            'email' => $email,
+            'email' => $request['email'],
             'token' => $token,
         ])->first();
         if (!$passwordResetObject) {
             return $this->sendError('Wrong token! Please try again.');
         }
-        $user = User::where('email', $email)->first();
+        $user = User::where('email',  $request['email'])->first();
         return $this->sendResponse($user);
     }
-    public function setPassword($email,$token,Request $request):object
+    public function setPassword($token,Request $request):object
     {
         $passwordResetObject = PasswordReset::where([
-            'email' => $email,
+            'email' =>  $request['email'],
             'token' => $token,
         ])->first();
         if (!$passwordResetObject) {
             return $this->sendError('Wrong token! Please try again.');
         }
-        $user = User::where('email', $email)->first();
+        $user = User::where('email',  $request['email'])->first();
         DB::transaction(function () use ($user, $passwordResetObject, $request) {
             $user->update(['password' => $request['password']]);
         });

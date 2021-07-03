@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="verify mail">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/SetNewPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PasswordReset.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/UserPasswordResetTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/setNewPassword.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/verifyUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/verifyUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="reset password">
+      <change beforePath="$PROJECT_DIR$/app/Models/PasswordReset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PasswordReset.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,21 +225,7 @@
       <workItem from="1624830391127" duration="2722000" />
       <workItem from="1625012242742" duration="3849000" />
       <workItem from="1625068343717" duration="2912000" />
-      <workItem from="1625335865420" duration="5915000" />
-    </task>
-    <task id="LOCAL-00010" summary="profile user">
-      <created>1619901492515</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1619901492515</updated>
-    </task>
-    <task id="LOCAL-00011" summary="profile user">
-      <created>1619903162885</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1619903162885</updated>
+      <workItem from="1625335865420" duration="6252000" />
     </task>
     <task id="LOCAL-00012" summary="profile user">
       <created>1619903764333</created>
@@ -578,7 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625341875689</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="reset password">
+      <created>1625345459194</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1625345459194</updated>
+    </task>
+    <task id="LOCAL-00060" summary="reset password">
+      <created>1625345523242</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1625345523242</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,6 +601,7 @@
     <MESSAGE value="admin-panel" />
     <MESSAGE value="admin-panel \ hiring-agent" />
     <MESSAGE value="verify mail" />
-    <option name="LAST_COMMIT_MESSAGE" value="verify mail" />
+    <MESSAGE value="reset password" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset password" />
   </component>
 </project>

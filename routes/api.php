@@ -24,8 +24,8 @@ Route::group([
         Route::post('company/register', 'RegisterController@companyRegister');
 
         Route::post('forget-password','ForgotPasswordController@sendResetLink');
-        Route::get('reset-password/{email}/{token}','ForgotPasswordController@validateToken');
-        Route::post('reset-password/{email}/{token}','ForgotPasswordController@setPassword');
+        Route::get('reset-password/{token}','ForgotPasswordController@validateToken');
+        Route::post('reset-password/{token}','ForgotPasswordController@setPassword');
 
         Route::post('login', 'LoginController@login');
         // AuthedUser
