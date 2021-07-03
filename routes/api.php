@@ -20,7 +20,7 @@ Route::group([
     });
     // AUTH
     Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
-        Route::post('user/register', 'RegisterController@useRegister');
+        Route::post('user/register', 'RegisterController@userRegister');
         Route::post('company/register', 'RegisterController@companyRegister');
         Route::post('login', 'LoginController@login');
         // AuthedUser

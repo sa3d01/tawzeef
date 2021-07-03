@@ -6,16 +6,12 @@ use App\Http\Controllers\Api\MasterController;
 use App\Http\Requests\Api\Auth\CompanyRegisterationRequest;
 use App\Http\Requests\Api\Auth\UserRegisterationRequest;
 use App\Http\Resources\CompanyLoginResourse;
-use App\Http\Resources\ProviderLoginResourse;
 use App\Http\Resources\UserLoginResourse;
 use App\Mail\VerifyMail;
 use App\Models\Cv;
-use App\Models\DropDown;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\VerifyUser;
-use App\Traits\UserBanksAndCarsTrait;
-use App\Traits\UserPhoneVerificationTrait;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -24,7 +20,7 @@ use Spatie\Permission\Models\Role;
 class RegisterController extends MasterController
 {
 
-    public function useRegister(UserRegisterationRequest $request): object
+    public function userRegister(UserRegisterationRequest $request): object
     {
         $data = $request->validated();
         $data['last_ip'] = $request->ip();
@@ -48,12 +44,11 @@ class RegisterController extends MasterController
         ]);
         Profile::create($data);
         //verification email
-        $verifyUser = VerifyUser::create([
+        VerifyUser::create([
             'user_id' => $user->id,
             'token' => sha1(time())
         ]);
         Mail::to($user->email)->send(new VerifyMail($user));
-
         return $this->sendResponse(new UserLoginResourse($user));
     }
     public function companyRegister(CompanyRegisterationRequest $request): object
@@ -76,7 +71,11 @@ class RegisterController extends MasterController
         $data['commercial_file'] = $filename;
         Profile::create($data);
         //verification email
-
+        VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => sha1(time())
+        ]);
+        Mail::to($user->email)->send(new VerifyMail($user));
         return $this->sendResponse(new CompanyLoginResourse($user));
     }
 
