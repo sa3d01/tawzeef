@@ -11,5 +11,7 @@ class PasswordReset extends Model
     protected $fillable = [
         'email',
         'token',
+        'expired_at',
+        'reset_at',
     ];
 }

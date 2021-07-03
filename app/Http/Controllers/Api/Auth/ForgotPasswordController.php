@@ -45,6 +45,9 @@ class ForgotPasswordController extends MasterController
         if (!$passwordResetObject) {
             return $this->sendError('Wrong token! Please try again.');
         }
+        if (Carbon::now()->gt(Carbon::parse($passwordResetObject->expired_at))) {
+            return $this->sendError('Token expired. Please request a new one');
+        }
         $user = User::where('email',  $passwordResetObject->email)->first();
         return $this->sendResponse($user);
     }
@@ -53,12 +56,17 @@ class ForgotPasswordController extends MasterController
         $passwordResetObject = PasswordReset::where([
             'email' =>  $request['email'],
             'token' => $token,
+            'reset_at'=>null
         ])->latest()->first();
         if (!$passwordResetObject) {
             return $this->sendError('Wrong token! Please try again.');
         }
+        if (Carbon::now()->gt(Carbon::parse($passwordResetObject->expired_at))) {
+            return $this->sendError('Token expired. Please request a new one');
+        }
         $user = User::where('email',  $request['email'])->first();
         DB::transaction(function () use ($user, $passwordResetObject, $request) {
+            $passwordResetObject->update(['reset_at' => Carbon::now()]);
             $user->update(['password' => $request['password']]);
         });
         if ($user['type']!='USER'){
