@@ -41,7 +41,6 @@ class User extends Authenticatable implements JWTSubject
         'city_id',
         'major_id',
         'members_count',
-        'hear_by',
         'hear_by_id',
         'banned',
         'last_login_at',
