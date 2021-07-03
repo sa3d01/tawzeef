@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="verify mail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,14 +224,8 @@
       <workItem from="1624802519225" duration="2509000" />
       <workItem from="1624830391127" duration="2722000" />
       <workItem from="1625012242742" duration="3849000" />
-      <workItem from="1625068343717" duration="1512000" />
-    </task>
-    <task id="LOCAL-00007" summary="profile user">
-      <created>1619547044484</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1619547044484</updated>
+      <workItem from="1625068343717" duration="2912000" />
+      <workItem from="1625335865420" duration="619000" />
     </task>
     <task id="LOCAL-00008" summary="profile user">
       <created>1619814058141</created>
@@ -570,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625069029986</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="verify mail">
+      <created>1625069877332</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1625069877332</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
