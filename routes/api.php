@@ -23,7 +23,7 @@ Route::group([
         Route::post('user/register', 'RegisterController@userRegister');
         Route::post('company/register', 'RegisterController@companyRegister');
 
-        Route::post('forget-password/{email}','ForgotPasswordController@sendResetLink');
+        Route::post('forget-password','ForgotPasswordController@sendResetLink');
         Route::get('reset-password/{email}/{token}','ForgotPasswordController@validateToken');
         Route::post('reset-password/{email}/{token}','ForgotPasswordController@setPassword');
 

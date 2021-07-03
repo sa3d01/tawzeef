@@ -21,9 +21,9 @@ class ForgotPasswordController extends MasterController
 {
     use UserPasswordResetTrait;
 
-    public function sendResetLink($email):object
+    public function sendResetLink(Request $request):object
     {
-        $user = User::where('email', $email)->first();
+        $user = User::where('email', $request['email'])->first();
         if (!$user) {
             return $this->sendError('هذا الحساب غير موجود.');
         }
