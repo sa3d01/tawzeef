@@ -11,6 +11,7 @@ use App\Models\Experience;
 use App\Models\Job;
 use App\Models\JobRequired;
 use App\Models\JobSubscribe;
+use App\Models\Notification;
 use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
@@ -93,6 +94,10 @@ class JobController extends MasterController
     }
     public function subscribeJob(Request $request)
     {
+        $job=Job::find($request['job_id']);
+        if ($job->end_date < Carbon::now()){
+            return $this->sendError('هذه الوظيفه انتهي الوقت المحدد للمزايده عليها');
+        }
         $data=[
             'user_id'=>auth('api')->id(),
             'job_id'=>$request['job_id'],
@@ -103,7 +108,14 @@ class JobController extends MasterController
         if ($subscribed){
             return $this->sendError('some thing error');
         }
-        JobSubscribe::create($data);
+        $subscribed=JobSubscribe::create($data);
+        Notification::create([
+            'receiver_id'=>$job->company_id,
+            'model'=>'JobSubscribe',
+            'model_id'=>$subscribed->id,
+            'note_ar'=>'لديك متقدم لوظيفة جديد من '.auth('api')->profile->first_name,
+            'note_en'=>' you have new form subscribe from '.auth('api')->profile->first_name
+        ]);
         return $this->sendResponse(new JobResourse(Job::find($request['job_id'])));
     }
 

@@ -19,7 +19,7 @@ class JobController extends MasterController
 {
     public function activeJobs(): object
     {
-        $jobs_q=Job::query();
+        $jobs_q=Job::where('company_id',auth('api')->id());
         if (request()->input('major_id')){
             $jobs_q=$jobs_q->where('job_id',request()->input('job_id'));
         }
@@ -29,7 +29,7 @@ class JobController extends MasterController
 
     public function expiredJobs()
     {
-        $jobs= Job::where('end_date','<',Carbon::now())->paginate(10);
+        $jobs= Job::where('company_id',auth('api')->id())->where('end_date','<',Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
     public function show($id): object
