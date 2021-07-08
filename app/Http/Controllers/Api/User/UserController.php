@@ -233,12 +233,12 @@ class UserController extends MasterController
         $count=count($request['type']);
         for ($i=0;$i<$count;$i++){
             $data['type']=$request['type'][$i];
-            $data['title']=$request['title'][$i];
-            $data['foundation_name']=$request['foundation_name'][$i];
-            $data['total_hours']=$request['total_hours'][$i];
-            $data['start_date']=$request['start_date'][$i];
-            $data['end_date']=$request['end_date'][$i];
-            $data['graduation_file']=$request['graduation_file'][$i];
+            $data['title']=$request['title']?$request['title'][$i]:'';
+            $data['foundation_name']=$request['foundation_name']?$request['foundation_name'][$i]:'';
+            $data['total_hours']=$request['total_hours']?$request['total_hours'][$i]:'';
+            $data['start_date']=$request['start_date']?$request['start_date'][$i]:'';
+            $data['end_date']=$request['end_date']?$request['end_date'][$i]:'';
+            $data['graduation_file']=$request['graduation_file']?$request['graduation_file'][$i]:'';
             $data['user_id']=$user->id;
             TrainingCourse::create($data);
         }
