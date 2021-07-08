@@ -227,6 +227,7 @@ class UserController extends MasterController
     public function updateTrainingCourses(Request $request):object
     {
         $user = auth('api')->user();
+        return $user->TrainingCourses;
         foreach ($user->TrainingCourses as $trainingCourse){
             $trainingCourse->delete();
         }
