@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\OrderResourse;
 use App\Models\Notification;
 use Edujugon\PushNotification\PushNotification;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -27,12 +26,13 @@ abstract class MasterController extends Controller
         return response()->json($response);
     }
 
-    public function sendError($error,$data=[], $code = 422)
+    public function sendError($error,$data=null, $code = 422)
     {
+        $errors[$data]=(array)$error;
         $response = [
             'status' => $code,
             'message' => $error,
-            'data' => $data,
+            'errors' => $errors,
         ];
         return response()->json($response, $code);
     }

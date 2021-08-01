@@ -27,7 +27,7 @@ class JobStoreRequest extends ApiMasterRequest
             'qualification_type' => 'required|in:secondary,diploma,bachelor,ma,phd',
             'level' => 'required|in:fresh_graduate,average,high',
             'working_type' => 'required|in:full_time,part_time,remotely',
-            'start_date' => 'required|date',
+            'start_date' => 'required|date|after:yesterday',
             'end_date' => 'nullable|date|after:start_date',
             'sex' => 'nullable|in:male,female',
             'experience_years'=>'nullable',

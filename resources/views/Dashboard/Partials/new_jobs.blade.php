@@ -38,7 +38,7 @@
                         <th>تاريخ الانتهاء</th>
                         <th>حالة الاعلان</th>
                         <th>التخصص</th>
-                        <th>المزيد</th>
+{{--                        <th>المزيد</th>--}}
                     </tr>
                     </thead>
                     <tbody>
@@ -54,11 +54,11 @@
                         <td>{{\Carbon\Carbon::parse($job->end_date)->format('Y-M-d')}}</td>
                         <td><span class="badge @if($job->end_date>\Carbon\Carbon::now()) badge-danger  @else badge-warning @endif">{{$job->getStatusArabic()}}</span></td>
                         <td>{{$job->major->name_ar}}</td>
-                        <td>
-                            <a href="{{route('admin.job.show',$job->id)}}">
-                                 <i class="fa fa-eye mr-1"></i> <span>عرض</span>
-                            </a>
-                        </td>
+{{--                        <td>--}}
+{{--                            <a href="{{route('admin.job.show',$job->id)}}">--}}
+{{--                                 <i class="fa fa-eye mr-1"></i> <span>عرض</span>--}}
+{{--                            </a>--}}
+{{--                        </td>--}}
                     </tr>
                     @endforeach
                     </tbody>

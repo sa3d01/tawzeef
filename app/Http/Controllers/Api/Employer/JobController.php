@@ -89,14 +89,14 @@ class JobController extends MasterController
         if ($request['experience_years']) {
             $job_q = $job_q->where('experience_years', $request['experience_years']);
         }
-        $jobs = $job_q->get();
+        $jobs = $job_q->latest()->get();
         return $this->sendResponse(new JobCollection($jobs));
     }
     public function subscribeJob(Request $request)
     {
         $job=Job::find($request['job_id']);
         if ($job->end_date < Carbon::now()){
-            return $this->sendError('هذه الوظيفه انتهي الوقت المحدد للمزايده عليها');
+            return $this->sendError('هذه الوظيفه انتهي الوقت المحدد لها','end_date');
         }
         $data=[
             'user_id'=>auth('api')->id(),
@@ -113,8 +113,8 @@ class JobController extends MasterController
             'receiver_id'=>$job->company_id,
             'model'=>'JobSubscribe',
             'model_id'=>$subscribed->id,
-            'note_ar'=>'لديك متقدم لوظيفة جديد من '.auth('api')->profile->first_name,
-            'note_en'=>' you have new form subscribe from '.auth('api')->profile->first_name
+            'note_ar'=>'لديك متقدم لوظيفة جديد من '.auth('api')->user()->profile->first_name,
+            'note_en'=>' you have new form subscribe from '.auth('api')->user()->profile->first_name
         ]);
         return $this->sendResponse(new JobResourse(Job::find($request['job_id'])));
     }

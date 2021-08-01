@@ -19,7 +19,7 @@ class EmployeeController extends MasterController
 {
     public function findEmployee(Request $request)
     {
-        $employee_q = User::where('type', 'USER');
+        $employee_q = User::where('type', 'USER')->whereBanned(0);
         if ($request['job_title']) {
             $expected_title_users = JobRequired::where('job_title', 'LIKE', "%{$request['job_title']}%")->pluck('user_id');
             $employee_q = $employee_q->whereIn('id', $expected_title_users);
@@ -54,43 +54,45 @@ class EmployeeController extends MasterController
 
     public function showEmployee($id)
     {
-        $seen=CompanySeen::where([
-            'company_id'=>auth('api')->id(),
-            'user_id'=>$id
+        $seen = CompanySeen::where([
+            'company_id' => auth('api')->id(),
+            'user_id' => $id
         ])->latest()->first();
-        if (!$seen){
+        if (!$seen) {
             CompanySeen::create([
-                'company_id'=>auth('api')->id(),
-                'user_id'=>$id
+                'company_id' => auth('api')->id(),
+                'user_id' => $id
             ]);
         }
         return $this->sendResponse(new UserResourse(User::find($id)));
     }
+
     public function messages()
     {
-        $messages=Message::where('receiver_id',auth()->id())->get();
-        foreach ($messages as $message){
+        $messages = Message::where('receiver_id', auth()->id())->get();
+        foreach ($messages as $message) {
             $message->update([
-               'read'=>true
+                'read' => true
             ]);
         }
-        return new MessageCollection(Message::where('receiver_id',auth()->id())->paginate());
+        return new MessageCollection(Message::where('receiver_id', auth()->id())->paginate());
     }
-    public function messageEmployee($id,Request $request)
+
+    public function messageEmployee($id, Request $request)
     {
-        $sender=User::find(auth()->id());
-        $name=$sender->profile->foundation_name;
-        $message=Message::create([
-            'sender_id'=>auth()->id(),
-            'receiver_id'=>$id,
-            'message'=>$request['message']
+        $sender = User::find(auth()->id());
+        $name = $sender->profile->foundation_name;
+        $message = Message::create([
+            'sender_id' => auth()->id(),
+            'receiver_id' => $id,
+            'message' => $request['message']
         ]);
         Notification::create([
-            'receiver_id'=>$id,
-            'model'=>'Message',
-            'model_id'=>$message->id,
-            'note_ar'=>'لديك رسالة جديدة من '.$name,
-            'note_en'=>' you have new message from '.$name
+            'receiver_id' => $id,
+            'model' => 'Message',
+            'model_id' => $message->id,
+            'note_ar' => 'لديك رسالة جديدة من ' . $name,
+            'note_en' => ' you have new message from ' . $name
         ]);
         return $this->sendResponse(new UserResourse(User::find($id)));
     }

@@ -15,6 +15,7 @@ use App\Models\VerifyUser;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Mockery\Exception;
 use Spatie\Permission\Models\Role;
 
 class RegisterController extends MasterController
@@ -25,30 +26,36 @@ class RegisterController extends MasterController
         $data = $request->validated();
         $data['last_ip'] = $request->ip();
         $data['type'] = 'USER';
-        $cv = $request['cv'];
-        $filename = null;
-        if (is_file($cv)) {
-            $filename = $this->uploadFile($cv,'media/files/cv/');
-        } elseif (filter_var($cv, FILTER_VALIDATE_URL) === True) {
-            $filename = $cv;
-        }
+
         $user = User::create($data);
         $user->refresh();
         $role = Role::findOrCreate($user->type);
         $user->assignRole($role);
         $data['user_id'] = $user->id;
-
-        Cv::create([
-            'user_id'=>$user->id,
-            'file'=> $filename
-        ]);
+        if ($request->has('cv')){
+            $cv = $request['cv'];
+            $filename = null;
+            if (is_file($cv)) {
+                $filename = $this->uploadFile($cv,'media/files/cv/');
+            } elseif (filter_var($cv, FILTER_VALIDATE_URL) === True) {
+                $filename = $cv;
+            }
+            Cv::create([
+                'user_id'=>$user->id,
+                'file'=> $filename
+            ]);
+        }
         Profile::create($data);
         //verification email
         VerifyUser::create([
             'user_id' => $user->id,
             'token' => sha1(time())
         ]);
-        Mail::to($user->email)->send(new VerifyMail($user));
+        try {
+            Mail::to($user->email)->send(new VerifyMail($user));
+        }catch (\Exception $e){
+
+        }
         return $this->sendResponse(new UserLoginResourse($user));
     }
     public function companyRegister(CompanyRegisterationRequest $request): object
@@ -75,7 +82,11 @@ class RegisterController extends MasterController
             'user_id' => $user->id,
             'token' => sha1(time())
         ]);
-        Mail::to($user->email)->send(new VerifyMail($user));
+        try {
+            Mail::to($user->email)->send(new VerifyMail($user));
+        }catch (\Exception $e){
+
+        }
         return $this->sendResponse(new CompanyLoginResourse($user));
     }
 

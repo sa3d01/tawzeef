@@ -10,6 +10,7 @@ use App\Http\Resources\SimpleCompanyResourse;
 use App\Http\Resources\SimpleJobResourse;
 use App\Models\Job;
 use App\Models\Major;
+use App\Models\Notification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -43,6 +44,13 @@ class JobController extends MasterController
         $data = $request->validated();
         $data['company_id'] = auth('api')->id();
         $job = Job::create($data);
+//        Notification::create([
+//            'receiver_id'=>$id,
+//            'model'=>'Message',
+//            'model_id'=>$message->id,
+//            'note_ar'=>'لديك رسالة جديدة من '.$name,
+//            'note_en'=>' you have new message from '.$name
+//        ]);
         return $this->sendResponse(new JobResourse($job));
     }
     public function update($id,JobStoreRequest $request): object

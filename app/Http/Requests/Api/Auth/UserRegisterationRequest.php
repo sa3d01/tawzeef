@@ -32,9 +32,9 @@ class UserRegisterationRequest extends ApiMasterRequest
             'country_id' => 'required|numeric|exists:countries,id',
             'city_id' => 'required|numeric|exists:cities,id',
             'major_id' => 'required|numeric|exists:majors,id',
-            'job_title' => 'required',
+            'job_title' => 'nullable',
             'hear_by_id' => 'required|numeric|exists:hear_bies,id',
-            'cv' => 'required',
+            'cv' => 'nullable',
         ];
     }
 }
