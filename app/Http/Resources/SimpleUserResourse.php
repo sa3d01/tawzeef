@@ -20,12 +20,12 @@ class SimpleUserResourse extends JsonResource
     {
         return [
             'id' => (int)$this->id,
-            'premium'=>$this->profile->premium==1,
+            'premium'=>$this->profile?$this->profile->premium==1:false,
             'type' => $this->type,
             'email' => $this->email,
             'avatar' => $this->avatar,
-            'first_name' => $this->profile->first_name,
-            'last_name' => $this->profile->last_name,
+            'first_name' => $this->profile?$this->profile->first_name:"",
+            'last_name' => $this->profile?$this->profile->last_name:"",
             'created_at'=>Carbon::parse($this->created_at)->format('Y-m-d')
         ];
     }
