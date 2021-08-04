@@ -60,6 +60,14 @@ class Profile extends Model
 //        }
 //        return $arr;
 //    }
+    protected function setCommercialFileAttribute()
+    {
+        $image = request('commercial_file');
+        if (is_file($image)) {
+            $filename = $this->upload_file($image);
+            $this->attributes['commercial_file'] = $filename;
+        }
+    }
     protected function getCommercialFileAttribute(): string
     {
         try {
@@ -73,7 +81,7 @@ class Profile extends Model
     private function upload_file($file)
     {
         $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
-        $file->move('media/images/user/', $filename);
+        $file->move('media/files/commercial_file/', $filename);
         return $filename;
     }
 
