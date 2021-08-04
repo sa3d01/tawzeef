@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Api\MasterController;
+use App\Http\Requests\Api\Auth\PasswordUpdateRequest;
 use App\Http\Resources\CompanyLoginResourse;
 use App\Http\Resources\UserLoginResourse;
 use App\Mail\SetNewPassword;
@@ -15,6 +16,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class ForgotPasswordController extends MasterController
@@ -74,6 +76,23 @@ class ForgotPasswordController extends MasterController
         }else{
             return $this->sendResponse(new UserLoginResourse($user));
         }
+    }
+
+    public function updatePassword(PasswordUpdateRequest $request)
+    {
+        $request->validated();
+        $user = $request->user();
+        if (Hash::check($request['old_password'], $user->password)) {
+            $user->update([
+                'password' => $request['new_password'],
+            ]);
+            if ($user['type']!='USER'){
+                return $this->sendResponse(new CompanyLoginResourse($user));
+            }else{
+                return $this->sendResponse(new UserLoginResourse($user));
+            }
+        }
+        return $this->sendError('Wrong Password');
     }
 
 }

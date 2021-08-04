@@ -28,12 +28,16 @@ Route::group([
         Route::get('reset-password/{token}','ForgotPasswordController@validateToken');
         Route::post('reset-password/{token}','ForgotPasswordController@setPassword');
 
+
+
         Route::post('login', 'LoginController@login');
         // AuthedUser
         Route::group([
             'middleware' => JwtTokenIsValid::class,
         ], function () {
             Route::post('logout', 'LoginController@logout');
+
+            Route::post('update-password','ForgotPasswordController@updatePassword');
         });
     });
     // USER
