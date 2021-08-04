@@ -110,6 +110,7 @@ Route::group([
         Route::get('active-job', 'JobController@activeJobs');
         Route::get('expired-job', 'JobController@expiredJobs');
         Route::get('job/{id}', 'JobController@show');
+        Route::get('job/{id}/subscribes', 'JobController@subscribes');
         Route::get('find-employee', 'EmployeeController@findEmployee');
         Route::get('employee/{id}', 'EmployeeController@showEmployee');
         Route::post('employee/{id}/message', 'EmployeeController@messageEmployee');

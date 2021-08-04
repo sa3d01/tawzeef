@@ -4,13 +4,19 @@ namespace App\Http\Controllers\Api\Company;
 
 use App\Http\Controllers\Api\MasterController;
 use App\Http\Requests\Api\JobStoreRequest;
+use App\Http\Resources\CvResource;
 use App\Http\Resources\JobCollection;
 use App\Http\Resources\JobResourse;
 use App\Http\Resources\SimpleCompanyResourse;
 use App\Http\Resources\SimpleJobResourse;
+use App\Http\Resources\SimpleUserResourse;
+use App\Models\Experience;
 use App\Models\Job;
+use App\Models\JobSubscribe;
 use App\Models\Major;
 use App\Models\Notification;
+use App\Models\Profile;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -102,6 +108,40 @@ class JobController extends MasterController
             $data[]=$arr;
         }
         return $this->sendResponse($data);
+    }
+
+    public function subscribes($job_id,Request $request)
+    {
+        $subscribes=JobSubscribe::where('job_id',$job_id);
+        if ($request['countries']) {
+            $countries = explode(',', $request['countries']);
+            $users=User::whereIn('country_id', $countries)->pluck('id')->toArray();
+            $subscribes = $subscribes->whereIn('user_id', $users);
+        }
+        if ($request['cities']) {
+            $cities = explode(',', $request['cities']);
+            $users=User::whereIn('city_id', $cities)->pluck('id')->toArray();
+            $subscribes = $subscribes->whereIn('user_id', $users);
+        }
+        if ($request['sex']) {
+            $users = Profile::where('sex', $request['sex'])->pluck('user_id')->toArray();
+            $subscribes = $subscribes->whereIn('user_id', $users);
+        }
+        if ($request['experience_years']) {
+            $users = Experience::where('experience_years', $request['experience_years'])->pluck('user_id')->toArray();
+            $subscribes = $subscribes->whereIn('user_id', $users);
+        }
+        $subscribes = $subscribes->latest()->get();
+        $subscribes_arr=[];
+        foreach ($subscribes as $subscribe)
+        {
+            $subscribe_arr['user']=new SimpleUserResourse($subscribe->user);
+            $subscribe_arr['cv']=new CvResource($subscribe->cv);
+            $subscribe_arr['message']=$subscribe->message;
+            $subscribe_arr['subscribed_from']=Carbon::parse($subscribe->created_at)->diffForHumans();
+            $subscribes_arr[]=$subscribe_arr;
+        }
+        return $this->sendResponse($subscribes_arr);
     }
 
 }
