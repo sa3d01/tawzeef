@@ -35,16 +35,27 @@ class JobResourse extends JsonResource
         $arr['show_company']=$this->show_company;
         $arr['my_job']=auth('api')->id()==$this->company->id;
         $arr['subscribed']=false;
+        $subscribes=[];
         if (auth('api')->check()){
             $subscribed=JobSubscribe::where([
                 'user_id'=>auth('api')->id(),
                 'job_id'=>$this->id,
             ])->first();
+            if (auth('api')->id()==$this->company->id){
+                foreach (JobSubscribe::where('job_id',$this->id)->latest()->get() as $subscribe)
+                {
+                    $subscribe_arr['user']=new SimpleUserResourse($subscribe->user);
+                    $subscribe_arr['cv']=new CvResource($subscribe->cv);
+                    $subscribe_arr['message']=$subscribe->message;
+                    $subscribe_arr['subscribed_from']=Carbon::parse($subscribe->created_at)->diffForHumans();
+                    $subscribes[]=$subscribe_arr;
+                }
+            }
             if ($subscribed){
                 $arr['subscribed']=true;
             }
         }
-
+        $arr['subscribes']=$subscribes;
         return $arr;
     }
 }
