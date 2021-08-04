@@ -20,6 +20,7 @@ class NotificationCollection extends ResourceCollection
             $arr['id']=(int)$obj->id;
             $arr['type']=$obj->type;
             $arr['model']=$obj->model;
+            $arr['model_id']=$obj->model_id;
             $arr['read']=$obj->read == 'true';
             $note['ar']=$obj->note_ar;
             $note['en']=$obj->note_en;

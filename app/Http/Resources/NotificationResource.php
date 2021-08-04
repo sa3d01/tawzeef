@@ -18,6 +18,7 @@ class NotificationResource extends JsonResource
         $arr['id']=(int)$this->id;
         $arr['type']=$this->type;
         $arr['model']=$this->model;
+        $arr['model_id']=$this->model_id;
         $arr['read']=$this->read == 'true';
         $note['ar']=$this->note_ar;
         $note['en']=$this->note_en;
