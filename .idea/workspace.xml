@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="verify pause">
-      <change afterPath="$PROJECT_DIR$/public/media/files/commercial_file/5Vf0N0KliS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/commercial_file/5acnHeKABl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/commercial_file/PEOCv4cyv0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/media/files/cv/4eAyGtIkw3.pdf" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MasterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/ExperienceUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/ExperienceUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/QulificationUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/QulificationUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/UserRegisterationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/UserRegisterationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/JobStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/JobStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/NotificationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/NotificationResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/Partials/new_jobs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/Partials/new_jobs.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,14 +243,9 @@
       <workItem from="1627748297646" duration="1062000" />
       <workItem from="1627750360633" duration="94000" />
       <workItem from="1627752362332" duration="895000" />
-      <workItem from="1627822033542" duration="4694000" />
-    </task>
-    <task id="LOCAL-00026" summary="company">
-      <created>1621514108646</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1621514108646</updated>
+      <workItem from="1627822033542" duration="6673000" />
+      <workItem from="1627994230349" duration="553000" />
+      <workItem from="1628036920202" duration="565000" />
     </task>
     <task id="LOCAL-00027" summary="company">
       <created>1621514532792</created>
@@ -603,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625848563067</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="edits">
+      <created>1627827079762</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1627827079762</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,9 +623,9 @@
     <MESSAGE value="verify mail" />
     <MESSAGE value="reset password" />
     <MESSAGE value="hear by" />
-    <MESSAGE value="edits" />
     <MESSAGE value="api -- training courses" />
     <MESSAGE value="verify pause" />
-    <option name="LAST_COMMIT_MESSAGE" value="verify pause" />
+    <MESSAGE value="edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="edits" />
   </component>
 </project>

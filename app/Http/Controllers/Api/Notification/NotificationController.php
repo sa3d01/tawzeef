@@ -22,6 +22,12 @@ class NotificationController extends MasterController
     {
         $notifies = new NotificationCollection($this->model->where('receiver_id', request()->user()->id)->latest()->get());
         $unread = $this->model->where('receiver_id', request()->user()->id)->where('read', 'false')->count();
+        foreach ($this->model->where('receiver_id', request()->user()->id)->where('read', 'false')->get() as $single)
+        {
+            $single->update([
+                'read' => 'true'
+            ]);
+        }
         return $this->sendResponse(['data' => $notifies, 'unread' => $unread]);
     }
 
