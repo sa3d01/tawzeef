@@ -137,7 +137,7 @@ class JobController extends MasterController
         foreach ($subscribes as $subscribe) {
             $subscribe_arr['user'] = new SimpleUserResourse($subscribe->user);
             $subscribe_arr['cv'] = $subscribe->cv ? new CvResource($subscribe->cv) : new Object_();
-            $subscribe_arr['message'] = $subscribe->message;
+            $subscribe_arr['message'] = $subscribe->message??"";
             $subscribe_arr['subscribed_from'] = Carbon::parse($subscribe->created_at)->diffForHumans();
             $subscribes_arr[] = $subscribe_arr;
         }
