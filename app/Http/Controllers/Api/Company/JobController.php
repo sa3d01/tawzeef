@@ -7,44 +7,42 @@ use App\Http\Requests\Api\JobStoreRequest;
 use App\Http\Resources\CvResource;
 use App\Http\Resources\JobCollection;
 use App\Http\Resources\JobResourse;
-use App\Http\Resources\SimpleCompanyResourse;
 use App\Http\Resources\SimpleJobResourse;
 use App\Http\Resources\SimpleUserResourse;
 use App\Models\Experience;
 use App\Models\Job;
 use App\Models\JobSubscribe;
-use App\Models\Major;
-use App\Models\Notification;
 use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use phpDocumentor\Reflection\Types\Object_;
 
 class JobController extends MasterController
 {
     public function activeJobs(): object
     {
-        $jobs_q=Job::where('company_id',auth('api')->id());
-        if (request()->input('major_id')){
-            $jobs_q=$jobs_q->where('job_id',request()->input('job_id'));
+        $jobs_q = Job::where('company_id', auth('api')->id());
+        if (request()->input('major_id')) {
+            $jobs_q = $jobs_q->where('job_id', request()->input('job_id'));
         }
-        $jobs= $jobs_q->where('end_date','>',Carbon::now())->paginate(10);
+        $jobs = $jobs_q->where('end_date', '>', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
 
     public function expiredJobs()
     {
-        $jobs= Job::where('company_id',auth('api')->id())->where('end_date','<',Carbon::now())->paginate(10);
+        $jobs = Job::where('company_id', auth('api')->id())->where('end_date', '<', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
+
     public function show($id): object
     {
         $job = Job::find($id);
 
         return $this->sendResponse(new JobResourse($job));
     }
+
     public function store(JobStoreRequest $request): object
     {
         $data = $request->validated();
@@ -59,23 +57,25 @@ class JobController extends MasterController
 //        ]);
         return $this->sendResponse(new JobResourse($job));
     }
-    public function update($id,JobStoreRequest $request): object
+
+    public function update($id, JobStoreRequest $request): object
     {
         $job = Job::find($id);
-        if (!$job || ($job->company_id != auth('api')->id())){
+        if (!$job || ($job->company_id != auth('api')->id())) {
             return $this->sendError('توجد مشكلة بالبيانات');
         }
         $job->update($request->validated());
         return $this->sendResponse(new JobResourse($job));
     }
-    public function delete($id):object
+
+    public function delete($id): object
     {
         $job = Job::find($id);
-        if (!$job || ($job->company_id != auth('api')->id())){
+        if (!$job || ($job->company_id != auth('api')->id())) {
             return $this->sendError('توجد مشكلة بالبيانات');
         }
         $job->delete();
-        $jobs= Job::where('company_id',auth('api')->id())->paginate(10);
+        $jobs = Job::where('company_id', auth('api')->id())->paginate(10);
         return new JobCollection($jobs);
     }
 
@@ -91,36 +91,37 @@ class JobController extends MasterController
         if ($request['city_id']) {
             $job_q = $job_q->where('city_id', $request['city_id']);
         }
-        $jobs=$job_q->pluck('expected_salary')->toArray();
-        if (count($jobs)==0){
+        $jobs = $job_q->pluck('expected_salary')->toArray();
+        if (count($jobs) == 0) {
             return $this->sendResponse(0);
         }
         $average = array_sum($jobs) / count($jobs);
         return $this->sendResponse($average);
     }
+
     public function findAverageSalary(Request $request)
     {
-        $jobs= Job::take(7)->get();
-        $data=[];
-        foreach ($jobs as $job){
+        $jobs = Job::take(7)->get();
+        $data = [];
+        foreach ($jobs as $job) {
             $arr['job'] = new SimpleJobResourse($job);
-            $arr['expected_salary']=(int)$job->expected_salary;
-            $data[]=$arr;
+            $arr['expected_salary'] = (int)$job->expected_salary;
+            $data[] = $arr;
         }
         return $this->sendResponse($data);
     }
 
-    public function subscribes($job_id,Request $request)
+    public function subscribes($job_id, Request $request)
     {
-        $subscribes=JobSubscribe::where('job_id',$job_id);
+        $subscribes = JobSubscribe::where('job_id', $job_id);
         if ($request['countries']) {
             $countries = explode(',', $request['countries']);
-            $users=User::whereIn('country_id', $countries)->pluck('id')->toArray();
+            $users = User::whereIn('country_id', $countries)->pluck('id')->toArray();
             $subscribes = $subscribes->whereIn('user_id', $users);
         }
         if ($request['cities']) {
             $cities = explode(',', $request['cities']);
-            $users=User::whereIn('city_id', $cities)->pluck('id')->toArray();
+            $users = User::whereIn('city_id', $cities)->pluck('id')->toArray();
             $subscribes = $subscribes->whereIn('user_id', $users);
         }
         if ($request['sex']) {
@@ -132,14 +133,13 @@ class JobController extends MasterController
             $subscribes = $subscribes->whereIn('user_id', $users);
         }
         $subscribes = $subscribes->latest()->get();
-        $subscribes_arr=[];
-        foreach ($subscribes as $subscribe)
-        {
-            $subscribe_arr['user']=new SimpleUserResourse($subscribe->user);
-            $subscribe_arr['cv']=new CvResource($subscribe->cv);
-            $subscribe_arr['message']=$subscribe->message;
-            $subscribe_arr['subscribed_from']=Carbon::parse($subscribe->created_at)->diffForHumans();
-            $subscribes_arr[]=$subscribe_arr;
+        $subscribes_arr = [];
+        foreach ($subscribes as $subscribe) {
+            $subscribe_arr['user'] = new SimpleUserResourse($subscribe->user);
+            $subscribe_arr['cv'] = $subscribe->cv ? new CvResource($subscribe->cv) : new Object_();
+            $subscribe_arr['message'] = $subscribe->message;
+            $subscribe_arr['subscribed_from'] = Carbon::parse($subscribe->created_at)->diffForHumans();
+            $subscribes_arr[] = $subscribe_arr;
         }
         return $this->sendResponse($subscribes_arr);
     }
