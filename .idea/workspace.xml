@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Contact/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Contact/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JwtTokenIsCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/JwtTokenIsCompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JwtTokenIsValid.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/JwtTokenIsValid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/setting/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/setting/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,21 +254,8 @@
       <workItem from="1627994230349" duration="553000" />
       <workItem from="1628036920202" duration="565000" />
       <workItem from="1628080652376" duration="9385000" />
-      <workItem from="1628358305145" duration="317000" />
-    </task>
-    <task id="LOCAL-00035" summary="blog">
-      <created>1623330970278</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1623330970278</updated>
-    </task>
-    <task id="LOCAL-00036" summary="blog">
-      <created>1623333067750</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1623333067750</updated>
+      <workItem from="1628358305145" duration="1070000" />
+      <workItem from="1628596888141" duration="1721000" />
     </task>
     <task id="LOCAL-00037" summary="bugs">
       <created>1623339107164</created>
@@ -592,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1628116411781</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="edits">
+      <created>1628358705226</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1628358705227</updated>
+    </task>
+    <task id="LOCAL-00085" summary="edits">
+      <created>1628358774199</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1628358774199</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -21,6 +21,8 @@ class JwtTokenIsCompany
         try {
             if (!$user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['message' => 'user not found'], 400);
+            }elseif ($user->banned==1){
+                return response()->json(['message' => 'تم حظرك من قبل إدارة التطبيق ..'], 401);
             }
             if ($user->type!='COMPANY'){
                 return response()->json(['message' => 'forbidden'], 403);

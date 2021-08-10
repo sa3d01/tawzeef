@@ -30,11 +30,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="create_job">سعر إضافة وظيفة*</label>
-                                <input type="number" min="1" name="create_job" required class="form-control" id="create_job" value="{{$setting->create_job}}">
+                                <input type="number" min="0" name="create_job" required class="form-control" id="create_job" value="{{$setting->create_job}}">
                             </div>
                             <div class="form-group">
                                 <label for="premium">سعر الترقية لحساب بريميوم*</label>
-                                <input type="number" min="1" name="premium" required class="form-control" id="premium" value="{{$setting->premium}}">
+                                <input type="number" min="0" name="premium" required class="form-control" id="premium" value="{{$setting->premium}}">
                             </div>
                             @php
                                 $facebook=\App\Models\Socials::where('user_id',null)->value('facebook');
@@ -44,19 +44,19 @@
                             @endphp
                             <div class="form-group">
                                 <label for="snap">رابط youtube*</label>
-                                <input type="url" name="youtube" required class="form-control" id="youtube" value="{{$youtube}}">
+                                <input type="url" name="youtube" class="form-control" id="youtube" value="{{$youtube}}">
                             </div>
                             <div class="form-group">
                                 <label for="twitter">رابط twitter*</label>
-                                <input type="url" name="twitter" required class="form-control" id="twitter" value="{{$twitter}}">
+                                <input type="url" name="twitter" class="form-control" id="twitter" value="{{$twitter}}">
                             </div>
                             <div class="form-group">
                                 <label for="facebook">رابط facebook*</label>
-                                <input type="url" name="facebook" required class="form-control" id="facebook" value="{{$facebook}}">
+                                <input type="url" name="facebook" class="form-control" id="facebook" value="{{$facebook}}">
                             </div>
                             <div class="form-group">
                                 <label for="insta">رابط instagram*</label>
-                                <input type="url" name="insta" required class="form-control" id="insta" value="{{$insta}}">
+                                <input type="url" name="insta" class="form-control" id="insta" value="{{$insta}}">
                             </div>
 
                             <div class="form-group text-right mb-0">

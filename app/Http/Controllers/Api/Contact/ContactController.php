@@ -21,7 +21,7 @@ class ContactController extends MasterController
 
     public function contactTypes(): object
     {
-        $data = ContactType::all();
+        $data = ContactType::whereStatus(1)->get();
         $results = [];
         foreach ($data as $datum) {
             $result['id'] = $datum->id;

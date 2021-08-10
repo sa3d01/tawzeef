@@ -132,6 +132,11 @@ class JobController extends MasterController
             $users = Experience::where('experience_years', $request['experience_years'])->pluck('user_id')->toArray();
             $subscribes = $subscribes->whereIn('user_id', $users);
         }
+
+        $users=$subscribes->pluck('user_id')->toArray();
+        $active_users=User::whereIn('id',$users)->whereBanned(0)->pluck('id')->toArray();
+        $subscribes=$subscribes->whereIn('user_id',$active_users);
+
         $subscribes = $subscribes->latest()->get();
         $subscribes_arr = [];
         foreach ($subscribes as $subscribe) {

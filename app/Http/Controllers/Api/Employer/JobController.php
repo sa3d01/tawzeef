@@ -24,7 +24,11 @@ class JobController extends MasterController
         $user = auth('api')->user();
         $jobs_q = Job::query();
         $jobs_q = $jobs_q->where('major_id', $user->major_id);
-        $jobs = $jobs_q->where('end_date', '>', Carbon::now())->paginate(10);
+
+        $companies=$jobs_q->pluck('company_id')->toArray();
+        $active_companies=User::whereIn('id',$companies)->whereBanned(0)->pluck('id')->toArray();
+
+        $jobs = $jobs_q->whereIn('company_id',$active_companies)->where('end_date', '>', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
     public function expiredJobs(): object
@@ -32,7 +36,11 @@ class JobController extends MasterController
         $user = auth('api')->user();
         $jobs_q = Job::query();
         $jobs_q = $jobs_q->where('major_id', $user->major_id);
-        $jobs = $jobs_q->where('end_date', '<', Carbon::now())->paginate(10);
+
+        $companies=$jobs_q->pluck('company_id')->toArray();
+        $active_companies=User::whereIn('id',$companies)->whereBanned(0)->pluck('id')->toArray();
+
+        $jobs = $jobs_q->whereIn('company_id',$active_companies)->where('end_date', '<', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
 
@@ -89,7 +97,10 @@ class JobController extends MasterController
         if ($request['experience_years']) {
             $job_q = $job_q->where('experience_years', $request['experience_years']);
         }
-        $jobs = $job_q->latest()->get();
+        $companies=$job_q->pluck('company_id')->toArray();
+        $active_companies=User::whereIn('id',$companies)->whereBanned(0)->pluck('id')->toArray();
+
+        $jobs = $job_q->whereIn('company_id',$active_companies)->latest()->get();
         return $this->sendResponse(new JobCollection($jobs));
     }
     public function subscribeJob(Request $request)

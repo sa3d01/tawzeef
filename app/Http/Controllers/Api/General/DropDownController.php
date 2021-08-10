@@ -26,16 +26,16 @@ class DropDownController extends MasterController
 
     public function countries():object
     {
-        return $this->sendResponse(new CountryCollection(Country::all()));
+        return $this->sendResponse(new CountryCollection(Country::where('banned',0)->get()));
     }
 
     public function cities($countryId):object
     {
-        return $this->sendResponse(new CityCollection(City::where('country_id', $countryId)->get()));
+        return $this->sendResponse(new CityCollection(City::where('country_id', $countryId)->where('banned',0)->get()));
     }
     public function majors():object
     {
-        return $this->sendResponse(new MajorCollection(Major::where('parent_id',null)->get()));
+        return $this->sendResponse(new MajorCollection(Major::where('parent_id',null)->where('banned',0)->get()));
     }
     public function hearBy():object
     {
@@ -43,6 +43,6 @@ class DropDownController extends MasterController
     }
     public function subMajors($major_id):object
     {
-        return $this->sendResponse(new MajorCollection(Major::where('parent_id',$major_id)->get()));
+        return $this->sendResponse(new MajorCollection(Major::where('parent_id',$major_id)->where('banned',0)->get()));
     }
 }
