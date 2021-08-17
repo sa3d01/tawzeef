@@ -60,14 +60,14 @@ class Profile extends Model
 //        }
 //        return $arr;
 //    }
-    protected function setCommercialFileAttribute()
-    {
-        $image = request('commercial_file');
-        if (is_file($image)) {
-            $filename = $this->upload_file($image);
-            $this->attributes['commercial_file'] = $filename;
-        }
-    }
+//    protected function setCommercialFileAttribute()
+//    {
+//        $image = request('commercial_file');
+//        if (is_file($image)) {
+//            $filename = $this->upload_file($image);
+//            $this->attributes['commercial_file'] = $filename;
+//        }
+//    }
     protected function getCommercialFileAttribute(): string
     {
         try {
