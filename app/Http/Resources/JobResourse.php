@@ -7,6 +7,7 @@ use App\Models\JobSubscribe;
 use App\Models\Major;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
+use phpDocumentor\Reflection\Types\Object_;
 
 class JobResourse extends JsonResource
 {
@@ -16,7 +17,7 @@ class JobResourse extends JsonResource
         $arr['company'] = new SimpleCompanyResourse($this->company);
         if ($this->show_company==0)
         {
-            $arr['company']['foundation_name']="";
+            $arr['company']=new Object_();
         }
 
         $arr['major'] = new MajorResourse($this->major);
