@@ -14,7 +14,7 @@ class JobResourse extends JsonResource
     {
         $arr['id'] = (int)$this->id;
         $arr['company'] = new SimpleCompanyResourse($this->company);
-        if ($this->show_company==false)
+        if ($this->show_company==0)
         {
             $arr['company']['foundation_name']="";
         }
