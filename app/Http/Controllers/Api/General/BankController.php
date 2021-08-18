@@ -22,7 +22,7 @@ class BankController extends MasterController
 
     public function index()
     {
-        $banks = Bank::where('user_id', null)->get();
+        $banks = Bank::where('user_id', null)->whereBanned(0)->get();
         $result=[];
         $result['accounts']=new BankCollection($banks);
         $result['page']=new PageResourse(Page::where('type','bank')->latest()->first());

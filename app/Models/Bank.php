@@ -15,6 +15,7 @@ class Bank extends Model
         'name_ar',
         'name_en',
         'account_number',
+        'banned',
     ];
     private function upload_file($file)
     {

@@ -49,6 +49,19 @@
                                             <a href="{{route('admin.bank.edit',$row->id)}}">
                                                 <button class="btn btn-warning waves-effect waves-light"> <i class="fa fa-map-pin mr-1"></i> <span>تعديل</span> </button>
                                             </a>
+                                            @if($row->banned==0)
+                                                <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.bank.ban',[$row->id]) }}">
+                                                    @csrf
+                                                    {{ method_field('POST') }}
+                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
+                                                </form>
+                                            @else
+                                                <form class="activate" data-id="{{$row->id}}" method="POST" action="{{ route('admin.bank.activate',[$row->id]) }}">
+                                                    @csrf
+                                                    {{ method_field('POST') }}
+                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
+                                                </form>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>
