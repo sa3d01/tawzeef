@@ -123,7 +123,7 @@ class JobController extends MasterController
         Notification::create([
             'receiver_id'=>$job->company_id,
             'model'=>'JobSubscribe',
-            'model_id'=>$subscribed->id,
+            'model_id'=>$job->id,
             'note_ar'=>'لديك متقدم لوظيفة جديد من '.auth('api')->user()->profile->first_name,
             'note_en'=>' you have new form subscribe from '.auth('api')->user()->profile->first_name
         ]);
