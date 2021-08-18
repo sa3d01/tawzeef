@@ -99,7 +99,8 @@ class Profile extends Model
         $image = request('cover');
         $filename = null;
         if (is_file($image)) {
-            $filename = $this->upload_file($image);
+            $filename = Str::random(10) . '.' . $image->getClientOriginalExtension();
+            $image->move('media/images/user/', $filename);
         } elseif (filter_var($image, FILTER_VALIDATE_URL) === True) {
             $filename = $image;
         }
