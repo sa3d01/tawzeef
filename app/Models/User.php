@@ -178,6 +178,15 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne(Profile::class);
     }
 
+    public function name()
+    {
+        if ($this->profile){
+           return $this->profile->first_name.' '.$this->profile->last_name;
+        }else{
+            return '';
+        }
+    }
+
     public function experience(): object
     {
         return $this->hasOne(Experience::class);

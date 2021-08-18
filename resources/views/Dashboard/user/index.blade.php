@@ -27,7 +27,8 @@
                             <tbody>
                             @foreach($rows as $row)
                                 <tr>
-                                    <td>{{$row->profile->first_name.' '.$row->profile->last_name}}</td>
+
+                                    <td>{{$row->name()}}</td>
                                     <td>{{$row->phone}}</td>
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->major->name_ar}}</td>
