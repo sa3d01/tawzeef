@@ -30,7 +30,7 @@ class JobCollection extends ResourceCollection
             $arr['location']=$obj->location;
             $arr['published_at']=Carbon::parse($obj->start_date)->diffForHumans();
             $arr['my_job']=auth('api')->id()==$obj->company->id;
-            $arr['similar_majors']=new MajorCollection(Major::all());
+            $arr['similar_majors']=new MajorCollection(Major::whereBanned(0)->get());
             $arr['subscribed']=false;
             if (auth('api')->check()){
                 $subscribed=JobSubscribe::where([

@@ -33,7 +33,7 @@ class JobResourse extends JsonResource
         $arr['sex']=$this->sex??"";
         $arr['location']=$this->location;
         $arr['published_at']=Carbon::parse($this->start_date)->diffForHumans();
-        $arr['similar_majors']=new MajorCollection(Major::all());
+        $arr['similar_majors']=new MajorCollection(Major::whereBanned(0)->get());
         $arr['similar_jobs']=new JobCollection(Job::where('major_id',$this->major_id)->get());
         $arr['recommended_jobs']=new JobCollection(Job::where('major_id',$this->major_id)->get());
         $arr['start_date']=Carbon::parse($this->start_date)->format('Y-m-d');

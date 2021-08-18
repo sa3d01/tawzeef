@@ -35,7 +35,7 @@ class JobController extends MasterController
     {
         $user = auth('api')->user();
         $jobs_q = Job::query();
-        $jobs_q = $jobs_q->where('major_id', $user->major_id);
+      //  $jobs_q = $jobs_q->where('major_id', $user->major_id);
 
         $companies=$jobs_q->pluck('company_id')->toArray();
         $active_companies=User::whereIn('id',$companies)->whereBanned(0)->pluck('id')->toArray();

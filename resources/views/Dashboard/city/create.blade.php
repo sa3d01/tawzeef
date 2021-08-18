@@ -1,5 +1,5 @@
 @extends('Dashboard.layouts.master')
-@section('title', 'إضافة دولة')
+@section('title', 'إضافة مدينة')
 @section('styles')
     <link href="{{asset('assets/libs/dropify/dist/css/dropify.min.css')}}" rel="stylesheet" type="text/css" />
 @endsection
