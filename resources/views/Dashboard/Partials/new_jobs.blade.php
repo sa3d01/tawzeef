@@ -15,7 +15,7 @@
                     <div class="inbox-item">
                     <a href="#">
                         <div class="inbox-item-img"><img style="height: 40px;width: 40px" src="{{$contact->user->avatar}}" class="rounded-circle" alt="{{$contact->user->profile->foundation_name}}"></div>
-                        <h5 class="inbox-item-author mt-0 mb-1">{{$contact->user->name}}</h5>
+                        <h5 class="inbox-item-author mt-0 mb-1">{{$contact->user->name()}}</h5>
                         <p class="inbox-item-text">{{\Illuminate\Support\Str::limit($contact->message,100)}}</p>
                         <p class="inbox-item-date">{{\Carbon\Carbon::parse($contact->created_at)->diffForHumans()}}</p>
                     </a>
