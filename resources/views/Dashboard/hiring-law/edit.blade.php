@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label for="image">الشعار</label>
                                 <div class="card-box">
-                                    <input name="image" id="input-file-now-custom-1 image" type="file" class="dropify"  data-default-file="{{$row->media}}" />
+                                    <input name="image" id="input-file-now-custom-1 image" type="file" class="dropify"  data-default-file="{{$row->image}}" />
                                 </div>
                             </div>
                             <div class="form-group text-right mb-0">
