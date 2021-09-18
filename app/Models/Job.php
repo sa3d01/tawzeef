@@ -83,7 +83,7 @@ class Job extends Model
     }
     public function getStatusArabic():string
     {
-        if ($this['end_date']< Carbon::now()){
+        if ($this['end_date'] > Carbon::now()){
             return "جديد";
         }else{
             return "منتهي";

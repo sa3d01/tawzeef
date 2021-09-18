@@ -52,7 +52,7 @@
                         </td>
                         <td>{{\Carbon\Carbon::parse($job->created_at)->format('Y-M-d')}}</td>
                         <td>{{\Carbon\Carbon::parse($job->end_date)->format('Y-M-d')}}</td>
-                        <td><span class="badge @if($job->end_date>\Carbon\Carbon::now()) badge-danger  @else badge-warning @endif">{{$job->getStatusArabic()}}</span></td>
+                        <td><span class="badge @if($job->end_date < \Carbon\Carbon::now()) badge-danger  @else badge-warning @endif">{{$job->getStatusArabic()}}</span></td>
                         <td>{{$job->major->name_ar}}</td>
 {{--                        <td>--}}
 {{--                            <a href="{{route('admin.job.show',$job->id)}}">--}}
