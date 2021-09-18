@@ -13,7 +13,7 @@ class BlogResource extends JsonResource
     {
         return [
             'id' => (int)$this->id,
-            'writer' => $this->writer->name??"",
+            'writer' => $this->writer->name()??"",
             'title' => [
                 'ar' => $this->title_ar,
                 'en' => $this->title_en
