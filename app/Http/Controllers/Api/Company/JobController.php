@@ -11,7 +11,9 @@ use App\Http\Resources\SimpleJobResourse;
 use App\Http\Resources\SimpleUserResourse;
 use App\Models\Experience;
 use App\Models\Job;
+use App\Models\JobRequired;
 use App\Models\JobSubscribe;
+use App\Models\Notification;
 use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
@@ -48,13 +50,25 @@ class JobController extends MasterController
         $data = $request->validated();
         $data['company_id'] = auth('api')->id();
         $job = Job::create($data);
-//        Notification::create([
-//            'receiver_id'=>$id,
-//            'model'=>'Message',
-//            'model_id'=>$message->id,
-//            'note_ar'=>'لديك رسالة جديدة من '.$name,
-//            'note_en'=>' you have new message from '.$name
-//        ]);
+
+        $job_required=JobRequired::where(
+            [
+                'major_id'=>$request['major_id'],
+                'level'=>$request['level'],
+                'working_type'=>$request['working_type'],
+            ]
+        )->pluck('user_id')->toArray();
+        foreach ($job_required as $user_id)
+        {
+            Notification::create([
+                'receiver_id'=>$user_id,
+                'model'=>'Job',
+                'model_id'=>$job->id,
+                'note_ar'=>'يوجد وظيفة جديدة :'.$job->job_title,
+                'note_en'=>' you have new job : '.$job->job_title
+            ]);
+        }
+
         return $this->sendResponse(new JobResourse($job));
     }
 
