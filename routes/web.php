@@ -82,5 +82,6 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::get('blog_type/blog/create', 'BlogController@createBlog')->name('blogs.create-blog');
 
     Route::resource('blog', 'BlogController');
+    Route::resource('hiring_law', 'HiringLawController');
 
 });
