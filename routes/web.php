@@ -75,4 +75,12 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::get('page/{type}/{for}', 'PageController@page')->name('page.edit');
     Route::put('page/{id}', 'PageController@update')->name('page.update');
 
+    Route::get('blog_type/new', 'BlogController@news')->name('blogs.new');
+    Route::get('blog_type/new/create', 'BlogController@createNew')->name('blogs.create-new');
+
+    Route::get('blog_type/blog', 'BlogController@blogs')->name('blogs.blog');
+    Route::get('blog_type/blog/create', 'BlogController@createBlog')->name('blogs.create-blog');
+
+    Route::resource('blog', 'BlogController');
+
 });

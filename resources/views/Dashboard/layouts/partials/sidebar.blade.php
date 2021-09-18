@@ -30,6 +30,19 @@
         </li>
 
         <li>
+            <a href="javascript: void(0);">
+                <i class="mdi mdi-source-branch"></i>
+                <span> إدارة المصادر </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level" aria-expanded="false">
+                <li><a href="{{route('admin.blogs.new')}}">أخبار العمل</a></li>
+                <li><a href="{{route('admin.blogs.blog')}}">المدونة</a></li>
+                <li><a href="{{route('admin.hiring_law.index')}}">قانون العمل</a></li>
+            </ul>
+        </li>
+
+        <li>
             <a href="{{route('admin.contact.index')}}">
                 <i class="mdi mdi-mailbox"></i>
                 <span> إدارة رسائل التواصل </span>
