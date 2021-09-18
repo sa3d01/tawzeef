@@ -47,7 +47,7 @@
                                         <label for="file">شهادة التخرج</label>
                                         <div class="wrapper">
                                             <div class="file-upload">
-                                                <input disabled value="{{$user->qualification->graduation_file}}" id="graduation_file" name="file" type="file"/>
+                                                <input value="{{$user->qualification->graduation_file}}" id="graduation_file" name="file" type="file"/>
                                             </div>
                                         </div>
                                     </div>
