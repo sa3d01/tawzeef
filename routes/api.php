@@ -89,6 +89,7 @@ Route::group([
         Route::post('job-email', 'JobController@emailNewJob');
         Route::get('majors', 'JobController@majors');
         Route::get('majors/{id}/jobs', 'JobController@majorJobs');
+        Route::get('job/{id}', 'JobController@show');
         Route::get('hiring-agents', 'JobController@hiringAgents');
         Route::get('active-companies', 'JobController@activeCompanies');
         Route::get('hiring-laws', 'JobController@hiringLaws');
