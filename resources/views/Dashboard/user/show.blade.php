@@ -40,22 +40,7 @@
                             <li class="list-group-item"><strong>التقدير : </strong><span>{{$user->qualification->graduation_degree}}</span></li>
                             <li class="list-group-item"><strong>التخصص : </strong><span>{{$user->qualification->specialization}}</span></li>
                             <li class="list-group-item"><strong>شهادة التخرج : </strong>
-
-                                <div class="card-body">
-                                    <h4 class="card-title">شهادة التخرج</h4>
-                                    <div class="col-sm-12">
-                                        <label for="file">شهادة التخرج</label>
-                                        <div class="wrapper">
-                                            <div class="file-upload">
-                                                <input value="{{$user->qualification->graduation_file}}" id="graduation_file" name="file" type="file"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="col-sm-12 form-group" id="file_preview"></div>
-                                </div>
-
-{{--                                    <img class="card-img-top img-fluid" style="max-height: 100px;max-width: 100px" src="{{$user->qualification->graduation_file}}">--}}
+                                <iframe id="iframe" src="{{$user->qualification->graduation_file}}" style="width:100%; height:500px;" frameborder="0"></iframe>
                             </li>
                         </ul>
                     </div>
@@ -68,13 +53,3 @@
     </div>
 @endsection
 
-@section('script')
-    <script type="text/javascript">
-        var total_file=document.getElementById("graduation_file").files.length;
-        for(var i=0;i<total_file;i++)
-        {
-            $('#file_preview').append("" +
-                "<iframe src='"+URL.createObjectURL(event.target.files[i])+"' style='width:100%; height:250px;'></iframe>");
-        }
-    </script>
-@endsection
