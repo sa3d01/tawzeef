@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,6 +255,7 @@
       <workItem from="1629202933610" duration="1309000" />
       <workItem from="1629209940138" duration="660000" />
       <workItem from="1629309061223" duration="9109000" />
+      <workItem from="1631977384233" duration="3389000" />
     </task>
     <task id="LOCAL-00053" summary="admin-panel \ hiring-agent">
       <created>1624836718658</created>
