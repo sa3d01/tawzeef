@@ -21,6 +21,7 @@ class SimpleUserResourse extends JsonResource
         return [
             'id' => (int)$this->id,
             'premium'=>$this->profile?$this->profile->premium==1:false,
+            'completedProfileRatio'=>$this->completedProfileRatio(),
             'type' => $this->type,
             'email' => $this->email,
             'avatar' => $this->avatar,

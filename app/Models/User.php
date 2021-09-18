@@ -180,10 +180,19 @@ class User extends Authenticatable implements JWTSubject
 
     public function name()
     {
-        if ($this->profile){
-           return $this->profile->first_name.' '.$this->profile->last_name;
+        if ($this->type=='COMPANY')
+        {
+            if ($this->profile){
+                return $this->profile->foundation_name;
+            }else{
+                return '';
+            }
         }else{
-            return '';
+            if ($this->profile){
+                return $this->profile->first_name.' '.$this->profile->last_name;
+            }else{
+                return '';
+            }
         }
     }
 

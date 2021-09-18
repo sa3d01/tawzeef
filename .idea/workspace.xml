@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="dash">
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/notifications.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,21 +256,7 @@
       <workItem from="1629202933610" duration="1309000" />
       <workItem from="1629209940138" duration="660000" />
       <workItem from="1629309061223" duration="9109000" />
-      <workItem from="1631977384233" duration="6805000" />
-    </task>
-    <task id="LOCAL-00059" summary="reset password">
-      <created>1625345459194</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1625345459194</updated>
-    </task>
-    <task id="LOCAL-00060" summary="reset password">
-      <created>1625345523242</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1625345523242</updated>
+      <workItem from="1631977384233" duration="9269000" />
     </task>
     <task id="LOCAL-00061" summary="reset password">
       <created>1625345747275</created>
@@ -601,7 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631985595020</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="api">
+      <created>1631987151882</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1631987151882</updated>
+    </task>
+    <task id="LOCAL-00109" summary="api">
+      <created>1631987344345</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1631987344345</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,6 +638,7 @@
     <MESSAGE value="verify pause" />
     <MESSAGE value="edits" />
     <MESSAGE value="dash" />
-    <option name="LAST_COMMIT_MESSAGE" value="dash" />
+    <MESSAGE value="api" />
+    <option name="LAST_COMMIT_MESSAGE" value="api" />
   </component>
 </project>
