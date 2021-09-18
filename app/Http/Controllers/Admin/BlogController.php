@@ -46,11 +46,13 @@ class BlogController extends MasterController
         $data = $request->all();
         $this->model->create($data);
         if ($request['type']=='new'){
-            $rows = $this->model->where('type','blog')->latest()->get();
+            $type='new';
+            $rows = $this->model->where('type','new')->latest()->get();
             return view('Dashboard.blog.index', compact('rows','type'));
         }else{
             $type='blog';
-            return view('Dashboard.blog.create',compact('type'));
+            $rows = $this->model->where('type','blog')->latest()->get();
+            return view('Dashboard.blog.index', compact('rows','type'));
         }
     }
     public function edit($id): object
