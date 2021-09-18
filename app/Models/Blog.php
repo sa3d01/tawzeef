@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Blog extends Model
 {
@@ -26,6 +27,21 @@ class Blog extends Model
     {
         return $this->hasMany(BlogComment::class,'blog_id','id');
     }
+    private function upload_file($file)
+    {
+        $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $file->move('media/images/blog/', $filename);
+        return $filename;
+    }
+    protected function setMediaAttribute()
+    {
+        $logo = request('media');
+        if (is_file($logo)) {
+            $filename = $this->upload_file($logo);
+            $this->attributes['media'] = $filename;
+        }
+    }
+
     protected function getMediaAttribute(): string
     {
         try {

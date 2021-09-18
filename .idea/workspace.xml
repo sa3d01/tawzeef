@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="api">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/blog/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/blog/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/blog/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="blog" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,28 +252,7 @@
       <workItem from="1629202933610" duration="1309000" />
       <workItem from="1629209940138" duration="660000" />
       <workItem from="1629309061223" duration="9109000" />
-      <workItem from="1631977384233" duration="11777000" />
-    </task>
-    <task id="LOCAL-00063" summary="reset password">
-      <created>1625346224587</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1625346224587</updated>
-    </task>
-    <task id="LOCAL-00064" summary="reset password">
-      <created>1625346628455</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1625346628455</updated>
-    </task>
-    <task id="LOCAL-00065" summary="hear by">
-      <created>1625348958981</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1625348958981</updated>
+      <workItem from="1631977384233" duration="12081000" />
     </task>
     <task id="LOCAL-00066" summary="hear by">
       <created>1625350100990</created>
@@ -605,7 +576,28 @@
       <option name="project" value="LOCAL" />
       <updated>1631990095937</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="blog">
+      <created>1631992499942</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1631992499942</updated>
+    </task>
+    <task id="LOCAL-00113" summary="blog">
+      <created>1631992556777</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1631992556777</updated>
+    </task>
+    <task id="LOCAL-00114" summary="blog">
+      <created>1631992704066</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1631992704066</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +622,6 @@
     <MESSAGE value="company" />
     <MESSAGE value="employer" />
     <MESSAGE value="employer-company" />
-    <MESSAGE value="blog" />
     <MESSAGE value="bugs" />
     <MESSAGE value="new domain configs" />
     <MESSAGE value="admin-panel" />
@@ -643,6 +634,7 @@
     <MESSAGE value="edits" />
     <MESSAGE value="dash" />
     <MESSAGE value="api" />
-    <option name="LAST_COMMIT_MESSAGE" value="api" />
+    <MESSAGE value="blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog" />
   </component>
 </project>
