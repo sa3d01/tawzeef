@@ -1,5 +1,5 @@
 @extends('Dashboard.layouts.master')
-@if($type=='new')
+@if($row->type=='new')
     @section('title', 'تعديل خبر')
 @else
     @section('title', 'تعديل تدوينة')
