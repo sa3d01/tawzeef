@@ -20,6 +20,8 @@
                                 <th>البريد الالكتروني</th>
                                 <th>التخصص</th>
                                 <th>المدينة</th>
+                                <th>من اين سمعت عنا</th>
+                                <th>نسبةاكتمال السيرة الذاتية</th>
                                 <th>الحالة</th>
                                 <th>العمليات المتاحة</th>
                             </tr>
@@ -33,6 +35,8 @@
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->major->name_ar}}</td>
                                     <td>{{$row->city->name_ar}}</td>
+                                    <td>{{$row->hear_by->name_ar}}</td>
+                                    <td>{{$row->completedProfileRatio() }} %</td>
                                     <td>
                                         <span class="badge @if($row->banned==0) badge-success @else badge-danger @endif">
                                             {{$row->banned==0?'مفعل':'غير مفعل'}}
