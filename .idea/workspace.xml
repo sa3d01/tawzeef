@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="blog">
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/hiring-law/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/hiring-law/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleCompanyResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserLoginResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserLoginResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResourse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,14 +259,8 @@
       <workItem from="1629202933610" duration="1309000" />
       <workItem from="1629209940138" duration="660000" />
       <workItem from="1629309061223" duration="9109000" />
-      <workItem from="1631977384233" duration="13104000" />
-    </task>
-    <task id="LOCAL-00070" summary="edits">
-      <created>1625690548736</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1625690548737</updated>
+      <workItem from="1631977384233" duration="13750000" />
+      <workItem from="1632840556813" duration="959000" />
     </task>
     <task id="LOCAL-00071" summary="api -- training courses">
       <created>1625760889498</created>
@@ -599,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631993683924</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="blog">
+      <created>1631993800075</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1631993800075</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

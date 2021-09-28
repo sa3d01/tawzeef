@@ -24,6 +24,7 @@ class SimpleUserResourse extends JsonResource
             'completedProfileRatio'=>$this->completedProfileRatio(),
             'type' => $this->type,
             'email' => $this->email,
+            'phone' => $this->phone,
             'avatar' => $this->avatar,
             'first_name' => $this->profile?$this->profile->first_name:"",
             'last_name' => $this->profile?$this->profile->last_name:"",

@@ -28,6 +28,7 @@ class UserResourse extends JsonResource
             'latest_updated_at' => Carbon::parse($this->profile->updated_at)->format('Y-m-d'),
             'completedProfileRatio'=>$this->completedProfileRatio(),
             'socials'=>$this->socials?new SocialResourse($this->socials):new Object_(),
+            'phone' => $this->phone??"",
             'contacts'=>[
                 'phone' => $this->phone??"",
                 'email' => $this->email,

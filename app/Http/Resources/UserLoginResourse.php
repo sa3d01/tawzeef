@@ -26,6 +26,7 @@ class UserLoginResourse extends JsonResource
                 'id' => (int)$this->id,
                 'premium'=>$this->profile->premium==1,
                 'type' => $this->type,
+                'phone' => $this->phone,
                 'email' => $this->email,
                 'avatar' => $this->avatar,
                 'first_name' => $this->profile->first_name,

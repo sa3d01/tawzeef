@@ -25,7 +25,7 @@ class QulificationUpdateRequest extends ApiMasterRequest
     {
         return [
             'qualification_type' => 'required|in:secondary,diploma,bachelor,ma,phd',
-            'foundation_name' => 'required|string|max:110',
+            'foundation_name' => 'nullable|string|max:110',
             'country_id' => 'required|numeric|exists:countries,id',
             'city_id' => 'required|numeric|exists:cities,id',
             'average_calculation_system'=>'nullable|string|max:110',
