@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="jimmy edits">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/JobCollection.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="error edits" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,21 +256,7 @@
       <workItem from="1632840556813" duration="2008000" />
       <workItem from="1632857814571" duration="1068000" />
       <workItem from="1633262093683" duration="87000" />
-      <workItem from="1633265697138" duration="311000" />
-    </task>
-    <task id="LOCAL-00072" summary="api -- training courses">
-      <created>1625761133632</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1625761133632</updated>
-    </task>
-    <task id="LOCAL-00073" summary="api -- training courses">
-      <created>1625761322406</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1625761322406</updated>
+      <workItem from="1633265697138" duration="657000" />
     </task>
     <task id="LOCAL-00074" summary="verify pause">
       <created>1625848563067</created>
@@ -604,7 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632841943147</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="error edits">
+      <created>1633266210947</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1633266210948</updated>
+    </task>
+    <task id="LOCAL-00122" summary="error edits">
+      <created>1633266347974</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1633266347974</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,6 +640,7 @@
     <MESSAGE value="api" />
     <MESSAGE value="blog" />
     <MESSAGE value="jimmy edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="jimmy edits" />
+    <MESSAGE value="error edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="error edits" />
   </component>
 </project>
