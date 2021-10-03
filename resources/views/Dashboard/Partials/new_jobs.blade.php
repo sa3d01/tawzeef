@@ -49,7 +49,7 @@
                         <td>{{$job->id}}</td>
                         <td>
                             <a href="{{route('admin.company.show',$job->company_id)}}">
-                            {{$job->company->name()}}
+                            {{$job->company?$job->company->name():$job->company_id}}
                             </a>
                         </td>
                         <td>{{\Carbon\Carbon::parse($job->created_at)->format('Y-M-d')}}</td>
