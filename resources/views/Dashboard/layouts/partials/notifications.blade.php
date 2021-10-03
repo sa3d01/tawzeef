@@ -18,31 +18,7 @@
         @endif
         @if(count($notifications)>0)
         <div class="slimscroll noti-scroll">
-            @foreach($notifications as $notification)
-                @if($notification->more_details['type']=='contact')
-                    <a href="{{route('admin.contact.index')}}" class="dropdown-item notify-item @if($notification->read=='true') active @endif">
-                        <div class="notify-icon bg-primary">
-                            @php
-                                $contact=\App\Models\Contact::find($notification->more_details['contact_id']);
-                            @endphp
-                            <i class="mdi mdi-mailbox"></i>
-                        </div>
-                        <p class="notify-details">رسالة تواصل من :{{$contact->user->name()}}</p>
-                        <p class="text-muted mb-0 user-msg">
-                            <small>{{\Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}</small>
-                        </p>
-                    </a>
-                @else
-                    <a href="{{route('admin.wallet-pay.index')}}" class="dropdown-item notify-item @if($notification->read=='true') active @endif">
-                        <div class="notify-icon bg-primary">
-                            <i class="mdi mdi-bank-transfer"></i>
-                        </div>
-                        <p class="notify-details">{{$notification->note}}
-                            <small>{{\Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}</small>
-                        </p>
-                    </a>
-                @endif
-            @endforeach
+
         </div>
         @else
             <div class="slimscroll noti-scroll">

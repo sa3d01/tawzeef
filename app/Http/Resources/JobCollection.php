@@ -32,7 +32,9 @@ class JobCollection extends ResourceCollection
             $arr['my_job']=auth('api')->id()==$obj->company->id;
             $arr['similar_majors']=new MajorCollection(Major::whereBanned(0)->get());
             $arr['subscribed']=false;
+            $arr['my_job']=false;
             if (auth('api')->check()){
+                $arr['my_job']=auth('api')->id()==$obj->company->id;
                 $subscribed=JobSubscribe::where([
                     'user_id'=>auth('api')->id(),
                     'job_id'=>$obj->id,
