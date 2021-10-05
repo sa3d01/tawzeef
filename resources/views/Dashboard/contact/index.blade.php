@@ -24,6 +24,9 @@
                             </thead>
                             <tbody>
                             @foreach($rows as $row)
+                                @if(!$row->user)
+                                    @continue
+                                @endif
                                 <tr>
                                     <td>
                                         @if($row->user->type=='USER')
