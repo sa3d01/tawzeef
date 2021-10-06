@@ -32,7 +32,7 @@ class ExperienceUpdateRequest extends ApiMasterRequest
             'job_description' => 'nullable|string|max:500',
             'start_date' => 'required|date|before:today',
             'end_date' => 'nullable|date|after:start_date|before:today',
-            'foundation_name' => 'required|string|max:110',
+            'foundation_name' => 'nullable|string|max:110',
             'foundation_members_count' => 'nullable|string|max:110',
             'latest_salary' => 'nullable',
         ];

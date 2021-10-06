@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="error edits">
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="contact index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,14 +260,7 @@
       <workItem from="1633262093683" duration="87000" />
       <workItem from="1633265697138" duration="1040000" />
       <workItem from="1633362492881" duration="36000" />
-      <workItem from="1633439375969" duration="598000" />
-    </task>
-    <task id="LOCAL-00076" summary="edits">
-      <created>1628080738536</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1628080738536</updated>
+      <workItem from="1633439375969" duration="1864000" />
     </task>
     <task id="LOCAL-00077" summary="edits">
       <created>1628081672310</created>
@@ -605,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633266614439</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="contact index">
+      <created>1633449740322</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1633449740322</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,6 +645,7 @@
     <MESSAGE value="blog" />
     <MESSAGE value="jimmy edits" />
     <MESSAGE value="error edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="error edits" />
+    <MESSAGE value="contact index" />
+    <option name="LAST_COMMIT_MESSAGE" value="contact index" />
   </component>
 </project>
