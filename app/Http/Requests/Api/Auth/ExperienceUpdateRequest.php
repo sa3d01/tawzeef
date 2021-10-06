@@ -24,7 +24,7 @@ class ExperienceUpdateRequest extends ApiMasterRequest
     public function rules()
     {
         return [
-            'experience_years'=>'nullable|string|max:110',
+            'experience_years'=>'nullable',
             'job_title'=>'nullable|string|max:110',
             'major_id' => 'nullable|numeric|exists:majors,id',
             'foundation_major_id' => 'nullable|numeric|exists:majors,id',
@@ -33,7 +33,7 @@ class ExperienceUpdateRequest extends ApiMasterRequest
             'start_date' => 'nullable|date|before:today',
             'end_date' => 'nullable|date|after:start_date|before:today',
             'foundation_name' => 'nullable|string|max:110',
-            'foundation_members_count' => 'nullable|string|max:110',
+            'foundation_members_count' => 'nullable',
             'latest_salary' => 'nullable',
         ];
     }
