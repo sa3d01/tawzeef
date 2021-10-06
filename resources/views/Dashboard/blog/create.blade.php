@@ -6,6 +6,7 @@
 @endif
 @section('styles')
     <link href="{{asset('assets/libs/dropify/dist/css/dropify.min.css')}}" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 @endsection
 @section('content')
     <div class="content">
@@ -41,7 +42,7 @@
                                 <textarea name="note_ar" required class="form-control" id="note_ar"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="note_en">العنوان باللغة الانجليزية*</label>
+                                <label for="note_en">النص باللغة الانجليزية*</label>
                                 <textarea name="note_en" required class="form-control" id="note_en"></textarea>
                             </div>
 
@@ -65,6 +66,10 @@
 @endsection
 @section('script')
     <script src="{{asset('assets/libs/dropify/dist/js/dropify.min.js')}}"></script>
+    <script>
+        CKEDITOR.replace( 'note_ar' );
+        CKEDITOR.replace( 'note_en' );
+    </script>
     <script>
         $(document).ready(function() {
             // Basic
