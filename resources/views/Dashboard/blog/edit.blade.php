@@ -5,6 +5,7 @@
     @section('title', 'تعديل تدوينة')
 @endif
 @section('styles')
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <link href="{{asset('assets/libs/dropify/dist/css/dropify.min.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
@@ -101,7 +102,10 @@
             })
         });
     </script>
-
+    <script>
+        CKEDITOR.replace( 'note_ar' );
+        CKEDITOR.replace( 'note_en' );
+    </script>
     <!-- Validation js (Parsleyjs) -->
     <script src="{{asset('assets/libs/parsleyjs/parsley.min.js')}}"></script>
     <!-- validation init -->
