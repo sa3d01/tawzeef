@@ -14,10 +14,14 @@
                 @foreach(\App\Models\Contact::where('read',false)->get() as $contact)
                     <div class="inbox-item">
                     <a href="#">
+                        @if($contact->user)
                         <div class="inbox-item-img">
                             <img style="height: 40px;width: 40px" src="{{$contact->user->avatar}}" class="rounded-circle" alt="{{$contact->user->name()}}">
                         </div>
-                        <h5 class="inbox-item-author mt-0 mb-1">{{$contact->user->name()}}</h5>
+                        @else
+                            <h5 class="inbox-item-author mt-0 mb-1">{{$contact->phone}}</h5>
+                        @endif
+                        <h5 class="inbox-item-author mt-0 mb-1">{{$contact->user?$contact->user->name():$contact->name}}</h5>
                         <p class="inbox-item-text">{{\Illuminate\Support\Str::limit($contact->message,100)}}</p>
                         <p class="inbox-item-date">{{\Carbon\Carbon::parse($contact->created_at)->diffForHumans()}}</p>
                     </a>
