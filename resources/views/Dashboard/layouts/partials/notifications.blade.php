@@ -27,7 +27,7 @@
                             @endphp
                             <i class="mdi mdi-mailbox"></i>
                         </div>
-                        <p class="notify-details">رسالة تواصل من :{{$contact->user->name()}}</p>
+                        <p class="notify-details">رسالة تواصل من :{{$contact->user?$contact->user->name():$contact->name}}</p>
                         <p class="text-muted mb-0 user-msg">
                             <small>{{\Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}</small>
                         </p>
