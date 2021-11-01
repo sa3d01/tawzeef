@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="mail">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="test mail" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,14 +262,7 @@
       <workItem from="1633527320217" duration="5689000" />
       <workItem from="1633879694769" duration="969000" />
       <workItem from="1635348562546" duration="2633000" />
-      <workItem from="1635779121261" duration="1550000" />
-    </task>
-    <task id="LOCAL-00086" summary="edits">
-      <created>1628598982735</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1628598982736</updated>
+      <workItem from="1635779121261" duration="1856000" />
     </task>
     <task id="LOCAL-00087" summary="edits">
       <created>1629026197491</created>
@@ -609,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635348677118</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="test mail">
+      <created>1635781502019</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1635781502020</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +627,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial" />
     <MESSAGE value="profile user" />
     <MESSAGE value="company" />
     <MESSAGE value="employer" />
@@ -654,6 +651,7 @@
     <MESSAGE value="ckeditor" />
     <MESSAGE value="contact without user" />
     <MESSAGE value="mail" />
-    <option name="LAST_COMMIT_MESSAGE" value="mail" />
+    <MESSAGE value="test mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="test mail" />
   </component>
 </project>
