@@ -54,8 +54,8 @@ class JobController extends MasterController
         $job_required=JobRequired::where(
             [
                 'major_id'=>$request['major_id'],
-                'level'=>$request['level'],
-                'working_type'=>$request['working_type'],
+                //'level'=>$request['level'],
+                //'working_type'=>$request['working_type'],
             ]
         )->pluck('user_id')->toArray();
         foreach ($job_required as $user_id)
