@@ -17,6 +17,9 @@ class MessageCollection extends ResourceCollection
     {
         $data=[];
         foreach ($this as $obj){
+            if (!$obj->sender){
+                continue;
+            }
             if ($obj->sender->type=='USER'){
                 $sender=new SimpleUserResourse($obj->sender);
             }else{
