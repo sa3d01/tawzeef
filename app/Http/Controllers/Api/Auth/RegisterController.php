@@ -82,6 +82,8 @@ class RegisterController extends MasterController
             'user_id' => $user->id,
             'token' => sha1(time())
         ]);
+        Mail::to($user->email)->send(new VerifyMail($user));
+
         try {
             Mail::to($user->email)->send(new VerifyMail($user));
         }catch (\Exception $e){
