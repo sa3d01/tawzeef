@@ -11,6 +11,8 @@ class Experience extends Model
     protected $fillable = [
         'user_id',
         'experience_years',
+        'company_name',
+        'previous_experience',
         'job_title',
         'major_id',
         'country_id',

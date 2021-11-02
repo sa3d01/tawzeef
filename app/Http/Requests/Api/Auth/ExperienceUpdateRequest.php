@@ -25,6 +25,8 @@ class ExperienceUpdateRequest extends ApiMasterRequest
     {
         return [
             'experience_years'=>'nullable',
+            'company_name'=>'nullable',
+            'previous_experience'=>'nullable',
             'job_title'=>'nullable|string|max:110',
             'major_id' => 'nullable|numeric|exists:majors,id',
             'foundation_major_id' => 'nullable|numeric|exists:majors,id',

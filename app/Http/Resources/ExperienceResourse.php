@@ -13,6 +13,8 @@ class ExperienceResourse extends JsonResource
         return [
             'experience_years'=>$this->experience_years??"",
             'job_title'=>$this->job_title??"",
+            'company_name'=>$this->company_name??"",
+            'previous_experience'=>$this->previous_experience??"",
             'major' => new MajorResourse($this->major),
             'country' => new CountryResourse($this->country),
             'job_description'=>$this->job_description??"",

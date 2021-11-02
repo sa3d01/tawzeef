@@ -18,6 +18,8 @@ class CreateExperiencesTable extends Migration
             $table->foreignId('user_id')->nullable();
             $table->integer('experience_years')->default(0);
             $table->string('job_title')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('previous_experience')->nullable();
             $table->text('job_description')->nullable();
             $table->foreignId('major_id')->nullable();
             $table->foreignId('country_id')->nullable();
