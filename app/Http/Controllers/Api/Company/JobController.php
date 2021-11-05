@@ -160,7 +160,14 @@ class JobController extends MasterController
             $subscribe_arr['subscribed_from'] = Carbon::parse($subscribe->created_at)->diffForHumans();
             $subscribes_arr[] = $subscribe_arr;
         }
-        return $this->sendResponse($subscribes_arr);
+        $response = [
+            'status' => 200,
+            'message' => '',
+            'data' => $subscribes_arr,
+            'employees_count' => count($subscribes),
+        ];
+        return response()->json($response);
+//        return $this->sendResponse($subscribes_arr);
     }
 
 }

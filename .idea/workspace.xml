@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="notify new job">
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="Experience">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/ExperienceUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/ExperienceUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/JobRequiredUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/JobRequiredUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Experience.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Experience.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_24_205845_create_experiences_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_24_205845_create_experiences_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,14 +265,11 @@
       <workItem from="1633527320217" duration="5689000" />
       <workItem from="1633879694769" duration="969000" />
       <workItem from="1635348562546" duration="2633000" />
-      <workItem from="1635779121261" duration="7170000" />
-    </task>
-    <task id="LOCAL-00092" summary="edits">
-      <created>1629312274088</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1629312274088</updated>
+      <workItem from="1635779121261" duration="8061000" />
+      <workItem from="1636041582057" duration="1501000" />
+      <workItem from="1636047305412" duration="306000" />
+      <workItem from="1636047737086" duration="600000" />
+      <workItem from="1636070879010" duration="463000" />
     </task>
     <task id="LOCAL-00093" summary="edits">
       <created>1629312793152</created>
@@ -613,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635783995989</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Experience">
+      <created>1635870567121</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1635870567121</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +634,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="company" />
     <MESSAGE value="employer" />
     <MESSAGE value="employer-company" />
     <MESSAGE value="bugs" />
@@ -658,6 +658,7 @@
     <MESSAGE value="mail" />
     <MESSAGE value="test mail" />
     <MESSAGE value="notify new job" />
-    <option name="LAST_COMMIT_MESSAGE" value="notify new job" />
+    <MESSAGE value="Experience" />
+    <option name="LAST_COMMIT_MESSAGE" value="Experience" />
   </component>
 </project>
