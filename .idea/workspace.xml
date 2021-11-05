@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="count">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/company/index.blade.php" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company profile">
       <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/company/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/company/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -270,14 +268,7 @@
       <workItem from="1636041582057" duration="1501000" />
       <workItem from="1636047305412" duration="306000" />
       <workItem from="1636047737086" duration="600000" />
-      <workItem from="1636070879010" duration="1460000" />
-    </task>
-    <task id="LOCAL-00094" summary="edits">
-      <created>1629312908721</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1629312908721</updated>
+      <workItem from="1636070879010" duration="1776000" />
     </task>
     <task id="LOCAL-00095" summary="edits">
       <created>1629313344242</created>
@@ -615,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636072034491</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="company profile">
+      <created>1636072596328</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1636072596328</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="employer-company" />
     <MESSAGE value="bugs" />
     <MESSAGE value="new domain configs" />
     <MESSAGE value="admin-panel" />
@@ -660,6 +657,7 @@
     <MESSAGE value="notify new job" />
     <MESSAGE value="Experience" />
     <MESSAGE value="count" />
-    <option name="LAST_COMMIT_MESSAGE" value="count" />
+    <MESSAGE value="company profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="company profile" />
   </component>
 </project>
