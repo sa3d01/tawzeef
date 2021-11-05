@@ -11,7 +11,7 @@
                         <h4 class="header-title mt-0 mb-3">المعلومات الشخصية</h4>
                         <img class="card-img-top img-fluid" style="max-height: 400px" src="{{$user->avatar}}" alt="avatar">
                         <div class="card-body">
-                            <h4 class="card-title">{{$user->name}}</h4>
+                            <h4 class="card-title">{{$user->name()}}</h4>
                             <p class="card-text">ID : {{$user->id}}</p>
                         </div>
                         <ul class="list-group list-group-flush">
