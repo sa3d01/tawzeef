@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company profile" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company profile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/company/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/company/show.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -266,28 +269,7 @@
       <workItem from="1636041582057" duration="1501000" />
       <workItem from="1636047305412" duration="306000" />
       <workItem from="1636047737086" duration="600000" />
-      <workItem from="1636070879010" duration="2087000" />
-    </task>
-    <task id="LOCAL-00100" summary="edits">
-      <created>1629316377305</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1629316377305</updated>
-    </task>
-    <task id="LOCAL-00101" summary="edits">
-      <created>1629324284471</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1629324284471</updated>
-    </task>
-    <task id="LOCAL-00102" summary="edits">
-      <created>1631983569734</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1631983569735</updated>
+      <workItem from="1636070879010" duration="2814000" />
     </task>
     <task id="LOCAL-00103" summary="edits">
       <created>1631983987769</created>
@@ -611,7 +593,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636072875671</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="company profile">
+      <created>1636073024751</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1636073024751</updated>
+    </task>
+    <task id="LOCAL-00150" summary="company profile">
+      <created>1636073058965</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1636073058965</updated>
+    </task>
+    <task id="LOCAL-00151" summary="company profile">
+      <created>1636073215587</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1636073215587</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
