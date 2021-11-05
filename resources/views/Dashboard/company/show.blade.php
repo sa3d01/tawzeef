@@ -34,7 +34,7 @@
                             <li class="list-group-item"><strong>العنوان : </strong><span>{{$user->profile->address}}</span></li>
                             <li class="list-group-item"><strong>وصف : </strong><span>{{$user->profile->note}}</span></li>
                             <li class="list-group-item"><strong>السجل التجاري : </strong>
-                                    <iframe  src="{{$user->profile->commercial_file}}">
+                                <iframe  src="{{$user->profile->commercial_file}}"></iframe>
                             </li>
                         </ul>
                     </div>
