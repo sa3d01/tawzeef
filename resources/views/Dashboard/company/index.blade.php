@@ -39,9 +39,9 @@
                                     </td>
                                     <td>
                                         <div class="button-list">
-{{--                                            <a href="{{route('admin.user.show',$row->id)}}">--}}
-{{--                                                <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>--}}
-{{--                                            </a>--}}
+                                            <a href="{{route('admin.company.show',$row->id)}}">
+                                                <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>
+                                            </a>
                                             @if($row->banned==0)
                                                 <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">
                                                     @csrf
