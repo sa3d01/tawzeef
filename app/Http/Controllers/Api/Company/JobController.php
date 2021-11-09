@@ -9,6 +9,7 @@ use App\Http\Resources\JobCollection;
 use App\Http\Resources\JobResourse;
 use App\Http\Resources\SimpleJobResourse;
 use App\Http\Resources\SimpleUserResourse;
+use App\Models\CompanySeen;
 use App\Models\Experience;
 use App\Models\Job;
 use App\Models\JobRequired;
@@ -158,6 +159,10 @@ class JobController extends MasterController
 
         $subscribes_arr = [];
         foreach ($subscribes as $subscribe) {
+            $subscribe_arr['company_seen'] =(bool) CompanySeen::where([
+                'company_id' => auth('api')->id(),
+                'user_id' => $subscribe->user_id
+            ])->latest()->first();
             $subscribe_arr['user'] = new SimpleUserResourse($subscribe->user);
             $subscribe_arr['cv'] = $subscribe->cv ? new CvResource($subscribe->cv) : "";
             $subscribe_arr['message'] = $subscribe->message??"";

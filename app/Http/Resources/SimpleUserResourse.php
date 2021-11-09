@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\CompanySeen;
 use App\Models\Major;
 use App\Models\Socials;
 use Carbon\Carbon;
@@ -18,8 +19,19 @@ class SimpleUserResourse extends JsonResource
      */
     public function toArray($request)
     {
+        $company_seen=false;
+        if (auth('api')->check()){
+            $seen=CompanySeen::where([
+                'company_id'=>auth('api')->id(),
+                'user_id'=>$this->id,
+            ])->first();
+            if ($seen){
+                $company_seen=true;
+            }
+        }
         return [
             'id' => (int)$this->id,
+            'company_seen' => $company_seen,
             'premium'=>$this->profile?$this->profile->premium==1:false,
             'completedProfileRatio'=>$this->completedProfileRatio(),
             'type' => $this->type,
