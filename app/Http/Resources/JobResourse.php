@@ -61,7 +61,7 @@ class JobResourse extends JsonResource
                 $arr['subscribed']=true;
             }
         }
-//        $arr['subscribes']=$subscribes;
+        $arr['employees_count']=JobSubscribe::where('job_id',$this->id)->count();
         return $arr;
     }
 }

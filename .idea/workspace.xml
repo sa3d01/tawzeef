@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company profile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="latest file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,13 +267,7 @@
       <workItem from="1636047305412" duration="306000" />
       <workItem from="1636047737086" duration="600000" />
       <workItem from="1636070879010" duration="4384000" />
-    </task>
-    <task id="LOCAL-00105" summary="dash">
-      <created>1631985304474</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1631985304474</updated>
+      <workItem from="1636466481114" duration="364000" />
     </task>
     <task id="LOCAL-00106" summary="dash">
       <created>1631985350453</created>
@@ -613,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636073780584</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="latest file">
+      <created>1636466839750</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1636466839751</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="bugs" />
     <MESSAGE value="new domain configs" />
     <MESSAGE value="admin-panel" />
     <MESSAGE value="admin-panel \ hiring-agent" />
@@ -658,6 +656,7 @@
     <MESSAGE value="Experience" />
     <MESSAGE value="count" />
     <MESSAGE value="company profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="company profile" />
+    <MESSAGE value="latest file" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest file" />
   </component>
 </project>
