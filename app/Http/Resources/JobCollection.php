@@ -43,6 +43,7 @@ class JobCollection extends ResourceCollection
                     $arr['subscribed']=true;
                 }
             }
+            $arr['employees_count']=JobSubscribe::where('job_id', $obj->id)->count();
             $data[] = $arr;
         }
         return $data;
