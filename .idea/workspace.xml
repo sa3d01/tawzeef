@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="latest file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/EmployeeController.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="order user ratio" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -270,14 +267,7 @@
       <workItem from="1636047305412" duration="306000" />
       <workItem from="1636047737086" duration="600000" />
       <workItem from="1636070879010" duration="4384000" />
-      <workItem from="1636466481114" duration="3168000" />
-    </task>
-    <task id="LOCAL-00107" summary="dash">
-      <created>1631985595020</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1631985595020</updated>
+      <workItem from="1636466481114" duration="3554000" />
     </task>
     <task id="LOCAL-00108" summary="api">
       <created>1631987151882</created>
@@ -615,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636467032313</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="order user ratio">
+      <created>1636470000704</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1636470000704</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new domain configs" />
     <MESSAGE value="admin-panel" />
     <MESSAGE value="admin-panel \ hiring-agent" />
     <MESSAGE value="verify mail" />
@@ -660,6 +656,7 @@
     <MESSAGE value="count" />
     <MESSAGE value="company profile" />
     <MESSAGE value="latest file" />
-    <option name="LAST_COMMIT_MESSAGE" value="latest file" />
+    <MESSAGE value="order user ratio" />
+    <option name="LAST_COMMIT_MESSAGE" value="order user ratio" />
   </component>
 </project>
