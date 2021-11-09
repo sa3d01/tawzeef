@@ -48,7 +48,11 @@ class EmployeeController extends MasterController
             $experience_users = Experience::where('experience_years', $request['experience_years'])->pluck('user_id');
             $employee_q = $employee_q->whereIn('id', $experience_users);
         }
-        $employee = $employee_q->paginate();
+
+        $employee= $employee_q->paginate()->sortByDesc(function($user) {
+            return $user->completedProfileRatio();
+        });
+
         return SimpleUserResourse::collection($employee);
     }
 

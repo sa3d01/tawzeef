@@ -151,7 +151,11 @@ class JobController extends MasterController
         $active_users=User::whereIn('id',$users)->whereBanned(0)->pluck('id')->toArray();
         $subscribes=$subscribes->whereIn('user_id',$active_users);
 
-        $subscribes = $subscribes->latest()->get();
+
+        $subscribes= $subscribes->get()->sortByDesc(function($subscribe) {
+            return $subscribe->user->completedProfileRatio();
+        });
+
         $subscribes_arr = [];
         foreach ($subscribes as $subscribe) {
             $subscribe_arr['user'] = new SimpleUserResourse($subscribe->user);
