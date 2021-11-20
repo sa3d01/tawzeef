@@ -44,7 +44,7 @@
                                                     <button class="btn btn-warning waves-effect waves-light"> <i class="fa fa-share-square"></i> <span>تفعيل</span> </button>
                                                 </form>
                                             @else
-                                                <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.major.ban',[$row->id]) }}">
+                                                <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.job.ban',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
                                                     <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-band-aid"></i> <span>حظر</span> </button>
