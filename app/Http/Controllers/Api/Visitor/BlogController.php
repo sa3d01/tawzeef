@@ -6,10 +6,13 @@ use App\Http\Controllers\Api\MasterController;
 use App\Http\Resources\BlogCommentResource;
 use App\Http\Resources\BlogResource;
 use App\Http\Resources\BlogSimpleResource;
+use App\Models\AlertJob;
 use App\Models\Blog;
 use App\Models\BlogComment;
 use App\Models\BlogSeen;
+use App\Models\Experience;
 use App\Models\Job;
+use App\Models\JobRequired;
 use App\Models\Qualification;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -96,7 +99,21 @@ class BlogController extends MasterController
     }
     public function updateLocation()
     {
-        $users=Job::where('country_id','!=',null)->get();
+        $users=Experience::where('country_id','!=',null)->get();
+        foreach ($users as $user) {
+            $user->update([
+                'country_id'=>$this->getCountry($user),
+//                'city_id'=>$this->getCity($user),
+            ]);
+        }
+        $users=JobRequired::where('country_id','!=',null)->get();
+        foreach ($users as $user) {
+            $user->update([
+                'country_id'=>$this->getCountry($user),
+//                'city_id'=>$this->getCity($user),
+            ]);
+        }
+        $users=AlertJob::where('country_id','!=',null)->get();
         foreach ($users as $user) {
             $user->update([
                 'country_id'=>$this->getCountry($user),
