@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class Major extends Model
 {
     use HasFactory;
-    protected $fillable = ['name_ar','name_en','banned','parent_id','image'];
+    protected $fillable = ['name_ar','name_en','banned','parent_id','image','type'];
     private function upload_file($file)
     {
         $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();

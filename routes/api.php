@@ -16,7 +16,9 @@ Route::group([
         Route::get('countries', 'DropDownController@countries');
         Route::get('countries/{countryId}/cities', 'DropDownController@cities');
         Route::get('majors', 'DropDownController@majors');
+        Route::get('sectors', 'DropDownController@sectors');
         Route::get('majors/{id}/subs', 'DropDownController@subMajors');
+        Route::get('sectors/{id}/subs', 'DropDownController@subSectors');
         Route::get('pages/{user_type}/{type}', 'PageController@getPage');
     });
     // AUTH

@@ -41,6 +41,10 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::post('major/{id}/ban', 'MajorController@ban')->name('major.ban');
     Route::post('major/{id}/activate', 'MajorController@activate')->name('major.activate');
 
+    Route::resource('sector', 'SectorController');
+    Route::post('sector/{id}/ban', 'SectorController@ban')->name('sector.ban');
+    Route::post('sector/{id}/activate', 'SectorController@activate')->name('sector.activate');
+
     Route::resource('country', 'CountryController');
     Route::post('country/{id}/ban', 'CountryController@ban')->name('country.ban');
     Route::post('country/{id}/activate', 'CountryController@activate')->name('country.activate');
