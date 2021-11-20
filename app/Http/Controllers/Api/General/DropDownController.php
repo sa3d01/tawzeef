@@ -23,7 +23,8 @@ class DropDownController extends MasterController
 
     public function countries(): object
     {
-        return $this->sendResponse(new CountryCollection(Country::where('banned', 0)->get()));
+        return new CountryCollection(Country::where('banned', 0)->paginate());
+        //return $this->sendResponse(new CountryCollection(Country::where('banned', 0)->get()));
     }
 
     public function cities($countryId): object
