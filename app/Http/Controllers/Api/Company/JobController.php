@@ -96,7 +96,7 @@ class JobController extends MasterController
 
     public function findJobSalary(Request $request)
     {
-        $job_q = Job::where('status','!=','rejected')->query();
+        $job_q = Job::where('status','!=','rejected');
         if ($request['major_id']) {
             $job_q = $job_q->where('major_id', $request['major_id']);
         }
