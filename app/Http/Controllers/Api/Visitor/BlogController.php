@@ -9,6 +9,7 @@ use App\Http\Resources\BlogSimpleResource;
 use App\Models\Blog;
 use App\Models\BlogComment;
 use App\Models\BlogSeen;
+use App\Models\Qualification;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -94,7 +95,7 @@ class BlogController extends MasterController
     }
     public function updateLocation()
     {
-        $users=User::where('country_id','!=',null)->get();
+        $users=Qualification::where('country_id','!=',null)->get();
         foreach ($users as $user) {
             $user->update([
                 'country_id'=>$this->getCountry($user),
