@@ -51,7 +51,7 @@ class JobController extends MasterController
     {
         $jobs_q = Job::query();
         $companies_id = $jobs_q->where('end_date', '>', Carbon::now())->pluck('company_id')->toArray();
-        $companies=User::whereIn('id',$companies_id)->get();
+        $companies=User::whereIn('id',$companies_id)->where('avatar','!=',null)->get();
         return $this->sendResponse(SimpleCompanyResourse::collection($companies));
     }
     public function majors()
