@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="order user ratio">
-      <change afterPath="$PROJECT_DIR$/app/Models/UserSeen.php" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="company seen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Company/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SimpleUserResourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Visitor/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,14 +273,10 @@
       <workItem from="1636047305412" duration="306000" />
       <workItem from="1636047737086" duration="600000" />
       <workItem from="1636070879010" duration="4384000" />
-      <workItem from="1636466481114" duration="5559000" />
-    </task>
-    <task id="LOCAL-00110" summary="api">
-      <created>1631990062527</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1631990062528</updated>
+      <workItem from="1636466481114" duration="7711000" />
+      <workItem from="1636835013737" duration="1827000" />
+      <workItem from="1636910155538" duration="1591000" />
+      <workItem from="1637442554131" duration="2757000" />
     </task>
     <task id="LOCAL-00111" summary="api">
       <created>1631990095937</created>
@@ -617,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636470825160</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="company seen">
+      <created>1636472374985</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1636472374985</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="admin-panel" />
     <MESSAGE value="admin-panel \ hiring-agent" />
     <MESSAGE value="verify mail" />
     <MESSAGE value="reset password" />
@@ -662,6 +665,7 @@
     <MESSAGE value="company profile" />
     <MESSAGE value="latest file" />
     <MESSAGE value="order user ratio" />
-    <option name="LAST_COMMIT_MESSAGE" value="order user ratio" />
+    <MESSAGE value="company seen" />
+    <option name="LAST_COMMIT_MESSAGE" value="company seen" />
   </component>
 </project>

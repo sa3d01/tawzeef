@@ -106,6 +106,8 @@ Route::group([
         Route::get('blogs/{id}/related', 'BlogController@related');
         Route::post('blogs/{id}/comment', 'BlogController@storeComment')->middleware(JwtTokenIsValid::class);
 
+        Route::get('update-location', 'BlogController@updateLocation');
+
     });
     // COMPANY
     Route::group(['namespace' => 'Company', 'prefix' => 'company','middleware'=>JwtTokenIsCompany::class], function () {

@@ -11,7 +11,6 @@ class Country extends Model
     protected $fillable = [
         'name_ar',
         'name_en',
-        'currency_label',
         'banned',
     ];
 }
