@@ -30,6 +30,13 @@
         </li>
 
         <li>
+            <a href="{{route('admin.job.index')}}">
+                <i class="mdi mdi-alpha-j-box-outline"></i>
+                <span> إدارة الوظائف </span>
+            </a>
+        </li>
+
+        <li>
             <a href="{{route('admin.sector.index')}}">
                 <i class="mdi mdi-access-point"></i>
                 <span> إدارة القطاعات </span>

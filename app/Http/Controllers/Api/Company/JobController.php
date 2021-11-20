@@ -25,7 +25,7 @@ class JobController extends MasterController
 {
     public function activeJobs(): object
     {
-        $jobs_q = Job::where('company_id', auth('api')->id());
+        $jobs_q = Job::where('status','!=','rejected')->where('company_id', auth('api')->id());
         if (request()->input('major_id')) {
             $jobs_q = $jobs_q->where('job_id', request()->input('job_id'));
         }
@@ -35,7 +35,7 @@ class JobController extends MasterController
 
     public function expiredJobs()
     {
-        $jobs = Job::where('company_id', auth('api')->id())->where('end_date', '<', Carbon::now())->paginate(10);
+        $jobs = Job::where('status','!=','rejected')->where('company_id', auth('api')->id())->where('end_date', '<', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
 
@@ -96,7 +96,7 @@ class JobController extends MasterController
 
     public function findJobSalary(Request $request)
     {
-        $job_q = Job::query();
+        $job_q = Job::where('status','!=','rejected')->query();
         if ($request['major_id']) {
             $job_q = $job_q->where('major_id', $request['major_id']);
         }
@@ -116,7 +116,7 @@ class JobController extends MasterController
 
     public function findAverageSalary(Request $request)
     {
-        $jobs = Job::take(7)->get();
+        $jobs = Job::where('status','!=','rejected')->take(7)->get();
         $data = [];
         foreach ($jobs as $job) {
             $arr['job'] = new SimpleJobResourse($job);

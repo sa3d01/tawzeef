@@ -22,7 +22,7 @@ class JobController extends MasterController
     public function activeJobs(): object
     {
         $user = auth('api')->user();
-        $jobs_q = Job::query();
+        $jobs_q = Job::where('status','!=','rejected')->query();
 //        $jobs_q = $jobs_q->where('major_id', $user->major_id);
 
         $companies=$jobs_q->pluck('company_id')->toArray();
@@ -34,7 +34,7 @@ class JobController extends MasterController
     public function expiredJobs(): object
     {
         $user = auth('api')->user();
-        $jobs_q = Job::query();
+        $jobs_q = Job::where('status','!=','rejected')->query();
       //  $jobs_q = $jobs_q->where('major_id', $user->major_id);
 
         $companies=$jobs_q->pluck('company_id')->toArray();
@@ -64,7 +64,7 @@ class JobController extends MasterController
 
     public function findJob(Request $request)
     {
-        $job_q = Job::query();
+        $job_q = Job::where('status','!=','rejected')->query();
         if ($request['job_title']) {
             $job_q = $job_q->where('job_title', 'LIKE', "%{$request['job_title']}%");
         }

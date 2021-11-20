@@ -28,7 +28,7 @@ class CompanyController extends MasterController
         $company = User::find($id);
         $data['company'] = new CompanyResourse($company);
         $data['similar_companies'] = SimpleCompanyResourse::collection(User::where(['type' => 'COMPANY', 'major_id' => $company->major_id])->get());
-        $jobs = Job::where('company_id', $company->id)->get();
+        $jobs = Job::where('status','!=','rejected')->where('company_id', $company->id)->get();
         $data['jobs'] = new JobCollection($jobs);
         return $this->sendResponse($data);
     }

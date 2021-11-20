@@ -20,7 +20,7 @@ class JobController extends MasterController
 {
     public function activeJobs(): object
     {
-        $jobs_q = Job::query();
+        $jobs_q = Job::where('status','!=','rejected')->query();
         $jobs = $jobs_q->where('end_date', '>', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
@@ -49,7 +49,7 @@ class JobController extends MasterController
 
     public function activeCompanies():object
     {
-        $jobs_q = Job::query();
+        $jobs_q = Job::where('status','!=','rejected')->query();
         $companies_id = $jobs_q->where('end_date', '>', Carbon::now())->pluck('company_id')->toArray();
         $companies=User::whereIn('id',$companies_id)->where('avatar','!=',null)->get();
         return $this->sendResponse(SimpleCompanyResourse::collection($companies));
@@ -60,7 +60,7 @@ class JobController extends MasterController
     }
     public function majorJobs($id)
     {
-        $jobs=Job::where('major_id',$id)->paginate(10);
+        $jobs=Job::where('status','!=','rejected')->where('major_id',$id)->paginate(10);
         return new JobCollection($jobs);
     }
     public function hiringLaws()

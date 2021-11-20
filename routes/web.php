@@ -63,6 +63,8 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::post('bank/{id}/activate', 'BankController@activate')->name('bank.activate');
 
     Route::resource('job', 'JobController');
+    Route::post('job/{id}/ban', 'JobController@ban')->name('job.ban');
+    Route::post('job/{id}/activate', 'JobController@activate')->name('job.activate');
 
     Route::resource('hear_by', 'HearByController');
     Route::post('hear_by/{id}/ban', 'HearByController@ban')->name('hear_by.ban');

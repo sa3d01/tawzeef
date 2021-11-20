@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="sectors" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="contact">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/job/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +153,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -159,8 +164,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/emails" />
       <recent name="$PROJECT_DIR$/app/Mail" />
@@ -270,21 +275,7 @@
       <workItem from="1636466481114" duration="7711000" />
       <workItem from="1636835013737" duration="1827000" />
       <workItem from="1636910155538" duration="1591000" />
-      <workItem from="1637442554131" duration="6161000" />
-    </task>
-    <task id="LOCAL-00119" summary="blog">
-      <created>1631993800075</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1631993800075</updated>
-    </task>
-    <task id="LOCAL-00120" summary="jimmy edits">
-      <created>1632841943147</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1632841943147</updated>
+      <workItem from="1637442554131" duration="7929000" />
     </task>
     <task id="LOCAL-00121" summary="error edits">
       <created>1633266210947</created>
@@ -615,7 +606,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637449455308</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="sectors">
+      <created>1637449529277</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1637449529277</updated>
+    </task>
+    <task id="LOCAL-00169" summary="contact">
+      <created>1637449825734</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1637449825734</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="reset password" />
     <MESSAGE value="hear by" />
     <MESSAGE value="api -- training courses" />
     <MESSAGE value="verify pause" />
@@ -660,6 +664,7 @@
     <MESSAGE value="company seen" />
     <MESSAGE value="countries cities" />
     <MESSAGE value="sectors" />
-    <option name="LAST_COMMIT_MESSAGE" value="sectors" />
+    <MESSAGE value="contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="contact" />
   </component>
 </project>
