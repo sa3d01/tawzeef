@@ -30,6 +30,13 @@
         </li>
 
         <li>
+            <a href="{{route('admin.sector.index')}}">
+                <i class="mdi mdi-access-point"></i>
+                <span> إدارة القطاعات </span>
+            </a>
+        </li>
+
+        <li>
             <a href="javascript: void(0);">
                 <i class="mdi mdi-source-branch"></i>
                 <span> إدارة المصادر </span>

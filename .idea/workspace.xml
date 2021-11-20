@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="countries cities">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SectorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/sector/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/sector/index.blade.php" afterDir="false" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="sectors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MajorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MajorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/General/DropDownController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/General/DropDownController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Major.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Major.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/layouts/partials/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,9 +164,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Models" />
-      <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
+      <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/emails" />
       <recent name="$PROJECT_DIR$/app/Mail" />
     </key>
@@ -280,14 +275,7 @@
       <workItem from="1636466481114" duration="7711000" />
       <workItem from="1636835013737" duration="1827000" />
       <workItem from="1636910155538" duration="1591000" />
-      <workItem from="1637442554131" duration="4422000" />
-    </task>
-    <task id="LOCAL-00115" summary="blog">
-      <created>1631992960586</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1631992960587</updated>
+      <workItem from="1637442554131" duration="4847000" />
     </task>
     <task id="LOCAL-00116" summary="blog">
       <created>1631993071296</created>
@@ -625,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637446251315</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="sectors">
+      <created>1637447228161</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1637447228161</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="verify mail" />
     <MESSAGE value="reset password" />
     <MESSAGE value="hear by" />
     <MESSAGE value="api -- training courses" />
@@ -670,6 +664,7 @@
     <MESSAGE value="order user ratio" />
     <MESSAGE value="company seen" />
     <MESSAGE value="countries cities" />
-    <option name="LAST_COMMIT_MESSAGE" value="countries cities" />
+    <MESSAGE value="sectors" />
+    <option name="LAST_COMMIT_MESSAGE" value="sectors" />
   </component>
 </project>

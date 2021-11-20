@@ -63,6 +63,9 @@ class RegisterController extends MasterController
         $data = $request->validated();
         $data['last_ip'] = $request->ip();
         $data['type'] = 'COMPANY';
+        if ($request['major_id']==null){
+            $data['major_id'] = $request['sector_id'];
+        }
         $commercial_file = $request['commercial_file'];
         $filename = null;
         if (is_file($commercial_file)) {
