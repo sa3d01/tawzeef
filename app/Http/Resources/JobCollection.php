@@ -7,6 +7,7 @@ use App\Models\JobSubscribe;
 use App\Models\Major;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use phpDocumentor\Reflection\Types\Object_;
 
 class JobCollection extends ResourceCollection
 {
@@ -16,6 +17,12 @@ class JobCollection extends ResourceCollection
         foreach ($this as $obj) {
             $arr['id'] = (int)$obj->id;
             $arr['company'] = new SimpleCompanyResourse($obj->company);
+            $arr['show_company']=$obj->show_company;
+
+//            if ($obj->show_company==0)
+//            {
+//                $arr['company']=new Object_();
+//            }
             $arr['major'] = new MajorResourse($obj->major);
             $arr['job_title'] = $obj->job_title;
             $arr['country']=new CountryResourse($obj->country);
