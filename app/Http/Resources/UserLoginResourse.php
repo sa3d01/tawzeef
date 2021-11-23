@@ -28,6 +28,7 @@ class UserLoginResourse extends JsonResource
                 'type' => $this->type,
                 'phone' => $this->phone,
                 'email' => $this->email,
+                'email_verified' => (bool)$this->email_verified_at!=null,
                 'avatar' => $this->avatar,
                 'first_name' => $this->profile->first_name,
                 'last_name' => $this->profile->last_name,

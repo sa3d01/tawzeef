@@ -49,7 +49,7 @@ class RegisterController extends MasterController
         //verification email
         VerifyUser::create([
             'user_id' => $user->id,
-            'token' => sha1(time())
+            'token' =>rand(1111,9999)// sha1(time())
         ]);
         try {
             Mail::to($user->email)->send(new VerifyMail($user));
@@ -83,7 +83,7 @@ class RegisterController extends MasterController
         //verification email
         VerifyUser::create([
             'user_id' => $user->id,
-            'token' => sha1(time())
+            'token' => rand(1111,9999)//sha1(time())
         ]);
         try {
             Mail::to($user->email)->send(new VerifyMail($user));

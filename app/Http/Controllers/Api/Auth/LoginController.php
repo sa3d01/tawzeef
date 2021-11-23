@@ -20,14 +20,14 @@ class LoginController extends MasterController
         if (!$user) {
             return $this->sendError('هذا الحساب غير موجود.');
         }
-//        if ($user->email_verified_at==null){
-//            VerifyUser::create([
-//                'user_id' => $user->id,
-//                'token' => sha1(time())
-//            ]);
-//            Mail::to($user->email)->send(new VerifyMail($user));
+        if ($user->email_verified_at==null){
+            VerifyUser::create([
+                'user_id' => $user->id,
+                'token' => rand(1111,9999)//sha1(time())
+            ]);
+            Mail::to($user->email)->send(new VerifyMail($user));
 //            return $this->sendError('يرجي تفعيل حسابك عن طريق بريدك الإلكتروني.');
-//        }
+        }
         if (auth('api')->attempt($credentials)) {
             if ($user['type']!='USER'){
                 return $this->sendResponse(new CompanyLoginResourse($user));

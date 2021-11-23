@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="job admin">
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="show company">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,14 +273,7 @@
       <workItem from="1636835013737" duration="1827000" />
       <workItem from="1636910155538" duration="1591000" />
       <workItem from="1637442554131" duration="9018000" />
-      <workItem from="1637601524704" duration="307000" />
-    </task>
-    <task id="LOCAL-00124" summary="error edits">
-      <created>1633266614439</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1633266614439</updated>
+      <workItem from="1637601524704" duration="1222000" />
     </task>
     <task id="LOCAL-00125" summary="contact index">
       <created>1633449740322</created>
@@ -618,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637451899798</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="show company">
+      <created>1637602071241</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1637602071241</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +638,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="api -- training courses" />
     <MESSAGE value="verify pause" />
     <MESSAGE value="edits" />
     <MESSAGE value="dash" />
@@ -663,6 +662,7 @@
     <MESSAGE value="sectors" />
     <MESSAGE value="contact" />
     <MESSAGE value="job admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="job admin" />
+    <MESSAGE value="show company" />
+    <option name="LAST_COMMIT_MESSAGE" value="show company" />
   </component>
 </project>
