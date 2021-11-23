@@ -30,6 +30,8 @@ Route::group([
         Route::get('reset-password/{token}','ForgotPasswordController@validateToken');
         Route::post('reset-password/{token}','ForgotPasswordController@setPassword');
 
+        Route::post('verify-email','RegisterController@verifyUser');
+
 
 
         Route::post('login', 'LoginController@login');

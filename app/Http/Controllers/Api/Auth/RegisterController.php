@@ -13,6 +13,7 @@ use App\Models\Profile;
 use App\Models\User;
 use App\Models\VerifyUser;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Mockery\Exception;
@@ -110,22 +111,27 @@ class RegisterController extends MasterController
         }
     }
 
-    public function verifyUser($token)
+    public function verifyUser(Request $request)
     {
-        $verifyUser = VerifyUser::where('token', $token)->first();
+        $user=User::where('email',$request['email'])->first();
+        if (!$user){
+            return $this->sendError('هذا الحساب غير موجود.');
+        }
+        $verifyUser = VerifyUser::where(['token'=> $request['token'],'email'=>$request['email']])->first();
         if(isset($verifyUser) ){
             $user = $verifyUser->user;
             if($user->email_verified_at==null) {
                 $user->update([
                     'email_verified_at'=>Carbon::now()
                 ]);
-                $status = "Your e-mail is verified. You can now login.";
-            } else {
-                $status = "Your e-mail is already verified. You can now login.";
             }
-        } else {
-            return redirect()->to('https://bebaan.net');
+        }else{
+            return $this->sendError('كود التفعيل غير صحيح.');
         }
-        return redirect()->to('https://bebaan.net/login')->with('status', $status);
+        if ($user['type']!='USER'){
+            return $this->sendResponse(new CompanyLoginResourse($user));
+        }else{
+            return $this->sendResponse(new UserLoginResourse($user));
+        }
     }
 }

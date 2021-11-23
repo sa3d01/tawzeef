@@ -9,6 +9,7 @@ use App\Http\Resources\UserLoginResourse;
 use App\Mail\VerifyMail;
 use App\Models\User;
 use App\Models\VerifyUser;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class LoginController extends MasterController
@@ -38,6 +39,18 @@ class LoginController extends MasterController
         return $this->sendError('كلمة المرور غير صحيحة.');
     }
 
+//    public function resendCode(Request $request)
+//    {
+//        $user = User::where(['email' => $request['email'], 'type' => $request['type']])->first();
+//        if (!$user) {
+//            return $this->sendError('هذا الحساب غير موجود.');
+//        }
+//        VerifyUser::create([
+//            'user_id' => $user->id,
+//            'token' => rand(1111,9999)//sha1(time())
+//        ]);
+//        Mail::to($user->email)->send(new VerifyMail($user));
+//    }
     public function logout(): object
     {
         auth('api')->logout();
