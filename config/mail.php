@@ -39,7 +39,7 @@ return [
             'host' => env('MAIL_HOST', 'mail.smtp2go.com'),
             'port' => env('MAIL_PORT', 2525),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME','bebaan'),
+            'username' => env('MAIL_USERNAME','beban'),
             'password' => env('MAIL_PASSWORD','N3h6cW93ZzNhcmEw'),
             'timeout' => null,
             'auth_mode' => null,
