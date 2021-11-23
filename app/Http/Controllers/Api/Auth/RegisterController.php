@@ -117,7 +117,7 @@ class RegisterController extends MasterController
         if (!$user){
             return $this->sendError('هذا الحساب غير موجود.');
         }
-        $verifyUser = VerifyUser::where(['token'=> $request['token'],'email'=>$request['email']])->first();
+        $verifyUser = VerifyUser::where(['token'=> $request['token'],'user_id'=>$user->id])->first();
         if(isset($verifyUser) ){
             if($user->email_verified_at==null) {
                 $user->update([
