@@ -119,7 +119,6 @@ class RegisterController extends MasterController
         }
         $verifyUser = VerifyUser::where(['token'=> $request['token'],'email'=>$request['email']])->first();
         if(isset($verifyUser) ){
-            $user = $verifyUser->user;
             if($user->email_verified_at==null) {
                 $user->update([
                     'email_verified_at'=>Carbon::now()
