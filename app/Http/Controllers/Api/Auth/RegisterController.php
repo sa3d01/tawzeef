@@ -51,11 +51,13 @@ class RegisterController extends MasterController
             'user_id' => $user->id,
             'token' =>rand(1111,9999)// sha1(time())
         ]);
-        try {
-            Mail::to($user->email)->send(new VerifyMail($user));
-        }catch (\Exception $e){
+        Mail::to($user->email)->send(new VerifyMail($user));
 
-        }
+//        try {
+//            Mail::to($user->email)->send(new VerifyMail($user));
+//        }catch (\Exception $e){
+//
+//        }
         return $this->sendResponse(new UserLoginResourse($user));
     }
     public function companyRegister(CompanyRegisterationRequest $request): object
