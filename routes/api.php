@@ -123,7 +123,7 @@ Route::group([
         Route::get('job/{id}', 'JobController@show');
         Route::get('job/{id}/subscribes', 'JobController@subscribes');
         Route::get('find-employee', 'EmployeeController@findEmployee');
-        Route::get('employee/{id}', 'EmployeeController@showEmployee');
+        Route::any('employee/{id}', 'EmployeeController@showEmployee');
         Route::post('employee/{id}/message', 'EmployeeController@messageEmployee');
         Route::get('message', 'EmployeeController@messages');
 
