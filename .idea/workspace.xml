@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="verify mail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Employer/JobController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,13 +276,7 @@
       <workItem from="1637442554131" duration="9018000" />
       <workItem from="1637601524704" duration="1222000" />
       <workItem from="1637685799005" duration="3644000" />
-    </task>
-    <task id="LOCAL-00133" summary="contact without user">
-      <created>1633880062557</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1633880062557</updated>
+      <workItem from="1637761780713" duration="2282000" />
     </task>
     <task id="LOCAL-00134" summary="mail">
       <created>1635348677117</created>
@@ -619,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637688721208</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="verify mail">
+      <created>1637761849737</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1637761849737</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

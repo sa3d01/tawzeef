@@ -106,6 +106,9 @@ class JobController extends MasterController
     public function subscribeJob(Request $request)
     {
         $job=Job::find($request['job_id']);
+        if(!$job){
+            return  $this->sendError('job not found');
+        }
         if ($job->end_date < Carbon::now()){
             return $this->sendError('هذه الوظيفه انتهي الوقت المحدد لها','end_date');
         }
