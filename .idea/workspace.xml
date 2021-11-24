@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="verify mail">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,21 +274,7 @@
       <workItem from="1636910155538" duration="1591000" />
       <workItem from="1637442554131" duration="9018000" />
       <workItem from="1637601524704" duration="1222000" />
-      <workItem from="1637685799005" duration="2798000" />
-    </task>
-    <task id="LOCAL-00131" summary="ckeditor">
-      <created>1633529917817</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1633529917817</updated>
-    </task>
-    <task id="LOCAL-00132" summary="contact without user">
-      <created>1633879958414</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1633879958414</updated>
+      <workItem from="1637685799005" duration="3644000" />
     </task>
     <task id="LOCAL-00133" summary="contact without user">
       <created>1633880062557</created>
@@ -619,7 +605,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637688430195</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="verify mail">
+      <created>1637688627872</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1637688627872</updated>
+    </task>
+    <task id="LOCAL-00181" summary="verify mail">
+      <created>1637688721208</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1637688721208</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -26,8 +26,11 @@ class LoginController extends MasterController
                 'user_id' => $user->id,
                 'token' => rand(1111,9999)//sha1(time())
             ]);
-            Mail::to($user->email)->send(new VerifyMail($user));
-//            return $this->sendError('يرجي تفعيل حسابك عن طريق بريدك الإلكتروني.');
+            try {
+                Mail::to($user->email)->send(new VerifyMail($user));
+            }catch (\Exception $e){
+
+            }
         }
         if (auth('api')->attempt($credentials)) {
             if ($user['type']!='USER'){
