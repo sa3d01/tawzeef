@@ -19,13 +19,12 @@ use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Object_;
 
 class JobController extends MasterController
 {
     public function activeJobs(): object
     {
-        $jobs_q = Job::where('status','!=','rejected')->where('company_id', auth('api')->id());
+        $jobs_q = Job::where('status', '!=', 'rejected')->where('company_id', auth('api')->id());
         if (request()->input('major_id')) {
             $jobs_q = $jobs_q->where('job_id', request()->input('job_id'));
         }
@@ -35,7 +34,7 @@ class JobController extends MasterController
 
     public function expiredJobs()
     {
-        $jobs = Job::where('status','!=','rejected')->where('company_id', auth('api')->id())->where('end_date', '<', Carbon::now())->paginate(10);
+        $jobs = Job::where('status', '!=', 'rejected')->where('company_id', auth('api')->id())->where('end_date', '<', Carbon::now())->paginate(10);
         return new JobCollection($jobs);
     }
 
@@ -52,21 +51,20 @@ class JobController extends MasterController
         $data['company_id'] = auth('api')->id();
         $job = Job::create($data);
 
-        $job_required=JobRequired::where(
+        $job_required = JobRequired::where(
             [
-                'major_id'=>$request['major_id'],
+                'major_id' => $request['major_id'],
                 //'level'=>$request['level'],
                 //'working_type'=>$request['working_type'],
             ]
         )->pluck('user_id')->toArray();
-        foreach ($job_required as $user_id)
-        {
+        foreach ($job_required as $user_id) {
             Notification::create([
-                'receiver_id'=>$user_id,
-                'model'=>'Job',
-                'model_id'=>$job->id,
-                'note_ar'=>'يوجد وظيفة جديدة :'.$job->job_title,
-                'note_en'=>' you have new job : '.$job->job_title
+                'receiver_id' => $user_id,
+                'model' => 'Job',
+                'model_id' => $job->id,
+                'note_ar' => 'يوجد وظيفة جديدة :' . $job->job_title,
+                'note_en' => ' you have new job : ' . $job->job_title
             ]);
         }
 
@@ -96,7 +94,7 @@ class JobController extends MasterController
 
     public function findJobSalary(Request $request)
     {
-        $job_q = Job::where('status','!=','rejected');
+        $job_q = Job::where('status', '!=', 'rejected');
         if ($request['major_id']) {
             $job_q = $job_q->where('major_id', $request['major_id']);
         }
@@ -116,7 +114,7 @@ class JobController extends MasterController
 
     public function findAverageSalary(Request $request)
     {
-        $jobs = Job::where('status','!=','rejected')->take(7)->get();
+        $jobs = Job::where('status', '!=', 'rejected')->take(7)->get();
         $data = [];
         foreach ($jobs as $job) {
             $arr['job'] = new SimpleJobResourse($job);
@@ -148,24 +146,24 @@ class JobController extends MasterController
             $subscribes = $subscribes->whereIn('user_id', $users);
         }
 
-        $users=$subscribes->pluck('user_id')->toArray();
-        $active_users=User::whereIn('id',$users)->whereBanned(0)->pluck('id')->toArray();
-        $subscribes=$subscribes->whereIn('user_id',$active_users);
+        $users = $subscribes->pluck('user_id')->toArray();
+        $active_users = User::whereIn('id', $users)->whereBanned(0)->pluck('id')->toArray();
+        $subscribes = $subscribes->whereIn('user_id', $active_users);
 
 
-        $subscribes= $subscribes->get()->sortByDesc(function($subscribe) {
+        $subscribes = $subscribes->get()->sortByDesc(function ($subscribe) {
             return $subscribe->user->completedProfileRatio();
         });
 
         $subscribes_arr = [];
         foreach ($subscribes as $subscribe) {
-            $subscribe_arr['company_seen'] =(bool) CompanySeen::where([
+            $subscribe_arr['company_seen'] = (bool)CompanySeen::where([
                 'company_id' => auth('api')->id(),
                 'user_id' => $subscribe->user_id
             ])->latest()->first();
             $subscribe_arr['user'] = new SimpleUserResourse($subscribe->user);
             $subscribe_arr['cv'] = $subscribe->cv ? new CvResource($subscribe->cv) : "";
-            $subscribe_arr['message'] = $subscribe->message??"";
+            $subscribe_arr['message'] = $subscribe->message ?? "";
             $subscribe_arr['subscribed_from'] = Carbon::parse($subscribe->created_at)->diffForHumans();
             $subscribes_arr[] = $subscribe_arr;
         }

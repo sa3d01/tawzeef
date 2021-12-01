@@ -20,8 +20,8 @@ class JobResourse extends JsonResource
             $arr['company']=new Object_();
         }
 
+        $arr['sector'] = new MajorResourse($this->company->major);
         $arr['major'] = new MajorResourse($this->major);
-        $arr['sector'] = new MajorResourse($this->sector);
         $arr['job_title'] = $this->job_title;
         $arr['country']=new CountryResourse($this->country);
         $arr['city']=new CityResourse($this->city);

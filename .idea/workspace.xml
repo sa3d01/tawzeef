@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="verify mail">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/JobResourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/JobResourse.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="sector" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -279,14 +275,7 @@
       <workItem from="1637685799005" duration="3644000" />
       <workItem from="1637761780713" duration="4658000" />
       <workItem from="1638053071316" duration="9000" />
-      <workItem from="1638372859275" duration="1224000" />
-    </task>
-    <task id="LOCAL-00136" summary="test mail">
-      <created>1635781655504</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1635781655505</updated>
+      <workItem from="1638372859275" duration="1705000" />
     </task>
     <task id="LOCAL-00137" summary="test mail">
       <created>1635781795258</created>
@@ -624,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637789756656</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="sector">
+      <created>1638374838558</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1638374838559</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="edits" />
     <MESSAGE value="dash" />
     <MESSAGE value="api" />
     <MESSAGE value="blog" />
@@ -669,6 +664,7 @@
     <MESSAGE value="job admin" />
     <MESSAGE value="show company" />
     <MESSAGE value="verify mail" />
-    <option name="LAST_COMMIT_MESSAGE" value="verify mail" />
+    <MESSAGE value="sector" />
+    <option name="LAST_COMMIT_MESSAGE" value="sector" />
   </component>
 </project>
