@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="sector" />
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="sector">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Auth/CompanyRegisterationRequest.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -275,14 +279,7 @@
       <workItem from="1637685799005" duration="3644000" />
       <workItem from="1637761780713" duration="4658000" />
       <workItem from="1638053071316" duration="9000" />
-      <workItem from="1638372859275" duration="1705000" />
-    </task>
-    <task id="LOCAL-00137" summary="test mail">
-      <created>1635781795258</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1635781795258</updated>
+      <workItem from="1638372859275" duration="2985000" />
     </task>
     <task id="LOCAL-00138" summary="test mail">
       <created>1635782041402</created>
@@ -620,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638374838559</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="sector">
+      <created>1638375546100</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1638375546100</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

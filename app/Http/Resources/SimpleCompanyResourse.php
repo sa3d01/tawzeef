@@ -20,6 +20,7 @@ class SimpleCompanyResourse extends JsonResource
             'id' => (int)$this->id,
             'type' => $this->type,
             'email' => $this->email,
+            'email_main_domain' => $this->email,
             'phone' => $this->phone,
             'avatar' => $this->avatar,
             'cover' => $this->profile->cover,

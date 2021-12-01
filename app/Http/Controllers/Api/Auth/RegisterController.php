@@ -68,6 +68,9 @@ class RegisterController extends MasterController
         if ($request['major_id']==null){
             $data['major_id'] = $request['sector_id'];
         }
+        if ($request['email_main_domain']){
+            $data['email']=$request['email_main_domain'];
+        }
         $commercial_file = $request['commercial_file'];
         $filename = null;
         if (is_file($commercial_file)) {

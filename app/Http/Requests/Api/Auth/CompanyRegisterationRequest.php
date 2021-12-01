@@ -26,7 +26,8 @@ class CompanyRegisterationRequest extends ApiMasterRequest
     {
         return [
             'foundation_name' => 'required|string|max:110',
-            'email' => 'required|email|max:90|unique:users',
+            'email' => 'nullable|email|max:90|unique:users',
+            'email_main_domain' => 'nullable|email|max:90|unique:users',
             'password' => 'required|string|min:6|max:15',
             'country_id' => 'required|numeric|exists:countries,id',
             'city_id' => 'required|numeric|exists:cities,id',
