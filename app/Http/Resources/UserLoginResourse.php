@@ -34,7 +34,7 @@ class UserLoginResourse extends JsonResource
                 'avatar' => $this->avatar,
                 'first_name' => $this->profile->first_name,
                 'last_name' => $this->profile->last_name,
-                'cv' => count($this->cv>0)?CvResource::collection($this->cv):$empty_cv_obj,
+                'cv' => count($this->cv)>0?CvResource::collection($this->cv):$empty_cv_obj,
             ],
             "access_token" => [
                 'token' => $token,
