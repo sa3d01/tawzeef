@@ -18,11 +18,14 @@ class UserResourse extends JsonResource
      */
     public function toArray($request)
     {
+        $empty_cv_obj['id']=0;
+        $empty_cv_obj['file']='https://';
+        $empty_cv_arr[]=$empty_cv_obj;
         return [
             'id' => (int)$this->id,
             'premium'=>$this->profile->premium==1,
             'type' => $this->type,
-            'cv' => CvResource::collection($this->cv),
+            'cv' => count($this->cv)>0?CvResource::collection($this->cv):$empty_cv_arr,
             'job_title' => $this->profile->job_title,
             'avatar' => $this->avatar,
             'latest_updated_at' => Carbon::parse($this->profile->updated_at)->format('Y-m-d'),
