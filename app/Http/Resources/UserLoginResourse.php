@@ -21,8 +21,8 @@ class UserLoginResourse extends JsonResource
             'last_login_at' => Carbon::now(),
             'last_ip' => $request->ip(),
         ]);
-        $empty_cv_obj['id']='';
-        $empty_cv_obj['file']='';
+        $empty_cv_obj['id']=0;
+        $empty_cv_obj['file']='https://';
         $empty_cv_arr[]=$empty_cv_obj;
 
         return [
