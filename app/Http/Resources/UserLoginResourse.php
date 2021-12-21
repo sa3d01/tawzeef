@@ -21,8 +21,10 @@ class UserLoginResourse extends JsonResource
             'last_login_at' => Carbon::now(),
             'last_ip' => $request->ip(),
         ]);
-        $empty_cv_obj[]['id']='';
-        $empty_cv_obj[]['file']='';
+        $empty_cv_obj['id']='';
+        $empty_cv_obj['file']='';
+        $empty_cv_arr[]=$empty_cv_obj;
+
         return [
             "user" => [
                 'id' => (int)$this->id,
@@ -34,7 +36,7 @@ class UserLoginResourse extends JsonResource
                 'avatar' => $this->avatar,
                 'first_name' => $this->profile->first_name,
                 'last_name' => $this->profile->last_name,
-                'cv' => count($this->cv)>0?CvResource::collection($this->cv):$empty_cv_obj,
+                'cv' => count($this->cv)>0?CvResource::collection($this->cv):$empty_cv_arr,
             ],
             "access_token" => [
                 'token' => $token,
