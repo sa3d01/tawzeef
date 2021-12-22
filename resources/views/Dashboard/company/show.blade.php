@@ -32,7 +32,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><strong>طبيعة العمل : </strong><span>{{$user->profile->working_type}}</span></li>
                             <li class="list-group-item"><strong>العنوان : </strong><span>{{$user->profile->address}}</span></li>
-                            <li class="list-group-item"><strong>وصف : </strong><span>{{$user->profile->note}}</span></li>
+                            <li class="list-group-item"><strong>وصف : </strong><span>{{$user->profile->description}}</span></li>
                             <li class="list-group-item"><strong>السجل التجاري : </strong>
                                 <iframe height="600" width="700"   src="{{$user->profile->commercial_file}}"></iframe>
                             </li>
