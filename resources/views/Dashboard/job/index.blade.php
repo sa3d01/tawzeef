@@ -35,8 +35,8 @@
                                     <td>{{\Carbon\Carbon::parse($row->created_at)->format('Y-M-d')}}</td>
                                     <td>{{\Carbon\Carbon::parse($row->end_date)->format('Y-M-d')}}</td>
                                     <td><span class="badge @if($row->end_date < \Carbon\Carbon::now()) badge-danger  @else badge-warning @endif">{{$row->getStatusArabic()}}</span></td>
-                                    <td>{{$row->major->name_ar}}</td>
                                     <td>{{\App\Models\JobSubscribe::where('job_id',$row->id)->count()}}</td>
+                                    <td>{{$row->major->name_ar}}</td>
                                     <td>
                                         <div class="button-list">
                                             @if($row->status=='rejected')
