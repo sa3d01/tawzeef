@@ -7,6 +7,9 @@
 @section('styles')
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <link href="{{asset('assets/libs/dropify/dist/css/dropify.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/libs/bootstrap-datepicker/bootstrap-datepicker.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/libs/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 @endsection
 @section('content')
     <div class="content">
@@ -45,20 +48,20 @@
                                 <label class="control-label">المؤهل المطلرب</label>
                                 <select name="major_id" class="form-control select2">
                                     <option selected value="{{$row->qualification_type}}">{{$row->qualification_type}}</option>
-                                    <option value="secondary">secondary</option>
-                                    <option value="diploma">diploma</option>
-                                    <option value="bachelor">bachelor</option>
-                                    <option value="ma">ma</option>
-                                    <option value="phd">phd</option>
+                                    <option value="secondary">ثانوي</option>
+                                    <option value="diploma">شهادة دباوم</option>
+                                    <option value="bachelor">بكالوريوس</option>
+                                    <option value="ma">ماجيستير</option>
+                                    <option value="phd">دكتوراه</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">طبيعة العمل </label>
                                 <select name="working_type" class="form-control select2">
                                     <option selected value="{{$row->working_type}}">{{$row->working_type}}</option>
-                                    <option value="full_time">full_time</option>
-                                    <option value="part_time">part_time</option>
-                                    <option value="remotely">remotely</option>
+                                    <option value="full_time">دوام كامل</option>
+                                    <option value="part_time">دوام جزئي</option>
+                                    <option value="remotely">العمل من المنزل</option>
                                 </select>
                             </div>
 
@@ -85,9 +88,9 @@
                                 <label class="control-label">المستوي</label>
                                 <select name="level" class="form-control select2">
                                     <option selected value="{{$row->level}}">{{$row->level}}</option>
-                                    <option value="fresh_graduate">fresh_graduate</option>
-                                    <option value="average">average</option>
-                                    <option value="high">high</option>
+                                    <option value="fresh_graduate">حديث التخرج</option>
+                                    <option value="average">متوسط</option>
+                                    <option value="high">عالي</option>
                                 </select>
                             </div>
 
@@ -174,4 +177,9 @@
     <script src="{{asset('assets/libs/parsleyjs/parsley.min.js')}}"></script>
     <!-- validation init -->
     <script src="{{asset('assets/js/pages/form-validation.init.js')}}"></script>
+
+
+    <script src="{{asset('assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/libs/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 @endsection
