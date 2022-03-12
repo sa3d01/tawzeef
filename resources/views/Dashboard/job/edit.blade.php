@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label class="control-label">التخصص</label>
                                 <select name="major_id" class="form-control select2">
-                                    <option selected value="{{$row->major_id}}">{{$row->owner->name_ar}}</option>
+                                    <option selected value="{{$row->major_id}}">{{$row->major->name_ar}}</option>
                                     @foreach($majors as $major)
                                         <option value="{{$major->id}}">{{$major->name_ar}}</option>
                                     @endforeach
