@@ -57,7 +57,7 @@
                                             @endif
                                             <form class="delete" data-id="{{$row->id}}" method="POST" action="{{ route('admin.user.delete',[$row->id]) }}">
                                                 @csrf
-                                                {{ method_field('POST') }}
+                                                {{ method_field('DELETE') }}
                                                 <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>
                                             </form>
                                         </div>
