@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Job;
+use Illuminate\Http\Request;
 
 class JobController extends MasterController
 {
@@ -44,5 +45,17 @@ class JobController extends MasterController
         $job->refresh();
         return redirect()->back()->with('updated');
     }
+    public function edit($id): object
+    {
+        $row = $this->model->find($id);
+        return view('Dashboard.job.edit', compact('row'));
+    }
 
+    public function update($id, Request $request)
+    {
+        $city = $this->model->find($id);
+        $city->update($request->all());
+        return redirect()->back()->with('updated');
+
+    }
 }

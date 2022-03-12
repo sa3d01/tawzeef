@@ -39,6 +39,9 @@
                                     <td>{{$row->major->name_ar}}</td>
                                     <td>
                                         <div class="button-list">
+                                            <a href="{{route('admin.job.edit',$row->id)}}">
+                                                <button class="btn btn-warning waves-effect waves-light"> <i class="fa fa-map-pin mr-1"></i> <span>تعديل</span> </button>
+                                            </a>
                                             @if($row->status=='rejected')
                                                 <form class="activate" data-id="{{$row->id}}" method="POST" action="{{ route('admin.job.activate',[$row->id]) }}">
                                                     @csrf

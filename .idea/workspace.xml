@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="delete user">
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="users">
+      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/job/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/job/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/job/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +153,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Dashboard/job" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -162,11 +164,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/Dashboard/job" />
       <recent name="$PROJECT_DIR$/resources/views/Dashboard" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/emails" />
-      <recent name="$PROJECT_DIR$/app/Mail" />
     </key>
   </component>
   <component name="RunManager">
@@ -286,21 +288,7 @@
       <workItem from="1641042084830" duration="322000" />
       <workItem from="1645459917574" duration="4767000" />
       <workItem from="1646753121454" duration="4455000" />
-      <workItem from="1647095797315" duration="4021000" />
-    </task>
-    <task id="LOCAL-00155" summary="latest file">
-      <created>1636467032313</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1636467032313</updated>
-    </task>
-    <task id="LOCAL-00156" summary="order user ratio">
-      <created>1636470000704</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1636470000704</updated>
+      <workItem from="1647095797315" duration="6402000" />
     </task>
     <task id="LOCAL-00157" summary="order user ratio">
       <created>1636470288773</created>
@@ -631,7 +619,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647102069533</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="users">
+      <created>1647102121806</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1647102121806</updated>
+    </task>
+    <task id="LOCAL-00205" summary="users">
+      <created>1647102342738</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1647102342738</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +653,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="contact index" />
     <MESSAGE value="founadation name nullable" />
     <MESSAGE value="ckeditor" />
     <MESSAGE value="contact without user" />
@@ -676,7 +677,8 @@
     <MESSAGE value="delete company" />
     <MESSAGE value="subscribes" />
     <MESSAGE value="delete user" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete user" />
+    <MESSAGE value="users" />
+    <option name="LAST_COMMIT_MESSAGE" value="users" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
