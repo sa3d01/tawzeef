@@ -170,8 +170,7 @@
         });
     </script>
     <script>
-        CKEDITOR.replace( 'note_ar' );
-        CKEDITOR.replace( 'note_en' );
+        CKEDITOR.replace( 'description' );
     </script>
     <!-- Validation js (Parsleyjs) -->
     <script src="{{asset('assets/libs/parsleyjs/parsley.min.js')}}"></script>
