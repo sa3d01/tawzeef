@@ -60,6 +60,11 @@
                                                     <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
                                                 </form>
                                             @endif
+                                            <form class="delete" data-id="{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
