@@ -19,6 +19,7 @@
                                 <th>تاريخ الاعلان</th>
                                 <th>تاريخ الانتهاء</th>
                                 <th>حالة الاعلان</th>
+                                <th>عدد المتقدمين</th>
                                 <th>التخصص</th>
                                 <th>العمليات المتاحة</th>
                             </tr>
@@ -35,6 +36,7 @@
                                     <td>{{\Carbon\Carbon::parse($row->end_date)->format('Y-M-d')}}</td>
                                     <td><span class="badge @if($row->end_date < \Carbon\Carbon::now()) badge-danger  @else badge-warning @endif">{{$row->getStatusArabic()}}</span></td>
                                     <td>{{$row->major->name_ar}}</td>
+                                    <td>{{\App\Models\JobSubscribe::where('job_id',$row->id)->count()}}</td>
                                     <td>
                                         <div class="button-list">
                                             @if($row->status=='rejected')
