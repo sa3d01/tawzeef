@@ -16,7 +16,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Mockery\Exception;
 use Spatie\Permission\Models\Role;
 
 class RegisterController extends MasterController
@@ -27,54 +26,54 @@ class RegisterController extends MasterController
         $data = $request->validated();
         $data['last_ip'] = $request->ip();
         $data['type'] = 'USER';
-
         $user = User::create($data);
         $user->refresh();
         $role = Role::findOrCreate($user->type);
         $user->assignRole($role);
         $data['user_id'] = $user->id;
-        if ($request->has('cv')){
+        if ($request->has('cv')) {
             $cv = $request['cv'];
             $filename = null;
             if (is_file($cv)) {
-                $filename = $this->uploadFile($cv,'media/files/cv/');
+                $filename = $this->uploadFile($cv, 'media/files/cv/');
             } elseif (filter_var($cv, FILTER_VALIDATE_URL) === True) {
                 $filename = $cv;
             }
             Cv::create([
-                'user_id'=>$user->id,
-                'file'=> $filename
+                'user_id' => $user->id,
+                'file' => $filename
             ]);
         }
         Profile::create($data);
         //verification email
         VerifyUser::create([
             'user_id' => $user->id,
-            'token' =>rand(1111,9999)// sha1(time())
+            'token' => rand(1111, 9999)// sha1(time())
         ]);
 
         try {
             Mail::to($user->email)->send(new VerifyMail($user));
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
 
         }
         return $this->sendResponse(new UserLoginResourse($user));
     }
+
     public function companyRegister(CompanyRegisterationRequest $request): object
     {
         $data = $request->validated();
         $data['last_ip'] = $request->ip();
         $data['type'] = 'COMPANY';
-        if ($request['major_id']==null){
+        if ($request['major_id'] == null) {
             $data['major_id'] = $request['sector_id'];
         }
-        if ($request['email_main_domain']){
-            $data['email']=$request['email_main_domain'];
+        if ($request['email_main_domain']) {
+            $data['email'] = $request['email_main_domain'];
         }
         $commercial_file = $request['commercial_file'];
         $filename = null;
         if (is_file($commercial_file)) {
-            $filename = $this->uploadFile($commercial_file,'media/files/commercial_file/');
+            $filename = $this->uploadFile($commercial_file, 'media/files/commercial_file/');
         } elseif (filter_var($commercial_file, FILTER_VALIDATE_URL) === True) {
             $filename = $commercial_file;
         }
@@ -88,17 +87,17 @@ class RegisterController extends MasterController
         //verification email
         VerifyUser::create([
             'user_id' => $user->id,
-            'token' => rand(1111,9999)//sha1(time())
+            'token' => rand(1111, 9999)//sha1(time())
         ]);
         try {
             Mail::to($user->email)->send(new VerifyMail($user));
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
 
         }
         return $this->sendResponse(new CompanyLoginResourse($user));
     }
 
-    function uploadFile($file,$dest)
+    function uploadFile($file, $dest)
     {
         $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
         $file->move($dest, $filename);
@@ -116,23 +115,23 @@ class RegisterController extends MasterController
 
     public function verifyUser(Request $request)
     {
-        $user=User::where('email',$request['email'])->first();
-        if (!$user){
+        $user = User::where('email', $request['email'])->first();
+        if (!$user) {
             return $this->sendError('هذا الحساب غير موجود.');
         }
-        $verifyUser = VerifyUser::where(['token'=> $request['token'],'user_id'=>$user->id])->first();
-        if(isset($verifyUser) ){
-            if($user->email_verified_at==null) {
+        $verifyUser = VerifyUser::where(['token' => $request['token'], 'user_id' => $user->id])->first();
+        if (isset($verifyUser)) {
+            if ($user->email_verified_at == null) {
                 $user->update([
-                    'email_verified_at'=>Carbon::now()
+                    'email_verified_at' => Carbon::now()
                 ]);
             }
-        }else{
+        } else {
             return $this->sendError('كود التفعيل غير صحيح.');
         }
-        if ($user['type']!='USER'){
+        if ($user['type'] != 'USER') {
             return $this->sendResponse(new CompanyLoginResourse($user));
-        }else{
+        } else {
             return $this->sendResponse(new UserLoginResourse($user));
         }
     }
