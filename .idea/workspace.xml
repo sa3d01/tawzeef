@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="cv">
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="mail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/company/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,13 +285,10 @@
       <workItem from="1638393759465" duration="1351000" />
       <workItem from="1638463784834" duration="15000" />
       <workItem from="1640111284279" duration="5529000" />
-    </task>
-    <task id="LOCAL-00148" summary="company profile">
-      <created>1636072875671</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1636072875671</updated>
+      <workItem from="1641042084830" duration="322000" />
+      <workItem from="1645459917574" duration="4767000" />
+      <workItem from="1646753121454" duration="4455000" />
+      <workItem from="1647095797315" duration="2037000" />
     </task>
     <task id="LOCAL-00149" summary="company profile">
       <created>1636073024751</created>
@@ -626,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640189634684</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="mail">
+      <created>1641042235995</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1641042236001</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +660,6 @@
     <MESSAGE value="founadation name nullable" />
     <MESSAGE value="ckeditor" />
     <MESSAGE value="contact without user" />
-    <MESSAGE value="mail" />
     <MESSAGE value="test mail" />
     <MESSAGE value="notify new job" />
     <MESSAGE value="Experience" />
@@ -671,6 +677,33 @@
     <MESSAGE value="sector" />
     <MESSAGE value="email_main_domain" />
     <MESSAGE value="cv" />
-    <option name="LAST_COMMIT_MESSAGE" value="cv" />
+    <MESSAGE value="mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="mail" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Dashboard/layouts/master.blade.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Dashboard/layouts/master.blade.php</url>
+          <line>14</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Dashboard/layouts/master.blade.php</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Dashboard/layouts/master.blade.php</url>
+          <line>40</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
