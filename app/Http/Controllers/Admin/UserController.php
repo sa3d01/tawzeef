@@ -35,7 +35,7 @@ class UserController extends MasterController
 
     public function index()
     {
-        $rows = $this->model->where('type','USER')->latest()->get();
+        $rows = $this->model->where('type','USER')->take(100)->get();
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
