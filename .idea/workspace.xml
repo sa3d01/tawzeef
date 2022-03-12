@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="edit job">
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/job/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/job/edit.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="edit job" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -285,21 +283,7 @@
       <workItem from="1641042084830" duration="322000" />
       <workItem from="1645459917574" duration="4767000" />
       <workItem from="1646753121454" duration="4455000" />
-      <workItem from="1647095797315" duration="7025000" />
-    </task>
-    <task id="LOCAL-00160" summary="countries cities">
-      <created>1637445440817</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1637445440817</updated>
-    </task>
-    <task id="LOCAL-00161" summary="countries cities">
-      <created>1637445796569</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1637445796569</updated>
+      <workItem from="1647095797315" duration="7384000" />
     </task>
     <task id="LOCAL-00162" summary="countries cities">
       <created>1637445959036</created>
@@ -630,7 +614,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647105066058</updated>
     </task>
-    <option name="localTasksCounter" value="209" />
+    <task id="LOCAL-00209" summary="edit job">
+      <created>1647105456915</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1647105456915</updated>
+    </task>
+    <task id="LOCAL-00210" summary="edit job">
+      <created>1647105491621</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1647105491622</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

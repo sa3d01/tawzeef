@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">المؤهل المطلرب</label>
-                                <select name="major_id" class="form-control select2">
+                                <select name="qualification_type" class="form-control select2">
                                     <option selected value="{{$row->qualification_type}}">{{$row->qualification_type}}</option>
                                     <option value="secondary">ثانوي</option>
                                     <option value="diploma">شهادة دباوم</option>
