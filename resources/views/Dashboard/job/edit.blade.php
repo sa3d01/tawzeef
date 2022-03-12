@@ -32,7 +32,7 @@
                                 <label class="control-label">التخصص</label>
                                 <select name="major_id" class="form-control select2">
                                     <option selected value="{{$row->major_id}}">{{$row->major->name_ar}}</option>
-                                    @foreach($majors as $major)
+                                    @foreach(\App\Models\Major::where('type','major')->get() as $major)
                                         <option value="{{$major->id}}">{{$major->name_ar}}</option>
                                     @endforeach
                                 </select>

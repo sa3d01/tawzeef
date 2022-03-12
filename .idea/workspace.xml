@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="users">
-      <change afterPath="$PROJECT_DIR$/resources/views/Dashboard/job/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/job/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/job/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="d675a034-00a0-40fc-b960-5aba26c907bc" name="Default Changelist" comment="edit job" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -288,21 +283,7 @@
       <workItem from="1641042084830" duration="322000" />
       <workItem from="1645459917574" duration="4767000" />
       <workItem from="1646753121454" duration="4455000" />
-      <workItem from="1647095797315" duration="6402000" />
-    </task>
-    <task id="LOCAL-00157" summary="order user ratio">
-      <created>1636470288773</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1636470288773</updated>
-    </task>
-    <task id="LOCAL-00158" summary="order user ratio">
-      <created>1636470825160</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1636470825160</updated>
+      <workItem from="1647095797315" duration="6721000" />
     </task>
     <task id="LOCAL-00159" summary="company seen">
       <created>1636472374985</created>
@@ -633,7 +614,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647102342738</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="edit job">
+      <created>1647104837747</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1647104837747</updated>
+    </task>
+    <task id="LOCAL-00207" summary="edit job">
+      <created>1647104923457</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1647104923457</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +648,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="founadation name nullable" />
     <MESSAGE value="ckeditor" />
     <MESSAGE value="contact without user" />
     <MESSAGE value="test mail" />
@@ -678,7 +672,8 @@
     <MESSAGE value="subscribes" />
     <MESSAGE value="delete user" />
     <MESSAGE value="users" />
-    <option name="LAST_COMMIT_MESSAGE" value="users" />
+    <MESSAGE value="edit job" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit job" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
