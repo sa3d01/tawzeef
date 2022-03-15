@@ -35,7 +35,7 @@ class UserController extends MasterController
 
     public function index()
     {
-        $rows = $this->model->where('type','USER')->paginate(100);
+        $rows = $this->model->where('type','USER')->paginate(10);
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
