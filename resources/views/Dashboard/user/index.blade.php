@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <table id="" class="table table-striped table-bordered dt-responsive nowrap">
+                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
                             <thead>
                             <tr>
                                 <th>الإسم</th>
@@ -71,6 +71,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{$row->links()}}
                     </div>
                 </div>
             </div>
