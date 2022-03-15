@@ -71,7 +71,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$row->links()}}
+                        {{$rows->links()}}
                     </div>
                 </div>
             </div>
