@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
 use App\Models\Notification;
 use App\Models\User;
-use Edujugon\PushNotification\PushNotification;
 use Illuminate\Http\Request;
 
 class NotificationController extends MasterController
@@ -18,22 +16,24 @@ class NotificationController extends MasterController
 
     public function clearAdminNotifications()
     {
-        $unread_notifications=Notification::where(['type'=>'admin','read'=>'false'])->get();
-        foreach ($unread_notifications as $unread_notification){
+        $unread_notifications = Notification::where(['type' => 'admin', 'read' => 'false'])->get();
+        foreach ($unread_notifications as $unread_notification) {
             $unread_notification->update([
-               'read'=>'true'
+                'read' => 'true'
             ]);
         }
         return redirect()->back();
     }
+
     public function readNotification($id)
     {
-        $unread_notification=Notification::find($id);
+        $unread_notification = Notification::find($id);
         $unread_notification->update([
-            'read'=>'true'
+            'read' => 'true'
         ]);
         return redirect()->back();
     }
+
     public function index()
     {
         $rows = $this->model->latest()->get();
@@ -42,40 +42,18 @@ class NotificationController extends MasterController
 
     public function store(Request $request)
     {
-        $data['title']='رسالة إدارية';
-        $data['note']=$request['note'];
-        foreach ($request['types'] as $type){
-            $users=User::where('type',$type)->get();
-            $usersTokens=[];
-            $usersIds=[];
-            foreach ($users as $user){
-                if ($user->device['id'] !='null'){
-                    $usersTokens[]=$user->device['id'];
-                    $usersIds[]=$user->id;
-                }
-            }
-            $push = new PushNotification('fcm');
-            $feed=$push->setMessage([
-                'notification' => array('title'=>$data['note'], 'sound' => 'default'),
-                'data' => [
-                    'title' => $data['note'],
-                    'body' => $data['note'],
-                    'status' => 'admin',
-                    'type'=>'admin',
-                ],
-                'priority' => 'high',
-            ])
-                ->setDevicesToken($usersTokens)
-                ->send()
-                ->getFeedback();
+        $data['title'] = 'رسالة إدارية';
+        $data['note_ar'] = $request['note_ar'];
+        $data['note_en'] = $request['note_en'];
+        foreach ($request['types'] as $type) {
+            $usersIds = User::where('type', $type)->pluck('id')->toArray();
             $this->model->create([
-                'receivers'=>$usersIds,
-                'admin_notify_type'=>$type,
-                'title'=>$data['title'],
-                'note'=>$data['note'],
+                'receivers' => $usersIds,
+                'admin_notify_type' => $type,
+                'note_ar' => $data['note_ar'],
+                'note_en' => $data['note_en']
             ]);
         }
-        return redirect()->back()->with('success','تم الارسال بنجاح');
+        return redirect()->back()->with('success', 'تم الارسال بنجاح');
     }
-
 }

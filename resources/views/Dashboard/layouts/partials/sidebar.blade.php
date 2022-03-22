@@ -23,6 +23,13 @@
         </li>
 
         <li>
+            <a href="{{route('admin.notification.index')}}">
+                <i class="mdi mdi-desktop-tower"></i>
+                <span> الإشعارات الجماعية </span>
+            </a>
+        </li>
+
+        <li>
             <a href="{{route('admin.major.index')}}">
                 <i class="mdi mdi-access-point"></i>
                 <span> إدارة التخصصات </span>
