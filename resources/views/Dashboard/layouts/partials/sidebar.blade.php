@@ -18,7 +18,8 @@
 
         <li>
             <a href="{{route('admin.company.index')}}">
-                <i class="mdi mdi-desktop-tower">{{$all_companies_count}}</i>
+                <i class="mdi mdi-desktop-tower"></i>
+                <span class="badge-info">{{$all_companies_count}}</span>
                 <span>إدارة الشركات-</span>
             </a>
         </li>
