@@ -11,14 +11,14 @@
         <li>
             <a href="{{route('admin.user.index')}}">
                 <i class="mdi mdi-human"></i>
-                <span> إدارة المستخدمين </span>
+                <span>{{$all_users_count}} إدارة المستخدمين --  </span>
             </a>
         </li>
 
         <li>
             <a href="{{route('admin.company.index')}}">
                 <i class="mdi mdi-desktop-tower"></i>
-                <span> إدارة الشركات </span>
+                <span>{{$all_companies_count}} إدارة الشركات--  </span>
             </a>
         </li>
 

@@ -50,7 +50,6 @@ class NotificationController extends MasterController
             $this->model->create([
                 'receivers' => $usersIds,
                 'admin_notify_type' => $type,
-                'type' => 'admin',
                 'note_ar' => $data['note_ar'],
                 'note_en' => $data['note_en']
             ]);
