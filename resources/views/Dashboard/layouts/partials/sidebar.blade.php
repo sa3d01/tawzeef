@@ -10,7 +10,8 @@
 
         <li>
             <a href="{{route('admin.user.index')}}">
-                <i class="mdi mdi-human">{{$all_users_count}}</i>
+                <i class="mdi mdi-human"></i>
+                <span class="badge-info">{{$all_users_count}}</span>
                 <span> إدارة المستخدمين </span>
             </a>
         </li>
