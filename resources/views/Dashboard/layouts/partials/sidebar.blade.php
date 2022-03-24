@@ -10,15 +10,15 @@
 
         <li>
             <a href="{{route('admin.user.index')}}">
-                <i class="mdi mdi-human"></i>
-                <span>{{$all_users_count}} إدارة المستخدمين --  </span>
+                <i class="mdi mdi-human">{{$all_users_count}}</i>
+                <span> إدارة المستخدمين </span>
             </a>
         </li>
 
         <li>
             <a href="{{route('admin.company.index')}}">
-                <i class="mdi mdi-desktop-tower"></i>
-                <span>{{$all_companies_count}} إدارة الشركات--  </span>
+                <i class="mdi mdi-desktop-tower">{{$all_companies_count}}</i>
+                <span>إدارة الشركات-</span>
             </a>
         </li>
 
