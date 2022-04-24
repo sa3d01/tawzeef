@@ -48,6 +48,12 @@ class JobController extends MasterController
     public function store(JobStoreRequest $request): object
     {
         $data = $request->validated();
+        $start_date=Carbon::parse($request['start_date']);
+        $end_date=Carbon::parse($request['end_date']);
+        $period=Carbon::parse($start_date)->diffInDays($end_date);
+        if($period<29){
+            return $this->sendError('يجب ألا تقل مدة الإعلان عن شهر علي الأقل');
+        }
         $data['company_id'] = auth('api')->id();
         $job = Job::create($data);
 
