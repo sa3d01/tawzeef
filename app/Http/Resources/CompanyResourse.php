@@ -21,6 +21,7 @@ class CompanyResourse extends JsonResource
         $social=Socials::where('user_id',$this->id)->first();
         return [
             'id' => (int)$this->id,
+            'approved' => (bool)$this->approved,
             'type' => $this->type,
             'phone' => $this->phone??"",
             'email' => $this->email,

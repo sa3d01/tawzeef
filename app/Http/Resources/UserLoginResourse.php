@@ -39,6 +39,7 @@ class UserLoginResourse extends JsonResource
                 'cv' => count($this->cv)>0?CvResource::collection($this->cv):$empty_cv_arr,
             ],
             "access_token" => [
+                'approved' => (bool)$this->approved,
                 'token' => $token,
                 'token_type' => 'Bearer',
             ],

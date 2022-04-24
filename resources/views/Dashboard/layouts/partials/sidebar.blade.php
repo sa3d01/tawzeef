@@ -128,6 +128,9 @@
                     </a>
                     <ul class="nav-third-level nav" aria-expanded="false">
                         <li>
+                            <a href="{{route('admin.nationality.index')}}">الجنسيات</a>
+                        </li>
+                        <li>
                             <a href="{{route('admin.city.index')}}">المدن</a>
                         </li>
                         <li>

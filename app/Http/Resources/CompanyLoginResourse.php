@@ -33,6 +33,7 @@ class CompanyLoginResourse extends JsonResource
                 'foundation_name' => $this->profile->foundation_name,
             ],
             "access_token" => [
+                'approved' => (bool)$this->approved,
                 'token' => $token,
                 'token_type' => 'Bearer',
             ],

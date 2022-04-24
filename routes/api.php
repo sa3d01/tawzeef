@@ -13,6 +13,7 @@ Route::group([
         Route::get('settings', 'SettingController@getSettings');
         Route::get('banks', 'BankController@index');
         Route::get('hear_by', 'DropDownController@hearBy');
+        Route::get('nationalities', 'DropDownController@nationalities');
         Route::get('countries', 'DropDownController@countries');
         Route::get('countries/{countryId}/cities', 'DropDownController@cities');
         Route::get('majors', 'DropDownController@majors');

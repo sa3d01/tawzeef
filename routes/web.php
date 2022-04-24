@@ -32,10 +32,13 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::resource('user', 'UserController');
     Route::post('user/{id}/ban', 'UserController@ban')->name('user.ban');
     Route::post('user/{id}/activate', 'UserController@activate')->name('user.activate');
+    Route::post('user/{id}/approve', 'UserController@approve')->name('user.approve');
 
     Route::resource('company', 'CompanyController');
     Route::post('company/{id}/ban', 'CompanyController@ban')->name('company.ban');
     Route::post('company/{id}/activate', 'CompanyController@activate')->name('company.activate');
+    Route::post('company/{id}/site_show', 'CompanyController@siteShow')->name('company.site_show');
+    Route::post('company/{id}/site_disappear', 'CompanyController@siteDisappear')->name('company.site_disappear');
 
     Route::resource('major', 'MajorController');
     Route::post('major/{id}/ban', 'MajorController@ban')->name('major.ban');
@@ -44,6 +47,10 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::resource('sector', 'SectorController');
     Route::post('sector/{id}/ban', 'SectorController@ban')->name('sector.ban');
     Route::post('sector/{id}/activate', 'SectorController@activate')->name('sector.activate');
+
+    Route::resource('nationality', 'NationalityController');
+    Route::post('nationality/{id}/ban', 'NationalityController@ban')->name('nationality.ban');
+    Route::post('nationality/{id}/activate', 'NationalityController@activate')->name('nationality.activate');
 
     Route::resource('country', 'CountryController');
     Route::post('country/{id}/ban', 'CountryController@ban')->name('country.ban');

@@ -49,9 +49,9 @@ class JobController extends MasterController
 
     public function activeCompanies():object
     {
-        $jobs_q = Job::where('status','!=','rejected');
-        $companies_id = $jobs_q->where('end_date', '>', Carbon::now())->pluck('company_id')->toArray();
-        $companies=User::whereIn('id',$companies_id)->where('avatar','!=',null)->get();
+//        $jobs_q = Job::where('status','!=','rejected');
+//        $companies_id = $jobs_q->where('end_date', '>', Carbon::now())->pluck('company_id')->toArray();
+        $companies=User::where('site_show',1)->get();
         return $this->sendResponse(SimpleCompanyResourse::collection($companies));
     }
     public function majors()

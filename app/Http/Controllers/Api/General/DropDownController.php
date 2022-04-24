@@ -10,6 +10,7 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\HearBy;
 use App\Models\Major;
+use App\Models\Nationality;
 
 class DropDownController extends MasterController
 {
@@ -23,8 +24,12 @@ class DropDownController extends MasterController
 
     public function countries(): object
     {
-        //return new CountryCollection(Country::where('banned', 0)->paginate());
         return $this->sendResponse(new CountryCollection(Country::where('banned', 0)->get()));
+    }
+
+    public function nationalities(): object
+    {
+        return $this->sendResponse(new CountryCollection(Nationality::where('banned', 0)->get()));
     }
 
     public function cities($countryId): object

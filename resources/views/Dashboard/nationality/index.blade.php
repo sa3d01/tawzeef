@@ -1,5 +1,5 @@
 @extends('Dashboard.layouts.master')
-@section('title', 'الوظائف')
+@section('title', 'الجنسيات')
 @section('styles')
     <link href="{{asset('assets/libs/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/libs/datatables/responsive.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
@@ -12,53 +12,36 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
+                        <a href="{{route('admin.nationality.create')}}">
+                            <button type="button" class="btn btn-block btn-sm btn-success waves-effect waves-light">إضافة جنسية</button>
+                        </a>
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
                             <thead>
                             <tr>
-                                <th>العنوان</th>
-                                <th>الشركة</th>
-                                <th>تاريخ الاعلان</th>
-                                <th>تاريخ الانتهاء</th>
-                                <th>حالة الاعلان</th>
-                                <th>عدد المتقدمين</th>
-                                <th>التخصص</th>
+                                <th>الاسم</th>
                                 <th>العمليات المتاحة</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($rows as $row)
                                 <tr>
-                                    <td>
-                                        <a href="{{"https://bebaan.net/jobs/".$row->id}}" target="_blank">
-                                            {{$row->job_title}}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="{{route('admin.company.show',$row->company_id)}}">
-                                            {{$row->company?$row->company->name():$row->company_id}}
-                                        </a>
-                                    </td>
-                                    <td>{{\Carbon\Carbon::parse($row->created_at)->format('Y-M-d')}}</td>
-                                    <td>{{\Carbon\Carbon::parse($row->end_date)->format('Y-M-d')}}</td>
-                                    <td><span class="badge @if($row->end_date < \Carbon\Carbon::now()) badge-danger  @else badge-warning @endif">{{$row->getStatusArabic()}}</span></td>
-                                    <td>{{\App\Models\JobSubscribe::where('job_id',$row->id)->count()}}</td>
-                                    <td>{{$row->major->name_ar}}</td>
+                                    <td>{{$row->name_ar}}</td>
                                     <td>
                                         <div class="button-list">
-                                            <a href="{{route('admin.job.edit',$row->id)}}">
+                                            <a href="{{route('admin.nationality.edit',$row->id)}}">
                                                 <button class="btn btn-warning waves-effect waves-light"> <i class="fa fa-map-pin mr-1"></i> <span>تعديل</span> </button>
                                             </a>
-                                            @if($row->status=='rejected')
-                                                <form class="activate" data-id="{{$row->id}}" method="POST" action="{{ route('admin.job.activate',[$row->id]) }}">
+                                            @if($row->banned==0)
+                                                <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.nationality.ban',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
-                                                    <button class="btn btn-warning waves-effect waves-light"> <i class="fa fa-share-square"></i> <span>تفعيل</span> </button>
+                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
                                                 </form>
                                             @else
-                                                <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.job.ban',[$row->id]) }}">
+                                                <form class="activate" data-id="{{$row->id}}" method="POST" action="{{ route('admin.nationality.activate',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
-                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-band-aid"></i> <span>حظر</span> </button>
+                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
                                                 </form>
                                             @endif
                                         </div>

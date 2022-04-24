@@ -24,6 +24,7 @@ use App\Models\Socials;
 use App\Models\TrainingCourse;
 use App\Models\User;
 use App\Models\VerifyUser;
+use Illuminate\Http\Request;
 
 class CompanyController extends MasterController
 {
@@ -42,6 +43,25 @@ class CompanyController extends MasterController
     {
         $user=$this->model->find($id);
         return view('Dashboard.company.show', compact('user'));
+    }
+    public function edit($id): object
+    {
+        $row = $this->model->find($id);
+        return view('Dashboard.company.edit', compact('row'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $company = $this->model->find($id);
+        $company->update([
+            'major_id'=>$request['major_id']
+        ]);
+        $company->profile->update([
+            'working_type'=>$request['working_type'],
+            'foundation_name'=>$request['foundation_name']
+        ]);
+        return redirect()->back()->with('updated');
+
     }
     public function ban($id):object
     {
