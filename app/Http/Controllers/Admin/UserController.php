@@ -67,30 +67,7 @@ class UserController extends MasterController
         $user->refresh();
         return redirect()->back()->with('updated');
     }
-    public function siteDisappear($id):object
-    {
-        $user=$this->model->find($id);
-        $user->update(
-            [
-                'site_show'=>0,
-            ]
-        );
-        $user->refresh();
-        $user->refresh();
-        return redirect()->back()->with('updated');
-    }
-    public function siteShow($id):object
-    {
-        $user=$this->model->find($id);
-        $user->update(
-            [
-                'site_show'=>1,
-            ]
-        );
-        $user->refresh();
-        $user->refresh();
-        return redirect()->back()->with('updated');
-    }
+
     public function approve($id):object
     {
         $user=$this->model->find($id);
