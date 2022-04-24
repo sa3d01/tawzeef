@@ -24,10 +24,16 @@
                         <div class="notify-icon bg-primary">
                             @php
                                 $contact=\App\Models\Contact::find($notification->more_details['contact_id']);
+                                $contact_user=$contact->user;
+                                if($contact_user){
+                                    $contact_title=$contact->user->name();
+                                }else{
+                                    $contact_title=$contact->name;
+                                }
                             @endphp
                             <i class="mdi mdi-mailbox"></i>
                         </div>
-                        <p class="notify-details">رسالة تواصل من :{{$contact->user?$contact->user->name():$contact->name}}</p>
+                        <p class="notify-details">رسالة تواصل من :{{$contact_title}}</p>
                         <p class="text-muted mb-0 user-msg">
                             <small>{{\Carbon\Carbon::parse($notification->created_at)->diffForHumans()}}</small>
                         </p>
