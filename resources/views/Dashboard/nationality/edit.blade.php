@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     <div class="card-box">
-                        <form method="POST" action="{{route('admin.nationality.update',$country->id)}}" enctype="multipart/form-data" data-parsley-validate novalidate>
+                        <form method="POST" action="{{route('admin.nationality.update',$nationality->id)}}" enctype="multipart/form-data" data-parsley-validate novalidate>
                             @csrf
                             @method('PUT')
                             <div class="form-group">
