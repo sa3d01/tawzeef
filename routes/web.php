@@ -37,6 +37,7 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::resource('company', 'CompanyController');
     Route::post('company/{id}/ban', 'CompanyController@ban')->name('company.ban');
     Route::post('company/{id}/activate', 'CompanyController@activate')->name('company.activate');
+    Route::post('company/{id}/approve', 'CompanyController@approve')->name('company.approve');
     Route::post('company/{id}/site_show', 'CompanyController@siteShow')->name('company.site_show');
     Route::post('company/{id}/site_disappear', 'CompanyController@siteDisappear')->name('company.site_disappear');
 

@@ -111,6 +111,18 @@ class CompanyController extends MasterController
         $user->refresh();
         return redirect()->back()->with('updated');
     }
+    public function approve($id):object
+    {
+        $user=$this->model->find($id);
+        $user->update(
+            [
+                'approved'=>1,
+            ]
+        );
+        $user->refresh();
+        $user->refresh();
+        return redirect()->back()->with('updated');
+    }
     public function destroy($id)
     {
         $user=$this->model->find($id);
