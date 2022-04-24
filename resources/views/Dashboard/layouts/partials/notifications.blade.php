@@ -24,6 +24,11 @@
                         <div class="notify-icon bg-primary">
                             @php
                                 $contact=\App\Models\Contact::find($notification->more_details['contact_id']);
+                            @endphp
+                            @if(!$contact)
+                                @continue
+                            @endif
+                            @php
                                 $contact_user=\App\Models\User::where('id',$contact->user_id)->first();
                                 if($contact_user){
                                     $contact_title=$contact->user->name();
