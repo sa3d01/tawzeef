@@ -170,23 +170,5 @@
                 allowOutsideClick: () => !Swal.isLoading()
             })
         });
-        $(document).on('click', '.approve', function (e) {
-            e.preventDefault();
-            var id = $(this).data('id');
-            Swal.fire({
-                title: "تأكيد عملية التفعيل ؟",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: 'btn-danger',
-                confirmButtonText: 'نعم !',
-                cancelButtonText: 'ﻻ , الغى العملية!',
-                closeOnConfirm: false,
-                closeOnCancel: false,
-                preConfirm: () => {
-                    $("form[data-id='" + id + "']").submit();
-                },
-                allowOutsideClick: () => !Swal.isLoading()
-            })
-        });
     </script>
 @endsection
