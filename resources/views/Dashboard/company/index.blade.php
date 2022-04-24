@@ -70,7 +70,7 @@
                                                 </form>
                                             @endif
                                             @if($row->approved==0)
-                                                <form class="approve" data-id="{{$row->id}}" method="POST" action="{{ route('admin.user.approve',[$row->id]) }}">
+                                                <form class="approve" data-id="{{$row->id}}" method="POST" action="{{ route('admin.company.approve',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
                                                     <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-twitter"></i> <span>تفعيل إضافة الوظائف</span> </button>
