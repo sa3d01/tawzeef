@@ -24,6 +24,8 @@ use App\Models\Socials;
 use App\Models\TrainingCourse;
 use App\Models\User;
 use App\Models\VerifyUser;
+use Carbon\Carbon;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class UserController extends MasterController
 {
@@ -35,6 +37,31 @@ class UserController extends MasterController
     // todo:fetch users excel
     public function index()
     {
+        $users = User::where('type','USER')->groupBy('id')->orderBy('id', 'desc');
+
+        $response = new StreamedResponse(function() use($users){
+            $handle = fopen('php://output', 'w');
+            // Add Excel headers
+            fputcsv($handle, [
+                'col1', 'Col 2'
+            ]);
+            $users->chunk(1000, function($filtered_users) use($handle) {
+                foreach ($filtered_users as $user) {
+                    // Add a new row with user data
+                    fputcsv($handle, [
+                        $user->col1, $user->col2
+                    ]);
+                }
+            });
+            // Close the output stream
+            fclose($handle);
+        }, 200, [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => 'attachment; filename="Users'.Carbon::now()->toDateTimeString().'.csv"',
+        ]);
+
+        return $response;
+
         $rows = User::where('type','USER')->orderBy('id','desc');
         return view('Dashboard.user.index', compact('rows'));
     }
