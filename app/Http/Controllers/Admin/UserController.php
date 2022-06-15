@@ -66,9 +66,6 @@ class UserController extends MasterController
             ->select('id')
             ->get() // now we're working with a collection
             ->chunk(300);
-        return $rows;
-
-
       //  $rows = User::where('type','USER')->select();
         return view('Dashboard.user.index', compact('rows'));
     }

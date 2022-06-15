@@ -27,47 +27,49 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($rows->lazy() as $row)
-                                @php($user=\App\Models\User::find($row['id']))
-                                <tr>
-                                    <td>{{$user->name()}}</td>
-                                    <td>{{$user->phone}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->major->name_ar}}</td>
-                                    <td>{{$user->city->name_ar}}</td>
-                                    <td>{{$user->hear_by->name_ar}}</td>
-                                    <td>{{$user->completedProfileRatio() }} %</td>
-                                    <td>
+                            @foreach($rows as $chunk)
+                                @foreach($chunk as $row)
+                                    @php($user=\App\Models\User::find($row['id']))
+                                    <tr>
+                                        <td>{{$user->name()}}</td>
+                                        <td>{{$user->phone}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->major->name_ar}}</td>
+                                        <td>{{$user->city->name_ar}}</td>
+                                        <td>{{$user->hear_by->name_ar}}</td>
+                                        <td>{{$user->completedProfileRatio() }} %</td>
+                                        <td>
                                         <span class="badge @if($user->banned==0) badge-success @else badge-danger @endif">
                                             {{$user->banned==0?'مفعل':'غير مفعل'}}
                                         </span>
-                                    </td>
-                                    <td>
-                                        <div class="button-list">
-                                            <a href="{{route('admin.user.show',$user->id)}}">
-                                                <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>
-                                            </a>
-                                            @if($user->banned==0)
-                                                <form class="ban" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.ban',[$user->id]) }}">
+                                        </td>
+                                        <td>
+                                            <div class="button-list">
+                                                <a href="{{route('admin.user.show',$user->id)}}">
+                                                    <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>
+                                                </a>
+                                                @if($user->banned==0)
+                                                    <form class="ban" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.ban',[$user->id]) }}">
+                                                        @csrf
+                                                        {{ method_field('POST') }}
+                                                        <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
+                                                    </form>
+                                                @else
+                                                    <form class="activate" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.activate',[$user->id]) }}">
+                                                        @csrf
+                                                        {{ method_field('POST') }}
+                                                        <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
+                                                    </form>
+                                                @endif
+                                                <form class="delete" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.destroy',[$user->id]) }}">
                                                     @csrf
-                                                    {{ method_field('POST') }}
-                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>
                                                 </form>
-                                            @else
-                                                <form class="activate" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.activate',[$user->id]) }}">
-                                                    @csrf
-                                                    {{ method_field('POST') }}
-                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
-                                                </form>
-                                            @endif
-                                            <form class="delete" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.destroy',[$user->id]) }}">
-                                                @csrf
-                                                {{ method_field('DELETE') }}
-                                                <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             @endforeach
                             </tbody>
                         </table>
