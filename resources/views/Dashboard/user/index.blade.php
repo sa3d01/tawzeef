@@ -27,9 +27,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($rows as $row)
+                            @foreach($rows->lazy() as $row)
                                 <tr>
-
                                     <td>{{$row->name()}}</td>
                                     <td>{{$row->phone}}</td>
                                     <td>{{$row->email}}</td>
@@ -71,7 +70,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$rows->links()}}
+{{--                        {{$rows->links()}}--}}
                     </div>
                 </div>
             </div>

@@ -32,10 +32,10 @@ class UserController extends MasterController
         $this->model = $model;
         parent::__construct();
     }
-
+    // todo:fetch users excel
     public function index()
     {
-        $rows = $this->model->where('type','USER')->paginate(100);
+        $rows = User::where('type','USER')->orderBy('id','desc');
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
