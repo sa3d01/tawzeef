@@ -45,19 +45,19 @@
                                                 <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>
                                             </a>
                                             @if($row->banned==0)
-                                                <form class="ban" data-id="ban#{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">
+                                                <form class="ban" data-id="{{$row->id}}" data-signature="ban#{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
                                                     <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
                                                 </form>
                                             @else
-                                                <form class="activate" data-id="activate#{{$row->id}}" method="POST" action="{{ route('admin.user.activate',[$row->id]) }}">
+                                                <form class="activate" data-id="{{$row->id}}" data-signature="activate#{{$row->id}}" method="POST" action="{{ route('admin.user.activate',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
                                                     <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
                                                 </form>
                                             @endif
-                                            <form class="delete" data-id="delete#{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">
+                                            <form class="delete" data-id="{{$row->id}}" data-signature="delete#{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
                                                 <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>
@@ -98,7 +98,7 @@
                 closeOnConfirm: false,
                 closeOnCancel: false,
                 preConfirm: () => {
-                    $("form[data-id='ban#" + id + "']").submit();
+                    $("form[data-signature='ban#" + id + "']").submit();
                 },
                 allowOutsideClick: () => !Swal.isLoading()
             })
@@ -116,7 +116,7 @@
                 closeOnConfirm: false,
                 closeOnCancel: false,
                 preConfirm: () => {
-                    $("form[data-id='delete#" + id + "']").submit();
+                    $("form[data-signature='delete#" + id + "']").submit();
                 },
                 allowOutsideClick: () => !Swal.isLoading()
             })
@@ -134,7 +134,7 @@
                 closeOnConfirm: false,
                 closeOnCancel: false,
                 preConfirm: () => {
-                    $("form[data-id='activate#" + id + "']").submit();
+                    $("form[data-signature='activate#" + id + "']").submit();
                 },
                 allowOutsideClick: () => !Swal.isLoading()
             })
