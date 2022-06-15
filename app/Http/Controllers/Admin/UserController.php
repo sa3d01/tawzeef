@@ -37,7 +37,7 @@ class UserController extends MasterController
     // todo:fetch users excel
     public function index()
     {
-        $rows = User::where('type','USER')->get();
+        $rows = User::where('type','USER')->paginate(100);
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
