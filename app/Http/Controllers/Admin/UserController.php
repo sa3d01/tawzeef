@@ -38,7 +38,6 @@ class UserController extends MasterController
     public function index()
     {
         $rows = User::where('type','USER')->get();
-        return $rows;
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
