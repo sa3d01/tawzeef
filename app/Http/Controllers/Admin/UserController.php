@@ -37,32 +37,38 @@ class UserController extends MasterController
     // todo:fetch users excel
     public function index()
     {
-        $users = User::where('type','USER')->groupBy('id')->orderBy('id', 'desc');
+       // $users = User::where('type','USER')->groupBy('id')->orderBy('id', 'desc');
 
-        $response = new StreamedResponse(function() use($users){
-            $handle = fopen('php://output', 'w');
-            // Add Excel headers
-            fputcsv($handle, [
-                'col1', 'Col 2'
-            ]);
-            $users->chunk(1000, function($filtered_users) use($handle) {
-                foreach ($filtered_users as $user) {
-                    // Add a new row with user data
-                    fputcsv($handle, [
-                        $user->col1, $user->col2
-                    ]);
-                }
-            });
-            // Close the output stream
-            fclose($handle);
-        }, 200, [
-            'Content-Type' => 'text/csv',
-            'Content-Disposition' => 'attachment; filename="Users'.Carbon::now()->toDateTimeString().'.csv"',
-        ]);
+//        $response = new StreamedResponse(function() use($users){
+//            $handle = fopen('php://output', 'w');
+//            // Add Excel headers
+//            fputcsv($handle, [
+//                'col1', 'Col 2'
+//            ]);
+//            $users->chunk(1000, function($filtered_users) use($handle) {
+//                foreach ($filtered_users as $user) {
+//                    // Add a new row with user data
+//                    fputcsv($handle, [
+//                        $user->col1, $user->col2
+//                    ]);
+//                }
+//            });
+//            // Close the output stream
+//            fclose($handle);
+//        }, 200, [
+//            'Content-Type' => 'text/csv',
+//            'Content-Disposition' => 'attachment; filename="Users'.Carbon::now()->toDateTimeString().'.csv"',
+//        ]);
+//
+//        return $response;
 
-        return $response;
+        $data = ser::where('type','USER')->latest('id')
+            ->select('id')
+            ->get() // now we're working with a collection
+            ->chunk(300);
+        return $data;
 
-        $rows = User::where('type','USER')->orderBy('id','desc');
+        $rows = User::where('type','USER')->select();
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
