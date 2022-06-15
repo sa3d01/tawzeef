@@ -62,13 +62,13 @@ class UserController extends MasterController
 //
 //        return $response;
 
-        $data = ser::where('type','USER')->latest('id')
+        $rows = User::where('type','USER')->latest('id')
             ->select('id')
             ->get() // now we're working with a collection
             ->chunk(300);
-        return $data;
 
-        $rows = User::where('type','USER')->select();
+
+      //  $rows = User::where('type','USER')->select();
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
