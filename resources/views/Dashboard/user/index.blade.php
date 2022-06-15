@@ -28,26 +28,27 @@
                             </thead>
                             <tbody>
                             @foreach($rows->lazy() as $row)
+                                @php($user=\App\Models\User::find($row->id))
                                 <tr>
-                                    <td>{{$row->name()}}</td>
-                                    <td>{{$row->phone}}</td>
-                                    <td>{{$row->email}}</td>
-                                    <td>{{$row->major->name_ar}}</td>
-                                    <td>{{$row->city->name_ar}}</td>
-                                    <td>{{$row->hear_by->name_ar}}</td>
-                                    <td>{{$row->completedProfileRatio() }} %</td>
+                                    <td>{{$user->name()}}</td>
+                                    <td>{{$user->phone}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->major->name_ar}}</td>
+                                    <td>{{$user->city->name_ar}}</td>
+                                    <td>{{$user->hear_by->name_ar}}</td>
+                                    <td>{{$user->completedProfileRatio() }} %</td>
                                     <td>
-                                        <span class="badge @if($row->banned==0) badge-success @else badge-danger @endif">
-                                            {{$row->banned==0?'مفعل':'غير مفعل'}}
+                                        <span class="badge @if($user->banned==0) badge-success @else badge-danger @endif">
+                                            {{$user->banned==0?'مفعل':'غير مفعل'}}
                                         </span>
                                     </td>
                                     <td>
                                         <div class="button-list">
-                                            <a href="{{route('admin.user.show',$row->id)}}">
+                                            <a href="{{route('admin.user.show',$user->id)}}">
                                                 <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>
                                             </a>
-                                            @if($row->banned==0)
-                                                <form class="ban" data-id="{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">
+                                            @if($user->banned==0)
+                                                <form class="ban" data-id="{{$user->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">
                                                     @csrf
                                                     {{ method_field('POST') }}
                                                     <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
