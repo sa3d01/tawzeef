@@ -37,7 +37,23 @@ class UserController extends MasterController
     // todo:fetch users excel
     public function index()
     {
-        $rows = User::where('type','USER')->chunk(100);
+        $rows = [];
+
+        User::where('type','USER')->orderBy('id')->chunk(100, function ($users) {
+            foreach ($users as $user) {
+                $rows[]="<tr>
+                                    <td>$user->name()</td>
+                                    <td>$user->phone</td>
+                                    <td>$user->email</td>
+                                    <td>$user->major->name_ar</td>
+                                    <td>$user->city->name_ar</td>
+                                    <td>$user->hear_by->name_ar</td>
+                                    <td>$user->completedProfileRatio()  %</td>
+                                </tr>";
+            }
+        });
+        return $rows;
+
         return view('Dashboard.user.index', compact('rows'));
     }
     public function show($id):object
