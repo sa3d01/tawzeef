@@ -25,6 +25,7 @@ use App\Models\TrainingCourse;
 use App\Models\User;
 use App\Models\VerifyUser;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class UserController extends MasterController
@@ -35,26 +36,88 @@ class UserController extends MasterController
         parent::__construct();
     }
     // todo:fetch users excel
+
+    public function allUsers(Request $request)
+    {
+        $totalFilteredRecord = $totalDataRecord = $draw_val = "";
+        $columns_list = array(
+            0 =>'name',
+            1 =>'phone',
+            2=> 'email',
+            3=> 'major',
+            4=> 'city',
+            5=> 'hear_by',
+            6=> 'completedProfileRatio',
+            7=> 'status',
+            8=> 'options',
+        );
+
+        $totalDataRecord = User::whereType('USER')->count();
+
+        $totalFilteredRecord = $totalDataRecord;
+
+        $limit_val = $request->input('length');
+        $start_val = $request->input('start');
+        $order_val = $columns_list[$request->input('order.0.column')];
+        $dir_val = $request->input('order.0.dir');
+        if(empty($request->input('search.value')))
+        {
+            $user_data = User::offset($start_val)
+                ->limit($limit_val)
+                ->orderBy($order_val,$dir_val)
+                ->get();
+        }
+        else {
+            $search_text = $request->input('search.value');
+
+            $user_data =  User::where('phone','LIKE',"%{$search_text}%")
+                ->orWhere('email', 'LIKE',"%{$search_text}%")
+                ->offset($start_val)
+                ->limit($limit_val)
+                ->orderBy($order_val,$dir_val)
+                ->get();
+
+            $totalFilteredRecord = User::where('phone','LIKE',"%{$search_text}%")
+                ->orWhere('email', 'LIKE',"%{$search_text}%")
+                ->count();
+        }
+
+        $data_val = array();
+        if(!empty($user_data))
+        {
+            foreach ($user_data as $user_val)
+            {
+                $datashow =  route('admin.user.show',$user_val->id);
+                $dataedit =  route('admin.us.edit',$user_val->id);
+
+                $usernestedData['name'] = $user_val->name();
+                $usernestedData['phone'] = $user_val->phone;
+                $usernestedData['email'] = $user_val->email;
+                $usernestedData['major'] = $user_val->major->name_ar;
+                $usernestedData['city'] = $user_val->city->name_ar;
+                $usernestedData['hear_by'] = $user_val->hear_by->name_ar;
+                $usernestedData['completedProfileRatio'] = $user_val->completedProfileRatio();
+                $usernestedData['status'] = $user_val->completedProfileRatio();
+                $usernestedData['options'] = "&emsp;<a href='{$datashow}' class='showdata' title='SHOW DATA' ><span class='showdata glyphicon glyphicon-list'></span></a>&emsp;<a href='{$dataedit}' class='editdata' title='EDIT DATA' ><span class='editdata glyphicon glyphicon-edit'></span></a>";
+                $data_val[] = $usernestedData;
+
+            }
+        }
+        $draw_val = $request->input('draw');
+        $get_json_data = array(
+            "draw"            => intval($draw_val),
+            "recordsTotal"    => intval($totalDataRecord),
+            "recordsFiltered" => intval($totalFilteredRecord),
+            "data"            => $data_val
+        );
+
+        echo json_encode($get_json_data);
+
+    }
     public function index()
     {
-        $rows = [];
-
-        User::where('type','USER')->orderBy('id')->chunk(100, function ($users) {
-            foreach ($users as $user) {
-                $rows[]="<tr>
-                                    <td>$user->name()</td>
-                                    <td>$user->phone</td>
-                                    <td>$user->email</td>
-                                    <td>$user->major->name_ar</td>
-                                    <td>$user->city->name_ar</td>
-                                    <td>$user->hear_by->name_ar</td>
-                                    <td>$user->completedProfileRatio()  %</td>
-                                </tr>";
-            }
-        });
-        return $rows;
-
-        return view('Dashboard.user.index', compact('rows'));
+       // $rows = User::where('type','USER')->paginate();
+        return view('Dashboard.user.index');
     }
     public function show($id):object
     {
