@@ -3,10 +3,10 @@
 @section('styles')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
 
-{{--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>--}}
-{{--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.0.6/css/scroller.dataTables.min.css"/>--}}
-{{--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.css"/>--}}
-{{--    <link rel="stylesheet" type="text/css" href="Editor-1.9.2/css/editor.dataTables.css">--}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.0.6/css/scroller.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="Editor-1.9.2/css/editor.dataTables.css">
 @endsection
 @section('content')
     <div class="content">
@@ -28,51 +28,51 @@
                                 <th>العمليات المتاحة</th>
                             </tr>
                             </thead>
-{{--                            <tbody>--}}
-{{--                            @foreach($rows as $row)--}}
-{{--                                <tr>--}}
-{{--                                    <td>{{$row->name()}}</td>--}}
-{{--                                    <td>{{$row->phone}}</td>--}}
-{{--                                    <td>{{$row->email}}</td>--}}
-{{--                                    <td>{{$row->major->name_ar}}</td>--}}
-{{--                                    <td>{{$row->city->name_ar}}</td>--}}
-{{--                                    <td>{{$row->hear_by->name_ar}}</td>--}}
-{{--                                    <td>{{$row->completedProfileRatio() }} %</td>--}}
-{{--                                    <td>--}}
-{{--                                        <span class="badge @if($row->banned==0) badge-success @else badge-danger @endif">--}}
-{{--                                            {{$row->banned==0?'مفعل':'غير مفعل'}}--}}
-{{--                                        </span>--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        <div class="button-list">--}}
-{{--                                            <a href="{{route('admin.user.show',$row->id)}}">--}}
-{{--                                                <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>--}}
-{{--                                            </a>--}}
-{{--                                            @if($row->banned==0)--}}
-{{--                                                <form class="ban" data-id="{{$row->id}}" data-signature="ban#{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">--}}
-{{--                                                    @csrf--}}
-{{--                                                    {{ method_field('POST') }}--}}
-{{--                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>--}}
-{{--                                                </form>--}}
-{{--                                            @else--}}
-{{--                                                <form class="activate" data-id="{{$row->id}}" data-signature="activate#{{$row->id}}" method="POST" action="{{ route('admin.user.activate',[$row->id]) }}">--}}
-{{--                                                    @csrf--}}
-{{--                                                    {{ method_field('POST') }}--}}
-{{--                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>--}}
-{{--                                                </form>--}}
-{{--                                            @endif--}}
-{{--                                            <form class="delete" data-id="{{$row->id}}" data-signature="delete#{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">--}}
-{{--                                                @csrf--}}
-{{--                                                {{ method_field('DELETE') }}--}}
-{{--                                                <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>--}}
-{{--                                            </form>--}}
-{{--                                        </div>--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-{{--                            </tbody>--}}
+                            <tbody>
+                            @foreach($rows as $row)
+                                <tr>
+                                    <td>{{$row->name()}}</td>
+                                    <td>{{$row->phone}}</td>
+                                    <td>{{$row->email}}</td>
+                                    <td>{{$row->major->name_ar}}</td>
+                                    <td>{{$row->city->name_ar}}</td>
+                                    <td>{{$row->hear_by->name_ar}}</td>
+                                    <td>{{$row->completedProfileRatio() }} %</td>
+                                    <td>
+                                        <span class="badge @if($row->banned==0) badge-success @else badge-danger @endif">
+                                            {{$row->banned==0?'مفعل':'غير مفعل'}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="button-list">
+                                            <a href="{{route('admin.user.show',$row->id)}}">
+                                                <button class="btn btn-info waves-effect waves-light"> <i class="fa fa-eye mr-1"></i> <span>عرض</span> </button>
+                                            </a>
+                                            @if($row->banned==0)
+                                                <form class="ban" data-id="{{$row->id}}" data-signature="ban#{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">
+                                                    @csrf
+                                                    {{ method_field('POST') }}
+                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>
+                                                </form>
+                                            @else
+                                                <form class="activate" data-id="{{$row->id}}" data-signature="activate#{{$row->id}}" method="POST" action="{{ route('admin.user.activate',[$row->id]) }}">
+                                                    @csrf
+                                                    {{ method_field('POST') }}
+                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>
+                                                </form>
+                                            @endif
+                                            <form class="delete" data-id="{{$row->id}}" data-signature="delete#{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
                         </table>
-{{--                        {{$rows->links()}}--}}
+                        {{$rows->links()}}
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
 @section('script')
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
 
-{{--    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.js"></script>--}}
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script>
         $(document).on('click', '.ban', function (e) {
@@ -142,32 +142,32 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function () {
-            $('#datatable').DataTable({
-                "serverSide": true,
-                "processing": true,
-                "ajax":{
-                    "url": "{{ route('admin.allUsers') }}",
-                    "dataType": "json",
-                    "type": "POST",
-                    "data":{ _token: "{{csrf_token()}}"}
-                },
-                "columns": [
-                    { "data": "name" },
-                    { "data": "phone" },
-                    { "data": "email" },
-                    { "data": "major" },
-                    { "data": "city" },
-                    { "data": "hear_by" },
-                    { "data": "completedProfileRatio" },
-                    { "data": "status" },
-                    { "data": "options" }
-                ]
+{{--    <script>--}}
+{{--        $(document).ready(function () {--}}
+{{--            $('#datatable').DataTable({--}}
+{{--                "serverSide": true,--}}
+{{--                "processing": true,--}}
+{{--                "ajax":{--}}
+{{--                    "url": "{{ route('admin.allUsers') }}",--}}
+{{--                    "dataType": "json",--}}
+{{--                    "type": "POST",--}}
+{{--                    "data":{ _token: "{{csrf_token()}}"}--}}
+{{--                },--}}
+{{--                "columns": [--}}
+{{--                    { "data": "name" },--}}
+{{--                    { "data": "phone" },--}}
+{{--                    { "data": "email" },--}}
+{{--                    { "data": "major" },--}}
+{{--                    { "data": "city" },--}}
+{{--                    { "data": "hear_by" },--}}
+{{--                    { "data": "completedProfileRatio" },--}}
+{{--                    { "data": "status" },--}}
+{{--                    { "data": "options" }--}}
+{{--                ]--}}
 
-            });
-        });
-    </script>
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
 
 {{--    <script>--}}
 {{--        $(document).ready(function() {--}}
