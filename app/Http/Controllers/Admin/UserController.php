@@ -115,7 +115,7 @@ class UserController extends MasterController
     }
     public function index()
     {
-        return $this->allUsers();
+        return '$this->allUsers()';
        // $rows = User::where('type','USER')->paginate();
         return view('Dashboard.user.index');
     }
