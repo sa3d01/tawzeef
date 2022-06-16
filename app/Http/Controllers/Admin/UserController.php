@@ -37,9 +37,8 @@ class UserController extends MasterController
     }
     // todo:fetch users excel
 
-    public function allUsers(Request $request)
+    public function allUsers()
     {
-        $totalFilteredRecord = $totalDataRecord = $draw_val = "";
         $columns_list = array(
             0 =>'name',
             1 =>'phone',
@@ -56,11 +55,11 @@ class UserController extends MasterController
 
         $totalFilteredRecord = $totalDataRecord;
 
-        $limit_val = $request->input('length');
-        $start_val = $request->input('start');
-        $order_val = $columns_list[$request->input('order.0.column')];
-        $dir_val = $request->input('order.0.dir');
-        if(empty($request->input('search.value')))
+        $limit_val = request()->input('length');
+        $start_val = request()->input('start');
+        $order_val = $columns_list[request()->input('order.0.column')];
+        $dir_val = request()->input('order.0.dir');
+        if(empty(request()->input('search.value')))
         {
             $user_data = User::offset($start_val)
                 ->limit($limit_val)
@@ -68,7 +67,7 @@ class UserController extends MasterController
                 ->get();
         }
         else {
-            $search_text = $request->input('search.value');
+            $search_text = request()->input('search.value');
 
             $user_data =  User::where('phone','LIKE',"%{$search_text}%")
                 ->orWhere('email', 'LIKE',"%{$search_text}%")
@@ -88,7 +87,7 @@ class UserController extends MasterController
             foreach ($user_data as $user_val)
             {
                 $datashow =  route('admin.user.show',$user_val->id);
-                $dataedit =  route('admin.us.edit',$user_val->id);
+                $dataedit =  route('admin.user.edit',$user_val->id);
 
                 $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
@@ -103,7 +102,7 @@ class UserController extends MasterController
 
             }
         }
-        $draw_val = $request->input('draw');
+        $draw_val = request()->input('draw');
         $get_json_data = array(
             "draw"            => intval($draw_val),
             "recordsTotal"    => intval($totalDataRecord),
@@ -111,11 +110,12 @@ class UserController extends MasterController
             "data"            => $data_val
         );
 
-        echo json_encode($get_json_data);
+        return json_encode($get_json_data);
 
     }
     public function index()
     {
+        return $this->allUsers();
        // $rows = User::where('type','USER')->paginate();
         return view('Dashboard.user.index');
     }
