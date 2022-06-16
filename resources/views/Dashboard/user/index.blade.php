@@ -201,57 +201,57 @@
 {{--    </script>--}}
 
 
-{{--    <script>--}}
-{{--        $(function() {--}}
-{{--            var Table = $('#datatable').DataTable({--}}
-{{--                "order": [[ 0, "desc" ]],--}}
-{{--                "oLanguage": {--}}
-{{--                    "sSearch": "بحث",--}}
-{{--                    "sInfoEmpty":    "يعرض 0 إلى 0 من أصل 0 سجل",--}}
-{{--                    "sProcessing":   "جارٍ التحميل...",--}}
-{{--                    "sZeroRecords":  "لم يعثر على أية سجلات",--}}
-{{--                    "sInfo":         "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",--}}
-{{--                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",--}}
-{{--                    "oPaginate": {--}}
-{{--                        "sFirst":    "الأول",--}}
-{{--                        "sPrevious": "السابق",--}}
-{{--                        "sNext":     "التالي",--}}
-{{--                        "sLast":     "الأخير"--}}
-{{--                    }--}}
-{{--                },--}}
-{{--                "iDisplayLength": -1,--}}
-{{--                "sPaginationType": "full_numbers",--}}
-{{--            });--}}
-{{--            var rows=Table.rows().data();--}}
-{{--            $(--}}
-{{--                ".filters-groups .date-picker-max, .filters-groups .date-picker-min"--}}
-{{--            ).change(function() {--}}
-{{--                var val = parseInt((new Date(this.value).getTime() / 1000).toFixed(0));--}}
-{{--                var op = "min";--}}
-{{--                if ($(this).hasClass("date-picker-max")) {--}}
-{{--                    op = "max";--}}
-{{--                }--}}
-{{--                Table.rows().every(function() {--}}
-{{--                    var row_id=this.data()[0];--}}
-{{--                    var date = Date.parse(this.data()[1])/1000;--}}
-{{--                    if (date) {--}}
-{{--                        if (op === "min") {--}}
-{{--                            if (date < val) {--}}
-{{--                                $('#'+row_id).hide();--}}
-{{--                            } else {--}}
-{{--                                $('#'+row_id).show();--}}
-{{--                            }--}}
-{{--                        } else {--}}
-{{--                            if (date > val) {--}}
-{{--                                $('#'+row_id).hide();--}}
-{{--                            } else {--}}
-{{--                                $('#'+row_id).show();--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                });--}}
-{{--                Table.draw();--}}
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
+    <script>
+        $(function() {
+            var Table = $('#datatable').DataTable({
+                "order": [[ 0, "desc" ]],
+                "oLanguage": {
+                    "sSearch": "بحث",
+                    "sInfoEmpty":    "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sProcessing":   "جارٍ التحميل...",
+                    "sZeroRecords":  "لم يعثر على أية سجلات",
+                    "sInfo":         "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "oPaginate": {
+                        "sFirst":    "الأول",
+                        "sPrevious": "السابق",
+                        "sNext":     "التالي",
+                        "sLast":     "الأخير"
+                    }
+                },
+                "iDisplayLength": -1,
+                "sPaginationType": "full_numbers",
+            });
+            var rows=Table.rows().data();
+            $(
+                ".filters-groups .date-picker-max, .filters-groups .date-picker-min"
+            ).change(function() {
+                var val = parseInt((new Date(this.value).getTime() / 1000).toFixed(0));
+                var op = "min";
+                if ($(this).hasClass("date-picker-max")) {
+                    op = "max";
+                }
+                Table.rows().every(function() {
+                    var row_id=this.data()[0];
+                    var date = Date.parse(this.data()[1])/1000;
+                    if (date) {
+                        if (op === "min") {
+                            if (date < val) {
+                                $('#'+row_id).hide();
+                            } else {
+                                $('#'+row_id).show();
+                            }
+                        } else {
+                            if (date > val) {
+                                $('#'+row_id).hide();
+                            } else {
+                                $('#'+row_id).show();
+                            }
+                        }
+                    }
+                });
+                Table.draw();
+            });
+        });
+    </script>
 @endsection
