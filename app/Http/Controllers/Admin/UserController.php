@@ -118,7 +118,7 @@ class UserController extends MasterController
     {
 
        $rows = User::where('type','USER')->paginate(300);
-        return view('Dashboard.user.index',compact($rows));
+        return view('Dashboard.user.index',compact('rows'));
     }
     public function show($id):object
     {
