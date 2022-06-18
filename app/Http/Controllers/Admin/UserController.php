@@ -67,14 +67,14 @@ class UserController extends MasterController
         else {
             $search_text = $request->input('search.value');
 
-            $user_data =  User::where('phone','LIKE',"%{$search_text}%")
+            $user_data =  User::whereType('USER')->where('deleted_at',null)->where('phone','LIKE',"%{$search_text}%")
                 ->orWhere('email', 'LIKE',"%{$search_text}%")
                 ->offset($start_val)
                 ->limit($limit_val)
                 ->orderBy($order_val,$dir_val)
                 ->get();
 
-            $totalFilteredRecord = User::where('phone','LIKE',"%{$search_text}%")
+            $totalFilteredRecord = User::whereType('USER')->where('deleted_at',null)->where('phone','LIKE',"%{$search_text}%")
                 ->orWhere('email', 'LIKE',"%{$search_text}%")
                 ->count();
         }
