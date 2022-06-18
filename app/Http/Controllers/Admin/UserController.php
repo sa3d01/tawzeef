@@ -107,7 +107,7 @@ class UserController extends MasterController
             "recordsFiltered" => intval($totalFilteredRecord),
             "data"            => $data_val
         );
-        return response()->json(json_encode($get_json_data));
+        return json_encode($get_json_data);
 
        // echo json_encode($get_json_data);
 
