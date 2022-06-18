@@ -31,8 +31,8 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
 
     Route::post('all-users', 'UserController@allUsers' )->name('allUsers');
     Route::resource('user', 'UserController');
-    Route::post('user/{id}/ban', 'UserController@ban')->name('user.ban');
-    Route::post('user/{id}/activate', 'UserController@activate')->name('user.activate');
+    Route::any('user/{id}/ban', 'UserController@ban')->name('user.ban');
+    Route::any('user/{id}/activate', 'UserController@activate')->name('user.activate');
     Route::post('user/{id}/approve', 'UserController@approve')->name('user.approve');
 
     Route::resource('company', 'CompanyController');

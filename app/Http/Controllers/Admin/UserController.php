@@ -96,17 +96,15 @@ class UserController extends MasterController
                 if ($user_val->banned==0){
                     $statusClass=' badge-success ';
                     $statusText=' مفعل ';
-                    $changeStatusForm="<form class='ban' data-id='{$dataId}' data-signature='ban#{$dataId}' method='POST' action='{$databan}'>
-                                            <input type='hidden' value='{$crf}' name='_token'/>
-                                            {$postmethod}
+                    $changeStatusForm="<form class='ban' data-id='{$dataId}' data-signature='ban#{$dataId}' method='GET' action='{$databan}'>
+
                                             <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-archive mr-1'></i> <span>حظر</span> </button>
                                         </form>";
                 }else{
                     $statusClass=' badge-danger ';
                     $statusText=' غير مفعل ';
-                    $changeStatusForm="<form class='activate' data-id='{$dataId}' data-signature='activate#{$dataId}' method='POST' action='{$dataactivate}'>
-                                            <input type='hidden' value='{$crf}' name='_token'/>
-                                            {$postmethod}
+                    $changeStatusForm="<form class='activate' data-id='{$dataId}' data-signature='activate#{$dataId}' method='GET' action='{$dataactivate}'>
+
                                             <button class='btn btn-success waves-effect waves-light'> <i class='fa fa-user-clock mr-1'></i> <span>تفعيل</span> </button>
                                         </form>";
                 }
@@ -119,7 +117,7 @@ class UserController extends MasterController
                 $usernestedData['hear_by'] = $user_val->hear_by->name_ar;
                 $usernestedData['completedProfileRatio'] = $user_val->completedProfileRatio();
                 $usernestedData['status'] = "&emsp;<span class='badge {$statusClass}'>{$statusText}</span>";
-                $usernestedData['options'] = "&emsp;<div class='button-list'>&emsp;<a href='{$datashow}'>
+                $usernestedData['options'] = "&emsp;<div class='button-list'><a href='{$datashow}'>
                                                 <button class='btn btn-info waves-effect waves-light'><i class='fa fa-eye mr-1'></i><span>عرض</span></button></a>
                                                 $changeStatusForm
                                                 <form class='delete' data-id='{$dataId}' data-signature='delete#{$dataId}' method='POST' action='{$datadelete}'>
