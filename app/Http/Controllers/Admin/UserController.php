@@ -89,7 +89,6 @@ class UserController extends MasterController
             foreach ($user_data as $user_val)
             {
                 $dataId =  $user_val->id;
-
                 $datashow =  route('admin.user.show',$user_val->id);
                 $datadelete =  route('admin.user.destroy',$user_val->id);
                 $databan =  route('admin.user.ban',[$user_val->id]);
@@ -126,8 +125,7 @@ class UserController extends MasterController
                                                 &emsp;$changeStatusForm
                                                 &emsp;
                                                 <form class='delete' data-id='{$dataId}' data-signature='delete#{$dataId}' method='POST' action='{$datadelete}'>
-                                                    <input type='hidden' value='{$crf}' name='_token'/>
-                                                    {$deletemethod}
+                                                    ".csrf_token() .method_field('DELETE')."
                                                     <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-trash'></i> <span>حذف</span> </button>
                                                 </form>
                                                 </div>";
