@@ -16,6 +16,14 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-md-6 text-right">
+                    <form class='excel' method='POST' action='{{route('admin.user.excelExport')}}'>
+                        @csrf
+                        @method('POST')
+                        <button class='btn btn-info waves-effect waves-light'> <i class='fa fa-file-excel-o'></i> <span>EXCEL</span> </button>
+                    </form>
+
+                </div>
                 <div class="col-12">
                     <div class="card-box">
                         <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap">

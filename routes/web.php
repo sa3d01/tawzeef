@@ -29,6 +29,7 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
 
     Route::get('/', 'HomeController@index')->name('home');
 
+    Route::post('excel/export', 'UserController@excelExport' )->name('user.excelExport');
     Route::post('all-users', 'UserController@allUsers' )->name('allUsers');
     Route::resource('user', 'UserController');
     Route::any('user/{id}/ban', 'UserController@ban')->name('user.ban');

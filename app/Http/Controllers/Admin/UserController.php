@@ -35,75 +35,106 @@ class UserController extends MasterController
         $this->model = $model;
         parent::__construct();
     }
+
     // todo:fetch users excel
 
+    public function excelExport(){
+        $users = User::whereType('USER')->where('deleted_at', null);
+        $response = new StreamedResponse(function() use($users){
+            $handle = fopen('php://output', 'w');
+            fputcsv($handle, [
+                'id',
+                'name',
+                'phone',
+                'email',
+                'major',
+                'city',
+                'hear_by',
+                'completedProfileRatio',
+                'status'
+            ]);
+            $users->chunk(1000, function($filtered_users) use($handle) {
+                foreach ($filtered_users as $user) {
+                    fputcsv($handle, [
+                        $user->id,
+                        $user->name(),
+                        $user->phone,
+                        $user->email,
+                        $user->major->name_ar,
+                        $user->city->name_ar,
+                        $user->hear_by->name_ar,
+                        $user->completedProfileRatio(),
+                        $user->banned==0?'مفعل':'غير مفعل',
+                    ]);
+                }
+            });
+            fclose($handle);
+        }, 200, [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => 'attachment; filename="Users'.Carbon::now()->toDateTimeString().'.csv"',
+        ]);
+
+        return $response;
+    }
     public function allUsers(Request $request)
     {
         $columns_list = array(
-            0 =>'id',
-            1 =>'name',
-            2 =>'phone',
-            3=> 'email',
-            4=> 'major',
-            5=> 'city',
-            6=> 'hear_by',
-            7=> 'completedProfileRatio',
-            8=> 'status',
-            9=> 'options',
+            0 => 'id',
+            1 => 'name',
+            2 => 'phone',
+            3 => 'email',
+            4 => 'major',
+            5 => 'city',
+            6 => 'hear_by',
+            7 => 'completedProfileRatio',
+            8 => 'status',
+            9 => 'options',
         );
 
-        $totalDataRecord = User::whereType('USER')->where('deleted_at',null)->count();
+        $totalDataRecord = User::whereType('USER')->where('deleted_at', null)->count();
         $totalFilteredRecord = $totalDataRecord;
         $limit_val = $request->input('length');
         $start_val = $request->input('start');
         $order_val = $columns_list[$request->input('order.0.column')];
         $dir_val = $request->input('order.0.dir');
-        if(empty($request->input('search.value')))
-        {
-            $user_data = User::whereType('USER')->where('deleted_at',null)->offset($start_val)
+        if (empty($request->input('search.value'))) {
+            $user_data = User::whereType('USER')->where('deleted_at', null)->offset($start_val)
                 ->limit($limit_val)
-                ->orderBy($order_val,$dir_val)
+                ->orderBy($order_val, $dir_val)
                 ->get();
-        }
-        else {
+        } else {
             $search_text = $request->input('search.value');
 
-            $user_data =  User::whereType('USER')->where('deleted_at',null)->where('phone','LIKE',"%{$search_text}%")
-                ->orWhere('email', 'LIKE',"%{$search_text}%")
+            $user_data = User::whereType('USER')->where('deleted_at', null)->where('phone', 'LIKE', "%{$search_text}%")
+                ->orWhere('email', 'LIKE', "%{$search_text}%")
                 ->offset($start_val)
                 ->limit($limit_val)
-                ->orderBy($order_val,$dir_val)
+                ->orderBy($order_val, $dir_val)
                 ->get();
 
-            $totalFilteredRecord = User::whereType('USER')->where('deleted_at',null)->where('phone','LIKE',"%{$search_text}%")
-                ->orWhere('email', 'LIKE',"%{$search_text}%")
+            $totalFilteredRecord = User::whereType('USER')->where('deleted_at', null)->where('phone', 'LIKE', "%{$search_text}%")
+                ->orWhere('email', 'LIKE', "%{$search_text}%")
                 ->count();
         }
 
         $data_val = array();
-        $crf =  csrf_token();
-        $postmethod =  method_field('POST');
-        $deletemethod =  method_field('DELETE');
-        if(!empty($user_data))
-        {
-            foreach ($user_data as $user_val)
-            {
-                $dataId =  $user_val->id;
-                $datashow =  route('admin.user.show',$user_val->id);
-                $datadelete =  route('admin.user.destroy',$user_val->id);
-                $databan =  route('admin.user.ban',[$user_val->id]);
-                $dataactivate =  route('admin.user.activate',[$user_val->id]);
-                if ($user_val->banned==0){
-                    $statusClass=' badge-success ';
-                    $statusText=' مفعل ';
-                    $changeStatusForm="<form class='ban' data-id='{$dataId}' data-signature='ban#{$dataId}' method='GET' action='{$databan}'>
+        if (!empty($user_data)) {
+            foreach ($user_data as $user_val) {
+                $dataId = $user_val->id;
+                $datashow = route('admin.user.show', $user_val->id);
+                $databan = route('admin.user.ban', [$user_val->id]);
+                $dataactivate = route('admin.user.activate', [$user_val->id]);
+                if ($user_val->banned == 0) {
+                    $statusClass = ' badge-success ';
+                    $statusText = ' مفعل ';
+                    $changeStatusForm = "<form class='ban' data-id='{$dataId}' data-signature='ban#{$dataId}' method='GET' action='{$databan}'>
 
                                             <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-archive mr-1'></i> <span>حظر</span> </button>
                                         </form>";
-                }else{
-                    $statusClass=' badge-danger ';
-                    $statusText=' غير مفعل ';
-                    $changeStatusForm="<form class='activate' data-id='{$dataId}' data-signature='activate#{$dataId}' method='GET' action='{$dataactivate}'>
+                } else {
+                    $statusClass = ' badge-danger ';
+                    $statusText = ' غير مفعل ';
+                    $changeStatusForm = "<form class='activate' data-id='{$dataId}' data-signature='activate#{$dataId}' method='GET' action='{$dataactivate}'>
 
                                             <button class='btn btn-success waves-effect waves-light'> <i class='fa fa-user-clock mr-1'></i> <span>تفعيل</span> </button>
                                         </form>";
@@ -128,41 +159,31 @@ class UserController extends MasterController
         }
         $draw_val = $request->input('draw');
         $get_json_data = array(
-            "draw"            => intval($draw_val),
-            "recordsTotal"    => intval($totalDataRecord),
+            "draw" => intval($draw_val),
+            "recordsTotal" => intval($totalDataRecord),
             "recordsFiltered" => intval($totalFilteredRecord),
-            "data"            => $data_val
+            "data" => $data_val
         );
         return json_encode($get_json_data);
     }
+
     public function index()
     {
-       //$rows = User::where('type','USER')->paginate(300);
         return view('Dashboard.user.index');
     }
-    public function show($id):object
+
+    public function show($id): object
     {
-        $user=$this->model->find($id);
+        $user = $this->model->find($id);
         return view('Dashboard.user.show', compact('user'));
     }
-    public function ban($id):object
+
+    public function ban($id): object
     {
-        $user=$this->model->find($id);
+        $user = $this->model->find($id);
         $user->update(
             [
-                'banned'=>1,
-            ]
-        );
-        $user->refresh();
-        $user->refresh();
-        return redirect()->back()->with('updated');
-    }
-    public function activate($id):object
-    {
-        $user=$this->model->find($id);
-        $user->update(
-            [
-                'banned'=>0,
+                'banned' => 1,
             ]
         );
         $user->refresh();
@@ -170,12 +191,25 @@ class UserController extends MasterController
         return redirect()->back()->with('updated');
     }
 
-    public function approve($id):object
+    public function activate($id): object
     {
-        $user=$this->model->find($id);
+        $user = $this->model->find($id);
         $user->update(
             [
-                'approved'=>1,
+                'banned' => 0,
+            ]
+        );
+        $user->refresh();
+        $user->refresh();
+        return redirect()->back()->with('updated');
+    }
+
+    public function approve($id): object
+    {
+        $user = $this->model->find($id);
+        $user->update(
+            [
+                'approved' => 1,
             ]
         );
         $user->refresh();
@@ -185,99 +219,100 @@ class UserController extends MasterController
 
     public function destroy($id)
     {
-        $user=$this->model->find($id);
+        $user = $this->model->find($id);
         $this->relatedTablesToUser($id);
         $user->delete();
         return redirect()->back()->with('deleted', 'تم الحذف بنجاح');
     }
+
     public function relatedTablesToUser($user_id)
     {
-        $banks=Bank::where('user_id',$user_id)->get();
-        foreach ($banks as $bank){
+        $banks = Bank::where('user_id', $user_id)->get();
+        foreach ($banks as $bank) {
             $bank->delete();
         }
-        $blogs=Blog::where('writer_id',$user_id)->get();
-        foreach ($blogs as $blog){
+        $blogs = Blog::where('writer_id', $user_id)->get();
+        foreach ($blogs as $blog) {
             $blog->delete();
         }
-        $blog_comments=BlogComment::where('user_id',$user_id)->get();
-        foreach ($blog_comments as $blog_comment){
+        $blog_comments = BlogComment::where('user_id', $user_id)->get();
+        foreach ($blog_comments as $blog_comment) {
             $blog_comment->delete();
         }
-        $blog_seen=BlogSeen::where('user_id',$user_id)->get();
-        foreach ($blog_seen as $blog_seen_1){
+        $blog_seen = BlogSeen::where('user_id', $user_id)->get();
+        foreach ($blog_seen as $blog_seen_1) {
             $blog_seen_1->delete();
         }
-        $company_seen=CompanySeen::where('user_id',$user_id)->get();
-        foreach ($company_seen as $company_seen_1){
+        $company_seen = CompanySeen::where('user_id', $user_id)->get();
+        foreach ($company_seen as $company_seen_1) {
             $company_seen_1->delete();
         }
-        $contacts=Contact::where('user_id',$user_id)->get();
-        foreach ($contacts as $contact){
+        $contacts = Contact::where('user_id', $user_id)->get();
+        foreach ($contacts as $contact) {
             $contact->delete();
         }
-        $cvs=Cv::where('user_id',$user_id)->get();
-        foreach ($cvs as $cv){
+        $cvs = Cv::where('user_id', $user_id)->get();
+        foreach ($cvs as $cv) {
             $cv->delete();
         }
-        $experiences=Experience::where('user_id',$user_id)->get();
-        foreach ($experiences as $experience){
+        $experiences = Experience::where('user_id', $user_id)->get();
+        foreach ($experiences as $experience) {
             $experience->delete();
         }
-        $jobs=Job::where('company_id',$user_id)->get();
-        foreach ($jobs as $job){
+        $jobs = Job::where('company_id', $user_id)->get();
+        foreach ($jobs as $job) {
             $job->delete();
         }
-        $job_requiredes=JobRequired::where('user_id',$user_id)->get();
-        foreach ($job_requiredes as $job_requirede){
+        $job_requiredes = JobRequired::where('user_id', $user_id)->get();
+        foreach ($job_requiredes as $job_requirede) {
             $job_requirede->delete();
         }
-        $job_subscribes=JobSubscribe::where('user_id',$user_id)->get();
-        foreach ($job_subscribes as $job_subscribe){
+        $job_subscribes = JobSubscribe::where('user_id', $user_id)->get();
+        foreach ($job_subscribes as $job_subscribe) {
             $job_subscribe->delete();
         }
-        $memberships=Membership::where('user_id',$user_id)->get();
-        foreach ($memberships as $membership){
+        $memberships = Membership::where('user_id', $user_id)->get();
+        foreach ($memberships as $membership) {
             $membership->delete();
         }
-        $messages_senders=Message::where('sender_id',$user_id)->get();
-        foreach ($messages_senders as $messages_sender){
+        $messages_senders = Message::where('sender_id', $user_id)->get();
+        foreach ($messages_senders as $messages_sender) {
             $messages_sender->delete();
         }
-        $messages_receivers=Message::where('receiver_id',$user_id)->get();
-        foreach ($messages_receivers as $messages_receiver){
+        $messages_receivers = Message::where('receiver_id', $user_id)->get();
+        foreach ($messages_receivers as $messages_receiver) {
             $messages_receiver->delete();
         }
-        $notifications=Notification::where('receiver_id',$user_id)->get();
-        foreach ($notifications as $notification){
+        $notifications = Notification::where('receiver_id', $user_id)->get();
+        foreach ($notifications as $notification) {
             $notification->delete();
         }
-        $premium_requests=PremiumRequest::where('user_id',$user_id)->get();
-        foreach ($premium_requests as $premium_request){
+        $premium_requests = PremiumRequest::where('user_id', $user_id)->get();
+        foreach ($premium_requests as $premium_request) {
             $premium_request->delete();
         }
-        $profiles=Profile::where('user_id',$user_id)->get();
-        foreach ($profiles as $profile){
+        $profiles = Profile::where('user_id', $user_id)->get();
+        foreach ($profiles as $profile) {
             $profile->delete();
         }
-        $qualifications=Qualification::where('user_id',$user_id)->get();
-        foreach ($qualifications as $qualification){
+        $qualifications = Qualification::where('user_id', $user_id)->get();
+        foreach ($qualifications as $qualification) {
             $qualification->delete();
         }
-        $skills=Skill::where('user_id',$user_id)->get();
-        foreach ($skills as $skill){
+        $skills = Skill::where('user_id', $user_id)->get();
+        foreach ($skills as $skill) {
             $skill->delete();
         }
-        $socials=Socials::where('user_id',$user_id)->get();
-        foreach ($socials as $social){
+        $socials = Socials::where('user_id', $user_id)->get();
+        foreach ($socials as $social) {
             $social->delete();
         }
-        $training_courses=TrainingCourse::where('user_id',$user_id)->get();
-        foreach ($training_courses as $training_course){
+        $training_courses = TrainingCourse::where('user_id', $user_id)->get();
+        foreach ($training_courses as $training_course) {
             $training_course->delete();
         }
-        $verifies=VerifyUser::where('user_id',$user_id)->get();
-        foreach ($verifies as $verifie){
+        $verifies = VerifyUser::where('user_id', $user_id)->get();
+        foreach ($verifies as $verifie) {
             $verifie->delete();
         }
     }
