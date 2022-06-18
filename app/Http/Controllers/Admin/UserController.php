@@ -40,7 +40,7 @@ class UserController extends MasterController
     public function allUsers(Request $request)
     {
         $columns_list = array(
-            0 =>'id',
+            0 =>'name',
             1 =>'phone',
             2=> 'email',
             3=> 'major',
@@ -53,8 +53,8 @@ class UserController extends MasterController
 
         $totalDataRecord = User::whereType('USER')->where('deleted_at',null)->count();
         $totalFilteredRecord = $totalDataRecord;
-        $limit_val = $request->input('length',10);
-        $start_val = $request->input('start',1);
+        $limit_val = $request->input('length');
+        $start_val = $request->input('start');
         $order_val = $columns_list[$request->input('order.0.column')];
         $dir_val = $request->input('order.0.dir');
         if(empty($request->input('search.value')))
@@ -87,7 +87,7 @@ class UserController extends MasterController
                 $datashow =  route('admin.user.show',$user_val->id);
                 $dataedit =  route('admin.user.edit',$user_val->id);
 
-                $usernestedData['id'] = $user_val->id;
+                $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
                 $usernestedData['email'] = $user_val->email;
                 $usernestedData['major'] = $user_val->major->name_ar;
