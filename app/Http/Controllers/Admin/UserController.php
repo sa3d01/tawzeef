@@ -94,6 +94,24 @@ class UserController extends MasterController
                     $statusClass=' badge-danger ';
                     $statusText=' غير مفعل ';
                 }
+//        {{--                                            @if($row->banned==0)--}}
+//        {{--                                                <form class="ban" data-id="{{$row->id}}" data-signature="ban#{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">--}}
+//        {{--                                                    @csrf--}}
+//        {{--                                                    {{ method_field('POST') }}--}}
+//        {{--                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>--}}
+//        {{--                                                </form>--}}
+//        {{--                                            @else--}}
+//        {{--                                                <form class="activate" data-id="{{$row->id}}" data-signature="activate#{{$row->id}}" method="POST" action="{{ route('admin.user.activate',[$row->id]) }}">--}}
+//        {{--                                                    @csrf--}}
+//        {{--                                                    {{ method_field('POST') }}--}}
+//        {{--                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>--}}
+//        {{--                                                </form>--}}
+//        {{--                                            @endif--}}
+//        {{--                                            <form class="delete" data-id="{{$row->id}}" data-signature="delete#{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">--}}
+//        {{--                                                @csrf--}}
+//        {{--                                                {{ method_field('DELETE') }}--}}
+//        {{--                                                <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>--}}
+//        {{--                                            </form>--}}
                 $usernestedData['id'] = $user_val->id;
                 $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
@@ -103,7 +121,8 @@ class UserController extends MasterController
                 $usernestedData['hear_by'] = $user_val->hear_by->name_ar;
                 $usernestedData['completedProfileRatio'] = $user_val->completedProfileRatio();
                 $usernestedData['status'] = "&emsp;<span class='badge {$statusClass}'>{$statusText}</span>";
-                $usernestedData['options'] = "&emsp;<a href='{$datashow}' class='showdata' title='SHOW DATA' ><span class='showdata glyphicon glyphicon-list'></span></a>&emsp;<a href='{$dataedit}' class='editdata' title='EDIT DATA' ><span class='editdata glyphicon glyphicon-edit'></span></a>";
+                $usernestedData['options'] = "&emsp;<div class='button-list'>&emsp;<a href='{$datashow}'><button class='btn btn-info waves-effect waves-light'><i class='fa fa-eye mr-1'></i><span>عرض</span></button></a></div>";
+//                $usernestedData['options'] = "&emsp;<a href='{$datashow}' class='showdata' title='SHOW DATA' ><span class='showdata glyphicon glyphicon-list'></span></a>&emsp;<a href='{$dataedit}' class='editdata' title='EDIT DATA' ><span class='editdata glyphicon glyphicon-edit'></span></a>";
                 $data_val[] = $usernestedData;
 
             }
