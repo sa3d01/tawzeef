@@ -109,7 +109,6 @@ class UserController extends MasterController
                                             {$postmethod}
                                             <button class='btn btn-success waves-effect waves-light'> <i class='fa fa-user-clock mr-1'></i> <span>تفعيل</span> </button>
                                         </form>";
-
                 }
                 $usernestedData['id'] = $user_val->id;
                 $usernestedData['name'] = $user_val->name();
@@ -122,10 +121,10 @@ class UserController extends MasterController
                 $usernestedData['status'] = "&emsp;<span class='badge {$statusClass}'>{$statusText}</span>";
                 $usernestedData['options'] = "&emsp;<div class='button-list'>&emsp;<a href='{$datashow}'>
                                                 <button class='btn btn-info waves-effect waves-light'><i class='fa fa-eye mr-1'></i><span>عرض</span></button></a>
-                                                &emsp;$changeStatusForm
-                                                &emsp;
+                                                $changeStatusForm
                                                 <form class='delete' data-id='{$dataId}' data-signature='delete#{$dataId}' method='POST' action='{$datadelete}'>
-                                                    ".csrf_token() .method_field('DELETE')."
+                                                    <input type='hidden' value='{$crf}' name='_token'/>
+                                                    {$postmethod}
                                                     <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-trash'></i> <span>حذف</span> </button>
                                                 </form>
                                                 </div>";
