@@ -160,7 +160,7 @@
                     "data":{ _token: "{{csrf_token()}}"}
                 },
                 "columns": [
-                    { "data": "name" },
+                    { "data": "id" },
                     { "data": "phone" },
                     { "data": "email" },
                     { "data": "major" },
