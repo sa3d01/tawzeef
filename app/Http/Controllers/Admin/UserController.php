@@ -39,7 +39,6 @@ class UserController extends MasterController
 
     public function allUsers(Request $request)
     {
-        $totalFilteredRecord = $totalDataRecord = $draw_val = "";
         $columns_list = array(
             0 =>'name',
             1 =>'phone',
@@ -53,11 +52,9 @@ class UserController extends MasterController
         );
 
         $totalDataRecord = User::whereType('USER')->count();
-
         $totalFilteredRecord = $totalDataRecord;
-
-        $limit_val = $request->input('length');
-        $start_val = $request->input('start');
+        $limit_val = $request->input('length',10);
+        $start_val = $request->input('start',1);
         $order_val = $columns_list[$request->input('order.0.column')];
         $dir_val = $request->input('order.0.dir');
         if(empty($request->input('search.value')))
@@ -110,15 +107,15 @@ class UserController extends MasterController
             "recordsFiltered" => intval($totalFilteredRecord),
             "data"            => $data_val
         );
+        return response()->json(json_encode($get_json_data));
 
-        echo json_encode($get_json_data);
+       // echo json_encode($get_json_data);
 
     }
     public function index()
     {
-
-       $rows = User::where('type','USER')->paginate(300);
-        return view('Dashboard.user.index',compact('rows'));
+       //$rows = User::where('type','USER')->paginate(300);
+        return view('Dashboard.user.index');
     }
     public function show($id):object
     {
