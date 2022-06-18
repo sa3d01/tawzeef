@@ -52,6 +52,7 @@ Route::group([
         Route::post('update-avatar', 'UserController@updateAvatar');
         Route::get('cv', 'UserController@userCv');
         Route::post('upload-cv', 'UserController@uploadCv');
+        Route::any('delete-cv/{id}', 'UserController@deleteCv');
         Route::post('premium', 'UserController@premium');
 
         Route::get('personal-info', 'UserController@personalInfo');

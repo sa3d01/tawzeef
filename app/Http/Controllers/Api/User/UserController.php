@@ -89,6 +89,16 @@ class UserController extends MasterController
         $file->move($dest, $filename);
         return $filename;
     }
+    public function deleteCv($id)
+    {
+        $cv=Cv::find($id);
+        $user = auth('api')->user();
+        if(!$cv || ($cv->user_id != $user->id)){
+            return $this->sendError('error happened');
+        }
+        $cv->delete();
+        return $this->sendResponse(CvResource::collection($user->cv));
+    }
     public function uploadCv(Request $request)
     {
         $this->validate($request, ['cv' => 'required']);
