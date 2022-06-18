@@ -81,37 +81,37 @@ class UserController extends MasterController
         }
 
         $data_val = array();
+        $crf =  csrf_token();
+        $postmethod =  method_field('POST');
+        $deletemethod =  method_field('DELETE');
         if(!empty($user_data))
         {
             foreach ($user_data as $user_val)
             {
+                $dataId =  $user_val->id;
+
                 $datashow =  route('admin.user.show',$user_val->id);
-                $dataedit =  route('admin.user.edit',$user_val->id);
+                $datadelete =  route('admin.user.destroy',$user_val->id);
+                $databan =  route('admin.user.ban',[$user_val->id]);
+                $dataactivate =  route('admin.user.activate',[$user_val->id]);
                 if ($user_val->banned==0){
                     $statusClass=' badge-success ';
                     $statusText=' مفعل ';
+                    $changeStatusForm="<form class='ban' data-id='{$dataId}' data-signature='ban#{$dataId}' method='POST' action='{$databan}'>
+                                            <input type='hidden' value='{$crf}' name='_token'/>
+                                            {$postmethod}
+                                            <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-archive mr-1'></i> <span>حظر</span> </button>
+                                        </form>";
                 }else{
                     $statusClass=' badge-danger ';
                     $statusText=' غير مفعل ';
+                    $changeStatusForm="<form class='activate' data-id='{$dataId}' data-signature='activate#{$dataId}' method='POST' action='{$dataactivate}'>
+                                            <input type='hidden' value='{$crf}' name='_token'/>
+                                            {$postmethod}
+                                            <button class='btn btn-success waves-effect waves-light'> <i class='fa fa-user-clock mr-1'></i> <span>تفعيل</span> </button>
+                                        </form>";
+
                 }
-//        {{--                                            @if($row->banned==0)--}}
-//        {{--                                                <form class="ban" data-id="{{$row->id}}" data-signature="ban#{{$row->id}}" method="POST" action="{{ route('admin.user.ban',[$row->id]) }}">--}}
-//        {{--                                                    @csrf--}}
-//        {{--                                                    {{ method_field('POST') }}--}}
-//        {{--                                                    <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-archive mr-1"></i> <span>حظر</span> </button>--}}
-//        {{--                                                </form>--}}
-//        {{--                                            @else--}}
-//        {{--                                                <form class="activate" data-id="{{$row->id}}" data-signature="activate#{{$row->id}}" method="POST" action="{{ route('admin.user.activate',[$row->id]) }}">--}}
-//        {{--                                                    @csrf--}}
-//        {{--                                                    {{ method_field('POST') }}--}}
-//        {{--                                                    <button class="btn btn-success waves-effect waves-light"> <i class="fa fa-user-clock mr-1"></i> <span>تفعيل</span> </button>--}}
-//        {{--                                                </form>--}}
-//        {{--                                            @endif--}}
-//        {{--                                            <form class="delete" data-id="{{$row->id}}" data-signature="delete#{{$row->id}}" method="POST" action="{{ route('admin.user.destroy',[$row->id]) }}">--}}
-//        {{--                                                @csrf--}}
-//        {{--                                                {{ method_field('DELETE') }}--}}
-//        {{--                                                <button class="btn btn-danger waves-effect waves-light"> <i class="fa fa-trash"></i> <span>حذف</span> </button>--}}
-//        {{--                                            </form>--}}
                 $usernestedData['id'] = $user_val->id;
                 $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
@@ -121,8 +121,16 @@ class UserController extends MasterController
                 $usernestedData['hear_by'] = $user_val->hear_by->name_ar;
                 $usernestedData['completedProfileRatio'] = $user_val->completedProfileRatio();
                 $usernestedData['status'] = "&emsp;<span class='badge {$statusClass}'>{$statusText}</span>";
-                $usernestedData['options'] = "&emsp;<div class='button-list'>&emsp;<a href='{$datashow}'><button class='btn btn-info waves-effect waves-light'><i class='fa fa-eye mr-1'></i><span>عرض</span></button></a></div>";
-//                $usernestedData['options'] = "&emsp;<a href='{$datashow}' class='showdata' title='SHOW DATA' ><span class='showdata glyphicon glyphicon-list'></span></a>&emsp;<a href='{$dataedit}' class='editdata' title='EDIT DATA' ><span class='editdata glyphicon glyphicon-edit'></span></a>";
+                $usernestedData['options'] = "&emsp;<div class='button-list'>&emsp;<a href='{$datashow}'>
+                                                <button class='btn btn-info waves-effect waves-light'><i class='fa fa-eye mr-1'></i><span>عرض</span></button></a>
+                                                &emsp;$changeStatusForm
+                                                &emsp;
+                                                <form class='delete' data-id='{$dataId}' data-signature='delete#{$dataId}' method='POST' action='{$datadelete}'>
+                                                    <input type='hidden' value='{$crf}' name='_token'/>
+                                                    {$deletemethod}
+                                                    <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-trash'></i> <span>حذف</span> </button>
+                                                </form>
+                                                </div>";
                 $data_val[] = $usernestedData;
 
             }
