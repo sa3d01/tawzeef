@@ -53,11 +53,10 @@ class UserController extends MasterController
                 'completedProfileRatio',
                 'status'
             ]);
-            $i=1;
-            $users->chunk(1000, function($filtered_users) use($handle,$i) {
+            $users->chunk(1000, function($filtered_users) use($handle) {
                 foreach ($filtered_users as $user) {
                     fputcsv($handle, [
-                        $i,
+                        $user->id,
                         $user->name(),
                         $user->phone,
                         $user->email,
@@ -67,7 +66,6 @@ class UserController extends MasterController
                         $user->completedProfileRatio(),
                         $user->banned==0?'مفعل':'غير مفعل',
                     ]);
-                    $i++;
                 }
             });
             fclose($handle);
@@ -121,7 +119,6 @@ class UserController extends MasterController
 
         $data_val = array();
         if (!empty($user_data)) {
-            $i=1;
             foreach ($user_data as $user_val) {
                 $dataId = $user_val->id;
                 $datashow = route('admin.user.show', $user_val->id);
@@ -142,7 +139,7 @@ class UserController extends MasterController
                                             <button class='btn btn-success waves-effect waves-light'> <i class='fa fa-user-clock mr-1'></i> <span>تفعيل</span> </button>
                                         </form>";
                 }
-                $usernestedData['id'] = $i;
+                $usernestedData['id'] = $user_val->id;
                 $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
                 $usernestedData['email'] = $user_val->email;
@@ -157,7 +154,7 @@ class UserController extends MasterController
 
                                                 </div>";
                 $data_val[] = $usernestedData;
-                $i++;
+
             }
         }
         $draw_val = $request->input('draw');
