@@ -154,7 +154,7 @@
                 "serverSide": true,
                 "processing": true,
                 "ajax":{
-                    "url": "{{ route('admin.allUsers') }}",
+                    "url": "https://admin.bebaan.net/admin/all-users",
                     "dataType": "json",
                     "type": "POST",
                     "data":{ _token: "{{csrf_token()}}"}
