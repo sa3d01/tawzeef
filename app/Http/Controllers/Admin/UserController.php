@@ -51,7 +51,7 @@ class UserController extends MasterController
             8=> 'options',
         );
 
-        $totalDataRecord = User::whereType('USER')->count();
+        $totalDataRecord = User::whereType('USER')->where('deleted_at',null)->count();
         $totalFilteredRecord = $totalDataRecord;
         $limit_val = $request->input('length',10);
         $start_val = $request->input('start',1);
