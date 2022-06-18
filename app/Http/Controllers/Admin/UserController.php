@@ -40,7 +40,7 @@ class UserController extends MasterController
     public function allUsers(Request $request)
     {
         $columns_list = array(
-            0 =>'id',
+            0 =>'name',
             1 =>'phone',
             2=> 'email',
             3=> 'major',
@@ -87,7 +87,7 @@ class UserController extends MasterController
                 $datashow =  route('admin.user.show',$user_val->id);
                 $dataedit =  route('admin.user.edit',$user_val->id);
 
-                $usernestedData['id'] = $user_val->id;
+                $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
                 $usernestedData['email'] = $user_val->email;
                 $usernestedData['major'] = $user_val->major->name_ar;
@@ -108,9 +108,6 @@ class UserController extends MasterController
             "data"            => $data_val
         );
         return json_encode($get_json_data);
-
-       // echo json_encode($get_json_data);
-
     }
     public function index()
     {
