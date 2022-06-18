@@ -87,7 +87,13 @@ class UserController extends MasterController
             {
                 $datashow =  route('admin.user.show',$user_val->id);
                 $dataedit =  route('admin.user.edit',$user_val->id);
-
+                if ($user_val->banned==0){
+                    $statusClass=' badge-success ';
+                    $statusText=' مفعل ';
+                }else{
+                    $statusClass=' badge-danger ';
+                    $statusText=' غير مفعل ';
+                }
                 $usernestedData['id'] = $user_val->id;
                 $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
@@ -96,7 +102,7 @@ class UserController extends MasterController
                 $usernestedData['city'] = $user_val->city->name_ar;
                 $usernestedData['hear_by'] = $user_val->hear_by->name_ar;
                 $usernestedData['completedProfileRatio'] = $user_val->completedProfileRatio();
-                $usernestedData['status'] = $user_val->completedProfileRatio();
+                $usernestedData['status'] = "&emsp;<span class='badge {$statusClass}'>{$statusText}</span>";
                 $usernestedData['options'] = "&emsp;<a href='{$datashow}' class='showdata' title='SHOW DATA' ><span class='showdata glyphicon glyphicon-list'></span></a>&emsp;<a href='{$dataedit}' class='editdata' title='EDIT DATA' ><span class='editdata glyphicon glyphicon-edit'></span></a>";
                 $data_val[] = $usernestedData;
 
