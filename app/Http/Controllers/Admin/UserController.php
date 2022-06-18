@@ -121,7 +121,7 @@ class UserController extends MasterController
 
         $data_val = array();
         if (!empty($user_data)) {
-            $i=0;
+            $i=1;
             foreach ($user_data as $user_val) {
                 $dataId = $user_val->id;
                 $datashow = route('admin.user.show', $user_val->id);
