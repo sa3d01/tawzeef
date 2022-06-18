@@ -120,9 +120,8 @@ class UserController extends MasterController
                 $usernestedData['options'] = "&emsp;<div class='button-list'><a href='{$datashow}'>
                                                 <button class='btn btn-info waves-effect waves-light'><i class='fa fa-eye mr-1'></i><span>عرض</span></button></a>
                                                 $changeStatusForm
-                                                <form class='delete' data-id='{$dataId}' data-signature='delete#{$dataId}' method='POST' action='{$datadelete}'>
-                                                    <input type='hidden' value='{$crf}' name='_token'/>
-                                                    {$postmethod}
+                                                <form class='delete' data-id='{$dataId}' data-signature='delete#{$dataId}' action='{$datadelete}'>
+
                                                     <button class='btn btn-danger waves-effect waves-light'> <i class='fa fa-trash'></i> <span>حذف</span> </button>
                                                 </form>
                                                 </div>";
