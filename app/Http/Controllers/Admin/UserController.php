@@ -87,7 +87,7 @@ class UserController extends MasterController
                 $datashow =  route('admin.user.show',$user_val->id);
                 $dataedit =  route('admin.user.edit',$user_val->id);
 
-                $usernestedData['name'] = $user_val->name();
+                $usernestedData['name'] = $user_val->id;
                 $usernestedData['phone'] = $user_val->phone;
                 $usernestedData['email'] = $user_val->email;
                 $usernestedData['major'] = $user_val->major->name_ar;
