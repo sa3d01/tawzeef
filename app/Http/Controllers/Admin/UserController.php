@@ -53,10 +53,11 @@ class UserController extends MasterController
                 'completedProfileRatio',
                 'status'
             ]);
-            $users->chunk(1000, function($filtered_users) use($handle) {
+            $i=1;
+            $users->chunk(1000, function($filtered_users) use($handle,$i) {
                 foreach ($filtered_users as $user) {
                     fputcsv($handle, [
-                        $user->id,
+                        $i,
                         $user->name(),
                         $user->phone,
                         $user->email,
@@ -66,6 +67,7 @@ class UserController extends MasterController
                         $user->completedProfileRatio(),
                         $user->banned==0?'مفعل':'غير مفعل',
                     ]);
+                    $i++;
                 }
             });
             fclose($handle);
@@ -119,8 +121,9 @@ class UserController extends MasterController
 
         $data_val = array();
         if (!empty($user_data)) {
+            $i=1;
             foreach ($user_data as $user_val) {
-                $dataId = $user_val->id;
+                $dataId = $i;
                 $datashow = route('admin.user.show', $user_val->id);
                 $databan = route('admin.user.ban', [$user_val->id]);
                 $dataactivate = route('admin.user.activate', [$user_val->id]);
@@ -154,7 +157,7 @@ class UserController extends MasterController
 
                                                 </div>";
                 $data_val[] = $usernestedData;
-
+                $i++;
             }
         }
         $draw_val = $request->input('draw');
