@@ -121,9 +121,9 @@ class UserController extends MasterController
 
         $data_val = array();
         if (!empty($user_data)) {
-            $i=1;
+            $i=0;
             foreach ($user_data as $user_val) {
-                $dataId = $i;
+                $dataId = $user_val->id;
                 $datashow = route('admin.user.show', $user_val->id);
                 $databan = route('admin.user.ban', [$user_val->id]);
                 $dataactivate = route('admin.user.activate', [$user_val->id]);
@@ -142,7 +142,7 @@ class UserController extends MasterController
                                             <button class='btn btn-success waves-effect waves-light'> <i class='fa fa-user-clock mr-1'></i> <span>تفعيل</span> </button>
                                         </form>";
                 }
-                $usernestedData['id'] = $user_val->id;
+                $usernestedData['id'] = $i;
                 $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
                 $usernestedData['email'] = $user_val->email;
