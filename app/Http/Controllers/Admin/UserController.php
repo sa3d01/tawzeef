@@ -59,7 +59,7 @@ class UserController extends MasterController
         $dir_val = $request->input('order.0.dir');
         if(empty($request->input('search.value')))
         {
-            $user_data = User::offset($start_val)
+            $user_data = User::whereType('USER')->where('deleted_at',null)->offset($start_val)
                 ->limit($limit_val)
                 ->orderBy($order_val,$dir_val)
                 ->get();
