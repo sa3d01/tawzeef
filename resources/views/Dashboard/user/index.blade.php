@@ -21,6 +21,7 @@
                         <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap">
                             <thead>
 {{--                            <tr>--}}
+                                <th>ID</th>
                                 <th>الإسم</th>
                                 <th>رقم الجوال</th>
                                 <th>البريد الالكتروني</th>
@@ -160,6 +161,7 @@
                     "data":{ _token: "{{csrf_token()}}"}
                 },
                 "columns": [
+                    { "data": "id" },
                     { "data": "name" },
                     { "data": "phone" },
                     { "data": "email" },

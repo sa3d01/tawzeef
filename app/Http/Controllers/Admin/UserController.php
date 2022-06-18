@@ -40,15 +40,16 @@ class UserController extends MasterController
     public function allUsers(Request $request)
     {
         $columns_list = array(
-            0 =>'name',
-            1 =>'phone',
-            2=> 'email',
-            3=> 'major',
-            4=> 'city',
-            5=> 'hear_by',
-            6=> 'completedProfileRatio',
-            7=> 'status',
-            8=> 'options',
+            0 =>'id',
+            1 =>'name',
+            2 =>'phone',
+            3=> 'email',
+            4=> 'major',
+            5=> 'city',
+            6=> 'hear_by',
+            7=> 'completedProfileRatio',
+            8=> 'status',
+            9=> 'options',
         );
 
         $totalDataRecord = User::whereType('USER')->where('deleted_at',null)->count();
@@ -87,7 +88,8 @@ class UserController extends MasterController
                 $datashow =  route('admin.user.show',$user_val->id);
                 $dataedit =  route('admin.user.edit',$user_val->id);
 
-                $usernestedData['name'] = $user_val->id;
+                $usernestedData['id'] = $user_val->id;
+                $usernestedData['name'] = $user_val->name();
                 $usernestedData['phone'] = $user_val->phone;
                 $usernestedData['email'] = $user_val->email;
                 $usernestedData['major'] = $user_val->major->name_ar;
