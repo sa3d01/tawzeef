@@ -43,6 +43,7 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::post('company/{id}/site_show', 'CompanyController@siteShow')->name('company.site_show');
     Route::post('company/{id}/site_disappear', 'CompanyController@siteDisappear')->name('company.site_disappear');
 
+    Route::resource('salary', 'SalaryController');
     Route::resource('major', 'MajorController');
     Route::post('major/{id}/ban', 'MajorController@ban')->name('major.ban');
     Route::post('major/{id}/activate', 'MajorController@activate')->name('major.activate');

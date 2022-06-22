@@ -37,6 +37,12 @@
                 <span> إدارة التخصصات </span>
             </a>
         </li>
+        <li>
+            <a href="{{route('admin.salary.index')}}">
+                <i class="mdi mdi-scale-balance"></i>
+                <span> إدارة تقارير الرواتب للتخصصات </span>
+            </a>
+        </li>
 
         <li>
             <a href="{{route('admin.job.index')}}">
