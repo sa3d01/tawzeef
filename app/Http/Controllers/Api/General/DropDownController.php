@@ -6,11 +6,13 @@ use App\Http\Controllers\Api\MasterController;
 use App\Http\Resources\CityCollection;
 use App\Http\Resources\CountryCollection;
 use App\Http\Resources\MajorCollection;
+use App\Http\Resources\SalaryCollection;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\HearBy;
 use App\Models\Major;
 use App\Models\Nationality;
+use App\Models\Salary;
 
 class DropDownController extends MasterController
 {
@@ -40,6 +42,17 @@ class DropDownController extends MasterController
     public function majors(): object
     {
         return $this->sendResponse(new MajorCollection(Major::where(['parent_id' => null, 'type' => 'major'])->where('banned', 0)->get()));
+    }
+
+    public function majorsAverageSalary(): object
+    {
+        $salary_majors_ids=Salary::pluck('major_id')->toArray();
+        return $this->sendResponse(new MajorCollection(Major::whereIn('id',$salary_majors_ids)->get()));
+    }
+
+    public function AverageSalary($major_id): object
+    {
+        return $this->sendResponse(new SalaryCollection(Salary::where('major_id',$major_id)->get()));
     }
 
     public function sectors(): object
