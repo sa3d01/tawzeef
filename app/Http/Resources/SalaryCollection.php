@@ -13,7 +13,7 @@ class SalaryCollection extends ResourceCollection
         $data = [];
         foreach ($this as $obj) {
             $arr['id'] = (int)$obj->id;
-            $arr['major_id']=$obj->major_id;
+            $arr['major'] = new MajorResourse($obj->major);
             $arr['position']=$obj->position;
             $arr['average_experience']=$obj->average_experience;
             $arr['average_lowest_salary']=$obj->average_lowest_salary;
