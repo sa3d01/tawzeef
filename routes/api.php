@@ -18,7 +18,7 @@ Route::group([
         Route::get('countries/{countryId}/cities', 'DropDownController@cities');
         Route::get('majors', 'DropDownController@majors');
         Route::get('majorsAverageSalary', 'DropDownController@majorsAverageSalary');
-        Route::get('majorsAverageSalary/{major_id}/AverageSalary', 'DropDownController@AverageSalary');
+        Route::get('majorsAverageSalary/AverageSalary', 'DropDownController@AverageSalary');
         Route::get('sectors', 'DropDownController@sectors');
         Route::get('majors/{id}/subs', 'DropDownController@subMajors');
         Route::get('sectors/{id}/subs', 'DropDownController@subSectors');

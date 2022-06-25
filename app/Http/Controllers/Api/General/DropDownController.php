@@ -50,9 +50,15 @@ class DropDownController extends MasterController
         return $this->sendResponse(new MajorCollection(Major::whereIn('id',$salary_majors_ids)->get()));
     }
 
-    public function AverageSalary($major_id): object
+    public function AverageSalary(): object
     {
-        return $this->sendResponse(new SalaryCollection(Salary::where('major_id',$major_id)->get()));
+
+        $salaries=Salary::query();
+        if (request()->has('major_id')){
+            $salaries=$salaries->where('major_id',request()->input('major_id'));
+        }
+        $salaries=$salaries->get();
+        return $this->sendResponse(new SalaryCollection($salaries));
     }
 
     public function sectors(): object
